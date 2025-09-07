@@ -1,0 +1,1339 @@
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Averia+Gruesa+Libre&family=Averia+Libre:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Averia+Sans+Libre:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Averia+Serif+Libre:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
+
+    /*
+=====================================================
+Setting some core variables up for easy changing
+ =====================================================
+ */
+
+    :root {
+        --averia-gruesa-libre-font: 'Averia Gruesa Libre', cursive;
+        --averia-libre-font: 'Averia Libre', cursive;
+        --averia-sans-libre-font: 'Averia Sans Libre', cursive;
+        --averia-serif-libre-font: 'Averia Serif Libre', cursive;
+        --highlight-color: #434040;
+        --text-color: #333;
+        --main-color: #F7F3F1;
+        --background-light: #F7F3F1;
+        --border-dark: #333;
+        --shadow-color: #333;
+        --background-dark: #eae5e3;
+        --tooltip-bg: #fff;
+        --tooltip-border: #ccc;
+        --fill-calcium: #5ec5a6;
+        --fill-water: #43a2ca;
+        --fill-calories: #a22525;
+        --fill-protein: #8085bd;
+        --fill-fat: #d0b247;
+        --fill-carbs: #ce6d22;
+        --fill-phosphorus: #c44299;
+        --fill-iron: #686868;
+        --fill-thiamin: #720884;
+        --fill-riboflavin: #7c5614;
+        --fill-niacin: #426f4b;
+        --fill-eleventh: #5ec5a6;
+        --fill-twelfth: #43a2ca;
+        --fill-thirteenth: #c6aedf;
+    }
+
+
+    /*
+=====================================================
+BUTTON CSS
+- active state
+- hover state
+ =====================================================
+ */
+    button {
+        margin-right: 4px;
+        margin-bottom: 6px;
+        font-size: 1.15em;
+        border-radius: 100px;
+        padding: 4px 8px;
+        background: transparent;
+        color: var(--text-color);
+        border: 1px solid var(--shadow-color);
+    }
+
+    button:hover,
+    button.active {
+        background-color: var(--highlight-color);
+        color: var(--main-color);
+    }
+
+    #buttonsDiv button {
+        font-family: var(--averia-sans-libre-font) !important;
+    }
+
+    #buttonsDiv {
+        border-bottom: 2px dashed #333;
+        padding-bottom: 10px;
+        margin-bottom: 10px;
+    }
+
+    button.active {
+        background-color: var(--text-color);
+        color: var(--main-color);
+    }
+
+
+    /*
+=====================================================
+DROPDOWN SELECTOR CSS
+- active state
+- padding/font size
+ =====================================================
+ */
+    select,
+    .barGraphSelect {
+        font-size: 1.2em;
+        padding: 4px;
+        margin: 0px;
+        border: 0px;
+        color: var(--main-color);
+        background-color: #cfc6c3;
+        background-image: url("data:image/svg+xml;utf8,<svg fill='%23BLACK_OR_COLOR' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>");
+        background-repeat: no-repeat;
+        background-position: right 10px center;
+        background-size: 40px;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+    }
+
+    .selectLabel {
+        display: block;
+        margin-bottom: 4px;
+        font-size: 0.8em;
+        text-align: left;
+    }
+
+    #categorySelect {
+        font-weight: 900;
+        font-size: 4rem;
+        line-height: 3rem;
+        margin-bottom: 10px;
+        max-width: 60%;
+    }
+
+    /*
+=====================================================
+WIDGET CONTAINER AREA
+- setting the rules for the big organizing container
+- font, text, box, margin
+ =====================================================
+ */
+
+    .gourmetMediaContainer {
+        border: 2px solid var(--shadow-color);
+        padding: 20px;
+        box-shadow: 5px 4px var(--border-dark);
+        background-color: var(--main-color);
+        color: var(--text-color);
+        position: relative;
+    }
+
+    .org_350 h2,
+    .org_350 p,
+    #categorySelect,
+    .tick text {
+        font-family: var(--averia-sans-libre-font) !important;
+    }
+
+    .org_350 p {
+        font-size: 16px;
+        line-height: 24px;
+        margin: 0 0 10px;
+    }
+
+    .org_350 h2 {
+        font-weight: 900;
+        font-size: 3rem;
+        line-height: 5rem;
+        margin-bottom: 0;
+        color: var(--text-color);
+    }
+
+    /*
+=====================================================
+MAIN GRAPH AREA
+- setting background and padding for the graph
+- font, text, box, margin
+ =====================================================
+ */
+
+    .choropleth_graphic_area {
+        background-color: var(--background-dark);
+        padding: 20px 10px;
+        position: relative;
+        border: 2px solid var(--shadow-color);
+        color: var(--text-color);
+        margin: 10px 0;
+        box-shadow: inset 0 0 3px #333;
+        font-family: var(--averia-sans-libre-font);
+        text-align: center;
+    }
+
+    svg path {
+        transition: fill 0.15s ease-in;
+    }
+
+    svg path:hover,
+    .node rect:hover,
+    .svgStatePath:hover {
+        opacity: .5;
+    }
+
+    .svg-container svg {
+        max-width: 100%;
+    }
+
+    .tick text {
+        color: #000;
+        -webkit-text-stroke: 0.5px rgba(0, 0, 0, 0.2);
+        font-weight: 700;
+    }
+
+
+
+
+    /*
+=====================================================
+CHECKBOX ELEMENTS
+- setting colors for each specific checkbox based off data property
+ =====================================================
+ */
+
+    label {
+        border-left: 20px solid var(--fill-water);
+        margin-bottom: 8px;
+        width: 120px;
+        font-size: 15px;
+        line-height: 16px;
+    }
+
+    label[data-label="water_blue"] {
+        border-left-color: var(--fill-water);
+    }
+
+    label[data-label="calories_red"] {
+        border-left-color: var(--fill-calories);
+    }
+
+    label[data-label="protein_grey"] {
+        border-left-color: var(--fill-protein);
+    }
+
+    label[data-label="fat_yellow"] {
+        border-left-color: var(--fill-fat);
+    }
+
+    label[data-label="carbs_orange"] {
+        border-left-color: var(--fill-carbs);
+    }
+
+    label[data-label="calcium_teal"] {
+        border-left-color: var(--fill-calcium);
+    }
+
+    label[data-label="phosphorus_pink"] {
+        border-left-color: var(--fill-phosphorus);
+    }
+
+    label[data-label="thiamin_purple"] {
+        border-left-color: var(--fill-thiamin);
+    }
+
+    label[data-label="iron_gray"] {
+        border-left-color: var(--fill-iron);
+    }
+
+    label[data-label="riboflavin_brown"] {
+        border-left-color: var(--fill-riboflavin);
+    }
+
+    label[data-label="niacin_green"] {
+        border-left-color: var(--fill-niacin);
+    }
+
+    label[data-label="eleventh_teal"] {
+        border-left-color: var(--fill-eleventh);
+    }
+
+    label[data-label="twelfth_lightblue"] {
+        border-left-color: var(--fill-twelfth);
+    }
+
+    label[data-label="thirteenth_indigo"] {
+        border-left-color: var(--fill-thirteenth);
+    }
+
+    input[type="checkbox"] {
+        margin-left: -16px;
+        margin-right: 10px;
+    }
+
+    input[type="checkbox"]+label::before {
+        content: '';
+        display: inline-block;
+        margin-right: 10px;
+        width: 16px;
+        height: 16px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        background-color: #fff;
+    }
+
+    #radialDiagramCheckBoxContainer {
+        position: relative;
+        max-width: 90vw;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: start;
+    }
+
+    .radial-chart-key {
+        position: absolute;
+        right: 30px;
+        bottom: 40px;
+        width: 140px;
+    }
+
+    #radialDiagram_graphTitleFood {
+        text-transform: uppercase;
+    }
+
+    input[type="checkbox"]+span {
+        text-decoration: line-through;
+    }
+
+    input[type="checkbox"]:checked+span {
+        text-decoration: none;
+    }
+
+    .calcium_teal {
+        color: var(--fill-calcium);
+    }
+
+    label[data-label="calcium_teal"] {
+        border-left-color: var(--fill-calcium);
+    }
+
+    /* Additional color classes */
+    .water_blue {
+        color: var(--fill-water);
+    }
+
+    .calories_red {
+        color: var(--fill-calories);
+    }
+
+    .protein_grey {
+        color: var(--fill-protein);
+    }
+
+    .fat_yellow {
+        color: var(--fill-fat);
+    }
+
+    .carbs_orange {
+        color: var(--fill-carbs);
+    }
+
+    .phosphorus_pink {
+        color: var(--fill-phosphorus);
+    }
+
+    .iron_gray {
+        color: var(--fill-iron);
+    }
+
+    .thiamin_purple {
+        color: var(--fill-thiamin);
+    }
+
+    .riboflavin_brown {
+        color: var(--fill-riboflavin);
+    }
+
+    .niacin_green {
+        color: var(--fill-niacin);
+    }
+
+    .eleventh_teal {
+        color: var(--fill-eleventh);
+    }
+
+    .twelfth_lightblue {
+        color: var(--fill-twelfth);
+    }
+
+    .thirteenth_indigo {
+        color: var(--fill-thirteenth);
+    }
+
+    /*
+=====================================================
+ADAPTATIONS FOR MOBILE STYLING
+- removing the border for when you are mobile 
+ =====================================================
+ */
+
+    @media (max-width: 768px) {
+
+        select,
+        .barGraphSelect {
+            padding: 6px 10px;
+            width: 100%;
+        }
+
+        .gourmetMediaContainer {
+            border: 0px;
+            box-shadow: none;
+            padding: 8px;
+            border-top: 1px solid #333;
+            border-bottom: 1px solid #333;
+            margin: 20px 0;
+        }
+
+        .choropleth_graphic_area {
+            box-shadow: 3px 2px #333;
+            border: 2px solid var(--shadow-color);
+            color: var(--text-color);
+            margin: 10px 0;
+        }
+
+        .radialDiagramCheckBoxContainer {
+            max-width: 100vw;
+        }
+
+        label {
+            width: 110px;
+        }
+
+        input[type="checkbox"] {
+            margin-left: -16px;
+            margin-right: 5px;
+        }
+
+        #categorySelect {
+            max-width: 40%;
+        }
+
+        .radial-chart-key {
+            right: 3px;
+            bottom: 40px;
+            width: 110px;
+        }
+    }
+
+    #my_dataviz1 {
+        margin: 5px 10px 0 0;
+    }
+
+    #radial-chart-container {
+        display: flex;
+        justify-content: center;
+    }
+
+    @media only screen and (max-width: 729px) {
+        #radial-chart-container {
+            flex-direction: row;
+        }
+
+        #my_dataviz1 {
+            margin: 0 4px 0 0;
+        }
+    }
+
+    #ingredientButtons {
+        margin-bottom: 20px;
+    }
+
+    #ingredientButtons button {
+        margin-right: 10px;
+        padding: 5px 10px;
+        font-size: 14px;
+        cursor: pointer;
+    }
+
+    #ingredientButtons button.active {
+        background-color: #333;
+        color: white;
+    }
+
+    #searchResults {
+        flex-wrap: wrap;
+        max-height: 100px;
+        overflow-y: scroll;
+        background-color: #dadada;
+        padding: 6px;
+    }
+
+    .searchResult {
+        padding: 3px 4px;
+        border: 1px solid #333;
+        margin-right: 8px;
+        margin-bottom: 7px;
+        border-radius: 100px;
+        font-size: 18px;
+        font-family: var(--averia-sans-libre-font) !important;
+    }
+
+    .searchResult:hover {
+        background-color: #333;
+        color: #fff;
+    }
+
+    #searchContainer {
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+#ingredientSearch {
+  width: 300px;
+  padding: 10px;
+  font-size: 16px;
+  border: 2px solid #ccc;
+  border-radius: 4px 0 0 4px;
+}
+
+    #tooltip {
+        position: absolute;
+        padding: 10px;
+        background: white;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        pointer-events: none;
+        font-size: 14px;
+        opacity: 0;
+        transition: opacity 0.3s;
+    }
+</style>
+<!------------------------------------------>
+<!------------------------------------------>
+<!------------------------------------------>
+<!------------------------------------------>
+<!------------------------------------------>
+<!------------------------------------------>
+<script src="https://d3js.org/d3.v4.js"></script>
+<script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+<div class="gourmetMediaContainer org_350">
+    <h2 style="line-height: 3.4rem; padding-bottom: 20px; font-size: 4rem;">Which Cocktail Ingredients Go Well Together?
+    </h2>
+    
+    <div id="searchContainer">
+        <input type="text" id="ingredientSearch" placeholder="Search for an ingredient...">
+        <button id="clearButton" style="display: none; margin-left: 10px; padding: 10px 15px; font-size: 16px; border: 2px solid #ccc; border-radius: 0 4px 4px 0; background-color: #f44336; color: white; cursor: pointer;">✕ Clear</button>
+      </div>    
+      <div id="searchResults"></div>
+    <div class="choropleth_graphic_area">
+        <h3 id="radialDiagram_graphTitle" style="margin: 0">
+            CHORD DIAGRAM OF INGREDIENT COMBINATIONS
+        </h3>
+        <i id="radialDiagram_graphSubhead" style="margin: 0">Select an ingredient to highlight its connections</i>
+        <div id="my_dataviz"></div>
+        <i id="radialDiagram_graphSource" style="margin-top: 0px;">Source: <a href="https://www.thecocktaildb.com/">The Cocktail DB</a></i>
+        <div id="tooltip" style="position: absolute; opacity: 0; pointer-events: none;"></div>
+    </div>
+    <div class="choropleth_bottomBand"
+        style=" display: flex; flex-direction: row; justify-content: space-between; height: 30px;">
+        <div class="choropleth_donationButtons"
+            style=" display: flex; flex-direction: row; justify-content: center; padding-top: 14px; margin-top: 10px; opacity: 0;">
+            <a href="https://juweek.studio/" target="_blank">
+                <button>Learn More</button>
+            </a>
+        </div>
+        <div>
+            <img src="https://images.squarespace-cdn.com/content/61e3e0fa2531e62193f7e651/3dda0d4b-4946-443a-885f-0cba9a119cfe/me_typing_transparent.gif?content-type=image%2Fgif"
+                alt="SketchyGuyMedia" width="120" height="110" style="margin-top: -70px; position: relative;">
+        </div>
+    </div>
+</div>
+<!------------------------------------------>
+<!------------------------------------------>
+<!------------------------------------------>
+<!------------------------------------------>
+<!------------------------------------------>
+<!------------------------------------------>
+<script>
+    /*
+    =============================================
+    // Global Variables
+    // Purpose: Set up global variables for easy manipulation
+    // Communicates with: Various chart update functions
+    =============================================
+    */
+    var currentIngredient = null;
+    var ingredients = [];
+    var res, names, matrix;
+    var width = 640; // Increased to accommodate labels
+    var height = 640;
+    var innerRadius = 220;
+    var outerRadius = 240;
+    var canvas, context;
+    var highlightedChord = null;
+    let hoveredGroup = null;
+    let hoveredCategory = null;
+
+
+    /*
+    =============================================
+    // newOrder
+    // Purpose: Set up mappings for reorder the vintage
+    // Communicates with: Various chart update functions
+    =============================================
+    */
+    let newOrder = {
+        "alcoholic": {
+            "whiskeys": ["blended whiskey", "blended scotch", "bourbon", "crown royal", "Irish Whiskey", "islay single malt scotch", "jack daniels", "jim beam", "johnnie walker", "rye whiskey", "tennessee whiskey", "whiskey", "whisky", "wild turkey"],
+            "rums": ["151 proof rum", "añejo rum", "bacardi limon", "blackstrap rum", "dark rum", "gold rum", "light rum", "malibu rum", "spiced rum", "white rum"],
+            "vodkas": ["absolut vodka", "absolut citron", "absolut kurant", "absolut peppar", "cranberry vodka", "lime vodka", "peach vodka", "raspberry vodka", "vanilla vodka"],
+            "gins": ["gin", "sloe gin"],
+            "brandies": ["apple brandy", "apricot brandy", "blackberry brandy", "cherry brandy", "cognac", "peach brandy"],
+            "liqueurs": ["advocaat", "amaretto", "amaro montenegro", "aperol", "baileys irish cream", "benedictine", "blue curacao", "butterscotch schnapps", "campari", "chambord raspberry liqueur", "cherry heering", "cherry liqueur", "chocolate liqueur", "coffee brandy", "coffee liqueur", "cointreau", "crème de banane", "crème de cacao", "crème de cassis", "crème de mure", "drambuie", "elderflower cordial", "frangelico", "galliano", "godiva liqueur", "grand marnier", "irish cream", "jägermeister", "Kahlua", "kiwi liqueur", "maraschino liqueur", "midori melon liqueur", "orange curacao", "passoa", "peach schnapps", "peachtree schnapps", "pernod", "pisang ambon", "sambuca", "southern comfort", "st. germain", "strawberry liqueur", "strawberry schnapps", "tia maria", "triple sec", "vanilla liqueur"],
+            "other_spirits": ["absinthe", "anisette", "apfelkorn", "cachaça", "everclear", "falernum", "firewater", "grain alcohol", "mezcal", "ouzo", "pisco", "ricard", "rumple minze", "tequila", "yukon jack"],
+            "wines": ["champagne", "dubonnet rouge", "lillet", "lillet blanc", "port", "prosecco", "red wine", "rosso vermouth", "ruby port", "sherry", "vermouth", "white wine", "wine"],
+            "beers": ["beer", "guinness stout", "lager", "cider"]
+        },
+        "nonalcoholic": {
+            "soft_drinks": ["7-up", "bitter lemon", "coca-cola", "dr. pepper", "fresca", "ginger ale", "ginger beer", "Mountain Dew", "pepsi cola", "root beer", "soda water", "sprite", "surge", "zima"],
+            "juices_nectars": ["apple juice", "apricot nectar", "cranberry juice", "grape juice", "grapefruit juice", "lemon juice", "lime juice", "orange juice", "passion fruit juice", "peach nectar", "pineapple juice", "pomegranate juice", "tomato juice"]
+        },
+        "mixers": {
+            "syrups_sweeteners": ["agave syrup", "chocolate syrup", "corn syrup", "grenadine", "honey", "honey syrup", "maple syrup", "mint syrup", "orgeat syrup", "passion fruit syrup", "pineapple syrup", "raspberry syrup", "rosemary syrup", "simple syrup", "sugar syrup", "vanilla syrup"],
+            "creams_dairy": ["butter", "condensed milk", "cream", "cream of coconut", "half-and-half", "heavy cream", "light cream", "whipped cream", "whipping cream", "yoghurt"],
+            "other_mixers": ["blackcurrant cordial", "coconut syrup", "daiquiri mix", "fruit punch", "hot chocolate", "pina colada mix", "sirup of roses", "sour mix", "sweet and sour mix"]
+        },
+        "fruits": {
+            "fresh_fruits": ["apple", "banana", "blackberries", "blood orange", "cherries", "cherry", "cucumber", "fig", "kiwi", "lemon", "lime", "mango", "olive", "rrange", "papaya", "passion fruit", "peach", "pineapple", "raspberry", "strawberry", "tomato"],
+            "peels_zests": ["lemon peel", "lime peel", "orange peel", "orange spiral"]
+        },
+        "spices": {
+            "herbs": ["lavender", "mint", "rosemary", "thyme"],
+            "spices": ["allspice", "black pepper", "cardamom", "cayenne pepper", "cinnamon", "cloves", "coriander", "cumin seed", "nutmeg", "pepper", "salt", "vanilla", "vanilla extract"]
+        },
+        "other": {
+            "flavorings_colorings": ["almond flavoring", "caramel coloring", "cocoa powder", "oconut liqueur", "demerara sugar", "marshmallows", "oreo cookie", "vanilla ice-Cream"],
+            "botanicals": ["asafoetida", "rose", "wormwood"],
+            "condiments": ["celery salt", "hot sauce", "olive brine", "worcestershire sauce"],
+            "essences_extracts": ["roses sweetened lime juice"],
+            "garnishes": ["Maraschino Cherry"],
+            "miscellaneous": ["egg", "egg white", "egg yolk", "ice", "powdered sugar", "red chili flakes"]
+        }
+    }
+
+    /*
+    =============================================
+    // reorderMatrix
+    // Purpose: reorder hte matrix based off the group mappings
+    // Called by: Chord mouseleave event
+    =============================================
+    */
+    function reorderMatrix(matrix, names) {
+        let groupOrder = [];
+        let groupedIngredients = {};
+
+        // Group ingredients
+        names.forEach((name, index) => {
+            let group = getIngredientGroup(name);
+            if (!groupedIngredients[group]) {
+                groupedIngredients[group] = [];
+                groupOrder.push(group);
+            }
+            groupedIngredients[group].push({ name, index });
+        });
+
+        console.log('yerrr');
+        console.log(newOrder);
+
+        // Sort groups based on the order in newOrder object
+        groupOrder.sort((a, b) => {
+            let aOrder = Object.keys(newOrder).findIndex(key => a.startsWith(key));
+            let bOrder = Object.keys(newOrder).findIndex(key => b.startsWith(key));
+            return aOrder - bOrder;
+        });
+
+        // Create new order of indices
+        let newOrderIndices = [];
+        groupOrder.forEach(group => {
+            groupedIngredients[group].forEach(item => {
+                newOrderIndices.push(item.index);
+            });
+        });
+
+        // Reorder matrix and names
+        let newMatrix = newOrderIndices.map(i => newOrderIndices.map(j => matrix[i][j]));
+        let newNames = newOrderIndices.map(i => names[i]);
+
+        return { matrix: newMatrix, names: newNames };
+    }
+
+    /*
+    =============================================
+    // initializeChart
+    // Purpose: Initializes the SVG container for the chord diagram
+    // Communicates with: createChordDiagram()
+    =============================================
+    */
+    function initializeChart() {
+        canvas = d3.select("#my_dataviz")
+            .append("canvas")
+            .attr("width", width)
+            .attr("height", height)
+            .node();
+
+        context = canvas.getContext("2d");
+        
+        // Handle high-DPI displays (common on mobile)
+        var devicePixelRatio = window.devicePixelRatio || 1;
+        var rect = canvas.getBoundingClientRect();
+        
+        // Set the actual canvas size in memory (scaled to device pixel ratio)
+        canvas.width = rect.width * devicePixelRatio;
+        canvas.height = rect.height * devicePixelRatio;
+        
+        // Scale the canvas back down using CSS
+        canvas.style.width = rect.width + 'px';
+        canvas.style.height = rect.height + 'px';
+        
+        // Scale the drawing context so everything draws at the correct size
+        context.scale(devicePixelRatio, devicePixelRatio);
+        
+        context.translate(width / 2, height / 2);
+    }
+
+    /*
+    =============================================
+    // createChordDiagram
+    // Purpose: Creates and updates the chord diagram
+    // Communicates with: updateChordDiagram()
+    // Parameters: 
+    // - data: The dataset to visualize
+    =============================================
+    */
+    function createChordDiagram(data) {
+        var matrix = data.columns.slice(1).map(function (ingredient, i) {
+            return data.map(function (d) {
+                return +d[ingredient];
+            });
+        });
+
+        names = data.columns.slice(1);
+
+        // Reorder the matrix and names
+        let reordered = reorderMatrix(matrix, names);
+        matrix = reordered.matrix;
+        names = reordered.names;
+
+        // Create the chord diagram
+        res = d3.chord()
+            .padAngle(0.05)
+            .sortSubgroups(d3.descending)(matrix);
+
+        updateChordDiagram();
+    }
+
+
+    /*
+    =============================================
+    // setupSearch
+    // Purpose: Sets up the search functionality
+    // Communicates with: updateChordDiagram()
+    =============================================
+    */
+    function setupSearch() {
+        const searchInput = document.getElementById('ingredientSearch');
+        const searchResults = document.getElementById('searchResults');
+        const clearButton = document.getElementById('clearButton');
+
+        function filterAndDisplayResults() {
+            const searchTerm = searchInput.value.toLowerCase();
+            const filteredIngredients = ingredients.filter(ing =>
+                ing.toLowerCase().includes(searchTerm)
+            );
+            displaySearchResults(filteredIngredients);
+        }
+
+        function clearSelection() {
+            currentIngredient = null;
+            hoveredCategory = null;
+            highlightedChord = null;
+            searchInput.value = '';
+            searchResults.style.display = 'none';
+            clearButton.style.display = 'none';
+            updateChordDiagram();
+        }
+
+        function showClearButton() {
+            if (currentIngredient && currentIngredient !== '') {
+                clearButton.style.display = 'inline-block';
+            } else {
+                clearButton.style.display = 'none';
+            }
+        }
+
+        searchInput.addEventListener('input', debounce(filterAndDisplayResults, 100));
+
+        searchInput.addEventListener('focus', function () {
+            filterAndDisplayResults();
+            if (searchResults.children.length > 0) {
+                searchResults.style.display = 'flex';
+            }
+        });
+
+        clearButton.addEventListener('click', clearSelection);
+
+        document.addEventListener('click', function (e) {
+            if (!searchInput.contains(e.target) && !searchResults.contains(e.target) && !clearButton.contains(e.target)) {
+                searchResults.style.display = 'none';
+            }
+        });
+
+        // Store the showClearButton function globally so other functions can use it
+        window.showClearButton = showClearButton;
+    }
+
+    /*
+    =============================================
+    // calculateGroupAngles
+    // Purpose: calculate the start and end angles for each group based on the reordered matrix.
+    // Communicates with: updateChordDiagram()
+    =============================================
+    */
+    function calculateGroupAngles(names) {
+        let groupAngles = {};
+        let totalIngredients = names.length;
+
+        names.forEach((name, index) => {
+            let group = getIngredientGroup(name).split('_')[0]; // Get only the main category
+            if (!groupAngles[group]) {
+                groupAngles[group] = {
+                    startAngle: ((index / totalIngredients) * 2 * Math.PI) - (Math.PI / 2), // Adjust for 90-degree offset
+                    count: 1
+                };
+            } else {
+                groupAngles[group].count++;
+            }
+        });
+
+        // Calculate end angles and convert to array
+        let result = Object.entries(groupAngles).map(([group, data]) => ({
+            group: group,
+            startAngle: data.startAngle,
+            endAngle: (data.startAngle + (data.count / totalIngredients) * 2 * Math.PI) % (2 * Math.PI)
+        }));
+
+        return result;
+    }
+
+    /*
+    =============================================
+    // debounce
+    // Purpose: Time out the search functionality for performance
+    // Communicates with: updateChordDiagram()
+    =============================================
+    */
+    function debounce(func, wait) {
+        let timeout;
+        return function (...args) {
+            clearTimeout(timeout);
+            timeout = setTimeout(() => func.apply(this, args), wait);
+        };
+    }
+
+    /*
+    =============================================
+    // displaySearchResults
+    // Purpose: Displays the filtered search results
+    // Called by: setupSearch
+    // Parameters:
+    // - results: Array of filtered ingredients
+    =============================================
+    */
+    function displaySearchResults(results) {
+        const searchResults = document.getElementById('searchResults');
+        searchResults.innerHTML = '';
+
+        if (results.length > 0) {
+            results.forEach(ing => {
+                const div = document.createElement('div');
+                div.textContent = ing;
+                div.className = 'searchResult';
+                div.addEventListener('click', function () {
+                    currentIngredient = ing.toLowerCase();
+                    document.getElementById('ingredientSearch').value = ing;
+                    searchResults.style.display = 'none';
+                    updateChordDiagram();
+                    if (window.showClearButton) {
+                        window.showClearButton();
+                    }
+                });
+                searchResults.appendChild(div);
+            });
+            searchResults.style.display = 'flex';
+        } else {
+            searchResults.style.display = 'none';
+        }
+    }
+
+    /*
+=============================================
+// isCurrentIngredient
+// Purpose: Updates the chord connections based on the selected ingredient
+// Called by: createChordDiagram(), ingredient selection
+=============================================
+*/
+    function isCurrentIngredient(d) {
+        if (!currentIngredient || currentIngredient === '') {
+            return true; // Show all chords equally when no ingredient is selected
+        }
+        var sourceIngredient = names[d.source.index].toLowerCase();
+        var targetIngredient = names[d.target.index].toLowerCase();
+        return sourceIngredient.includes(currentIngredient) || targetIngredient.includes(currentIngredient);
+    }
+
+    /*
+    =============================================
+    // belongsToCategory
+    // Purpose: Check if a chord belongs to a specific category
+    // Called by: updateChordDiagram when hoveredCategory is set
+    =============================================
+    */
+    function belongsToCategory(d, category) {
+        var sourceGroup = getIngredientGroup(names[d.source.index]);
+        var targetGroup = getIngredientGroup(names[d.target.index]);
+        return sourceGroup === category || targetGroup === category;
+    }
+
+
+    /*
+=============================================
+// getIngredientGroup
+// Purpose: Updates the chord connections based on the  group mappings
+// Called by: createChordDiagram(), ingredient selection
+=============================================
+*/
+    function getIngredientGroup(ingredient) {
+        for (let category in newOrder) {
+            for (let subCategory in newOrder[category]) {
+                if (newOrder[category][subCategory].includes(ingredient.toLowerCase())) {
+                    return category; // Return only the main category
+                }
+            }
+        }
+        return 'other';
+    }
+
+    /*
+ =============================================
+ // updateChordDiagram
+ // Purpose: Updates the chord connections based on the selected ingredient
+ // Called by: createChordDiagram(), ingredient selection
+ =============================================
+ */
+    function updateChordDiagram() {
+        var defaultColor = "#333";
+        var highlightColor = "#c70000";
+        var defaultOpacity = 1;
+        var highlightOpacity = 1;
+        var defaultStrokeWidth = 0.1;
+        var highlightStrokeWidth = .8;
+
+        // Define colors for each category
+        let categoryColors = {
+            "alcoholic": "#8B0000", // Dark Red
+            "nonalcoholic": "#006400", // Dark Green
+            "mixers": "#00008B", // Dark Blue
+            "fruits": "#DAA520", // Goldenrod
+            "spices": "#8B008B", // Dark Magenta
+            "other": "#008B8B" // Dark Cyan
+        };
+
+        context.clearRect(-width / 2, -height / 2, width, height);
+        var ribbon = d3.ribbon().radius(innerRadius).context(context);
+
+        res.forEach(function (d) {
+            context.beginPath();
+            ribbon(d);
+
+            // Get the group colors for source and target
+            var sourceGroup = getIngredientGroup(names[d.source.index]);
+            var targetGroup = getIngredientGroup(names[d.target.index]);
+            var sourceColor = categoryColors[sourceGroup] || '#333';
+            var targetColor = categoryColors[targetGroup] || '#333';
+
+            // Create a gradient for the chord
+            var gradient = context.createLinearGradient(
+                innerRadius * Math.cos(d.source.startAngle),
+                innerRadius * Math.sin(d.source.startAngle),
+                innerRadius * Math.cos(d.target.startAngle),
+                innerRadius * Math.sin(d.target.startAngle)
+            );
+            gradient.addColorStop(0, sourceColor);
+            gradient.addColorStop(1, targetColor);
+
+            context.fillStyle = gradient;
+            
+            // Determine opacity based on current state - stack effects when both are active
+            let chordOpacity = 0.5;
+            let chordLineWidth = 0.4;
+            
+            let showChord = true; // Start with showing the chord
+            
+            // Apply ingredient filter if an ingredient is selected
+            if (currentIngredient && currentIngredient !== '') {
+                showChord = showChord && isCurrentIngredient(d);
+            }
+            
+            // Apply category filter if hovering over a category
+            if (hoveredCategory) {
+                showChord = showChord && belongsToCategory(d, hoveredCategory);
+            }
+            
+            // Set opacity and line width based on whether chord should be shown
+            if (currentIngredient || hoveredCategory) {
+                chordOpacity = showChord ? 0.6 : 0;
+                chordLineWidth = showChord ? 1 : 0.1;
+            }
+            // If neither filter is active, use default values
+            
+            context.globalAlpha = chordOpacity;
+            context.lineWidth = chordLineWidth;
+            context.fill();
+            context.strokeStyle = gradient;
+            context.stroke();
+        });
+
+        // Highlight the selected chord if any
+        if (highlightedChord) {
+            context.beginPath();
+            ribbon(highlightedChord);
+            context.strokeStyle = "black";
+            context.lineWidth = 4;
+            context.stroke();
+        }
+
+        // Draw group markers
+        let groupAngles = calculateGroupAngles(names);
+        let arcWidth = 40; // Increased arc width
+        let labelRadius = outerRadius + arcWidth + 20; // Moved labels further outside the arcs
+
+        // First, draw all the arcs
+        groupAngles.forEach(group => {
+            context.beginPath();
+            context.arc(0, 0, outerRadius + arcWidth / 2, group.startAngle, group.endAngle);
+            context.lineWidth = arcWidth;
+            context.strokeStyle = categoryColors[group.group] || '#000';
+            
+            // Set opacity based on hover state
+            if (hoveredCategory) {
+                context.globalAlpha = group.group === hoveredCategory ? 0.6 : 0.3; // Highlight hovered, dim others
+            } else {
+                context.globalAlpha = 0.3; // Default opacity
+            }
+            
+            context.stroke();
+        });
+
+        // Draw labels horizontally with hover-based opacity
+        groupAngles.forEach(group => {
+            let midAngle = (group.startAngle + group.endAngle) / 2;
+            let labelX = labelRadius * Math.cos(midAngle);
+            let labelY = labelRadius * Math.sin(midAngle);
+
+            context.save();
+            context.translate(labelX, labelY);
+            // Don't rotate - keep text horizontal
+            context.textAlign = 'center';
+            context.textBaseline = 'middle';
+            context.fillStyle = '#333'; // Changed to dark color for better visibility
+            context.font = 'bold 16px Arial'; // Slightly larger font
+
+            // Set opacity based on hover state
+            if (hoveredCategory) {
+                context.globalAlpha = group.group === hoveredCategory ? 1.0 : 0.4; // Highlight hovered, dim others
+            } else {
+                context.globalAlpha = 1.0; // Default opacity
+            }
+
+            // Capitalize and format the group name
+            let groupName = group.group.charAt(0).toUpperCase() + group.group.slice(1);
+            context.fillText(groupName, 0, 0);
+            context.restore();
+        });
+    }
+
+    /*
+    =============================================
+    // showTooltip
+    // Purpose: Displays tooltip when hovering over a chord
+    // Called by: Chord mouseover event
+    // Parameters:
+    // - d: Data associated with the hovered chord
+    =============================================
+    */
+    function showTooltip(event) {
+        var rect = canvas.getBoundingClientRect();
+        var devicePixelRatio = window.devicePixelRatio || 1;
+        var mouseX = ((event.clientX - rect.left) * devicePixelRatio - width / 2) - 50; // Adjust for canvas center and DPI
+        var mouseY = (event.clientY - rect.top) * devicePixelRatio - height / 2; // Adjust for canvas center and DPI
+
+        // Check if hovering over a category (either arc or label)
+        let groupAngles = calculateGroupAngles(names);
+        let arcWidth = 40;
+        let labelRadius = outerRadius + arcWidth + 20; // Same as in updateChordDiagram
+        let hoveredLabel = null;
+
+        // Calculate mouse position in polar coordinates
+        let mouseRadius = Math.sqrt(mouseX * mouseX + mouseY * mouseY);
+        let mouseAngle = Math.atan2(mouseY, mouseX);
+        // Normalize angle to match our coordinate system (0 to 2π)
+        if (mouseAngle < 0) mouseAngle += 2 * Math.PI;
+
+        groupAngles.forEach(group => {
+            let isInArcArea = false;
+            let isInLabelArea = false;
+            
+            // Check if hovering over the arc area
+            let arcInnerRadius = outerRadius;
+            let arcOuterRadius = outerRadius + arcWidth;
+            
+            if (mouseRadius >= arcInnerRadius && mouseRadius <= arcOuterRadius) {
+                // Check if mouse angle is within the group's angle range
+                let startAngle = group.startAngle;
+                let endAngle = group.endAngle;
+                
+                // Handle angle wrapping
+                if (startAngle < 0) startAngle += 2 * Math.PI;
+                if (endAngle < 0) endAngle += 2 * Math.PI;
+                
+                // Check if mouse angle is within the arc range
+                if (startAngle <= endAngle) {
+                    isInArcArea = mouseAngle >= startAngle && mouseAngle <= endAngle;
+                } else {
+                    // Handle case where arc crosses 0/2π boundary
+                    isInArcArea = mouseAngle >= startAngle || mouseAngle <= endAngle;
+                }
+            }
+            
+            // Check if hovering over the label area
+            let midAngle = (group.startAngle + group.endAngle) / 2;
+            let labelX = labelRadius * Math.cos(midAngle);
+            let labelY = labelRadius * Math.sin(midAngle);
+            
+            let labelWidth = 80; // Approximate width
+            let labelHeight = 20; // Approximate height
+            
+            isInLabelArea = mouseX >= labelX - labelWidth/2 && mouseX <= labelX + labelWidth/2 &&
+                           mouseY >= labelY - labelHeight/2 && mouseY <= labelY + labelHeight/2;
+            
+            // Set hovered label if mouse is in either area AND there are visible chords in this category
+            if (isInArcArea || isInLabelArea) {
+                // Check if this category has any visible chords given current filters
+                let hasVisibleChords = false;
+                
+                if (!currentIngredient) {
+                    // If no ingredient is selected, all categories have visible chords
+                    hasVisibleChords = true;
+                } else {
+                    // Check if any chord involving the current ingredient belongs to this category
+                    res.forEach(function(d) {
+                        if (isCurrentIngredient(d) && belongsToCategory(d, group.group)) {
+                            hasVisibleChords = true;
+                        }
+                    });
+                }
+                
+                if (hasVisibleChords) {
+                    hoveredLabel = group.group;
+                }
+            }
+        });
+
+        // Update hovered category if it changed
+        if (hoveredLabel !== hoveredCategory) {
+            hoveredCategory = hoveredLabel;
+            updateChordDiagram();
+            if (hoveredCategory) {
+                d3.select("#tooltip")
+                    .style("opacity", 1)
+                    .html("Category: " + hoveredCategory.charAt(0).toUpperCase() + hoveredCategory.slice(1))
+                    .style("left", (event.pageX - 300) + "px")
+                    .style("top", (event.pageY - 428) + "px");
+                return; // Don't check for chord hover if we're hovering a label
+            } else {
+                hideTooltip();
+            }
+        }
+
+        // Only check for chord hover if not hovering over a label
+        if (!hoveredCategory) {
+            var ribbon = d3.ribbon().radius(innerRadius).context(context);
+            var found = null;
+
+            // Adjust mouse coordinates back for chord detection
+            var canvasMouseX = mouseX + width / 2;
+            var canvasMouseY = mouseY + height / 2;
+
+            context.save();
+            res.forEach(function (d) {
+                // Check if this chord is currently visible (using same logic as updateChordDiagram)
+                let showChord = true;
+                
+                // Apply ingredient filter if an ingredient is selected
+                if (currentIngredient && currentIngredient !== '') {
+                    showChord = showChord && isCurrentIngredient(d);
+                }
+                
+                // Apply category filter if hovering over a category
+                if (hoveredCategory) {
+                    showChord = showChord && belongsToCategory(d, hoveredCategory);
+                }
+                
+                // Only check for hover if the chord is visible
+                if (showChord && (currentIngredient || hoveredCategory)) {
+                    context.beginPath();
+                    ribbon(d);
+                    if (context.isPointInPath(canvasMouseX, canvasMouseY) || context.isPointInStroke(canvasMouseX, canvasMouseY)) {
+                        found = d;
+                        return;
+                    }
+                } else if (!currentIngredient && !hoveredCategory) {
+                    // If no filters are active, check all chords
+                    context.beginPath();
+                    ribbon(d);
+                    if (context.isPointInPath(canvasMouseX, canvasMouseY) || context.isPointInStroke(canvasMouseX, canvasMouseY)) {
+                        found = d;
+                        return;
+                    }
+                }
+            });
+            context.restore();
+
+            if (found) {
+                if (highlightedChord !== found) {
+                    highlightedChord = found;
+                    updateChordDiagram(); // Redraw the entire diagram
+
+                    // Highlight the found chord
+                    context.save();
+                    context.beginPath();
+                    ribbon(found);
+                    context.strokeStyle = "black";
+                    context.lineWidth = 4;
+                    context.stroke();
+                    context.restore();
+
+                    d3.select("#tooltip")
+                        .style("opacity", 1)
+                        .html("Source: " + names[found.source.index] + "<br>Target: " + names[found.target.index])
+                        .style("left", (event.pageX - 300) + "px")
+                        .style("top", (event.pageY - 728) + "px");
+                }
+            } else if (highlightedChord) {
+                highlightedChord = null;
+                updateChordDiagram(); // Redraw without highlight
+                hideTooltip();
+            }
+        }
+    }
+
+    /*
+    =============================================
+    // hideTooltip
+    // Purpose: Hides tooltip when mouse leaves a chord
+    // Called by: Chord mouseleave event
+    =============================================
+    */
+    function hideTooltip() {
+        d3.select("#tooltip").style("opacity", 0);
+        if (highlightedChord || hoveredCategory) {
+            highlightedChord = null;
+            hoveredCategory = null;
+            updateChordDiagram(); // Redraw without highlight
+        }
+    }
+
+    /*
+    =============================================
+    // handleTouch
+    // Purpose: Convert touch events to mouse-like events for mobile support
+    // Called by: Touch event listeners
+    =============================================
+    */
+    function handleTouch(event) {
+        event.preventDefault(); // Prevent scrolling when touching the canvas
+        
+        if (event.touches && event.touches.length > 0) {
+            // Get the first touch point
+            var touch = event.touches[0];
+            
+            // Create a mock mouse event object
+            var mockMouseEvent = {
+                clientX: touch.clientX,
+                clientY: touch.clientY,
+                pageX: touch.pageX,
+                pageY: touch.pageY
+            };
+            
+            // Call the existing showTooltip function with the mock event
+            showTooltip(mockMouseEvent);
+        }
+    }
+
+
+    /*
+    =============================================
+    // createButtons
+    // Purpose: Creates interactive buttons for ingredient selection
+    // Communicates with: updateChordDiagram()
+    // Parameters:
+    // - ingredients: List of ingredients to create buttons for
+    =============================================
+    */
+    function createButtons(ingredients) {
+        var buttonContainer = d3.select("#ingredientButtons");
+
+        buttonContainer.selectAll("button")
+            .data(ingredients)
+            .enter()
+            .append("button")
+            .text(function (d) { return d; })
+            .classed("active", function (d) { return d === currentIngredient; })
+            .on("click", function (d) {
+                currentIngredient = d;
+                d3.selectAll("#ingredientButtons button").classed("active", function (b) { return b === d; });
+                updateChordDiagram();
+            });
+    }
+
+    /*
+    =============================================
+    // Main execution
+    // Purpose: Loads data and initializes the chart
+    =============================================
+    */
+    document.addEventListener('DOMContentLoaded', function () {
+        d3.csv("https://raw.githubusercontent.com/juweek/datasets/main/updated_ingredient_association_matrix.csv", function (error, data) {
+            if (error) throw error;
+
+            initializeChart();
+            createChordDiagram(data);
+
+            ingredients = Array.from(new Set(data.columns.slice(1)));
+            setupSearch();
+
+            // Desktop events
+            canvas.addEventListener('mousemove', showTooltip);
+            canvas.addEventListener('mouseout', hideTooltip);
+            
+            // Mobile touch events
+            canvas.addEventListener('touchstart', handleTouch, { passive: false });
+            canvas.addEventListener('touchmove', handleTouch, { passive: false });
+            canvas.addEventListener('touchend', hideTooltip);
+        });
+    });
+</script>
