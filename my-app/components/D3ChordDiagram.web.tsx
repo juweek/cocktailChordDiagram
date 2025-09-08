@@ -4,18 +4,16 @@ import { chord, ribbon } from 'd3-chord';
 import { select } from 'd3-selection';
 import { descending } from 'd3-array';
 import { arc } from 'd3-shape';
+import { INGREDIENT_MATRIX } from '@/data/ingredientMatrix';
+import { CATEGORY_COLORS } from '@/constants/Ingredients';
 
 interface D3ChordDiagramProps {
-  data: {
-    matrix: number[][];
-    names: string[];
-    colors: string[];
-  };
-  selectedIngredient?: string;
+  selectedIngredient?: string | null;
 }
 
-export function D3ChordDiagram({ data, selectedIngredient }: D3ChordDiagramProps) {
-  const svgRef = useRef<SVGSVGElement>(null);
+export function D3ChordDiagram({ selectedIngredient }: D3ChordDiagramProps) {
+  const { ingredients, matrix, colors } = INGREDIENT_MATRIX;
+  const canvasRef = useRef<HTMLCanvasElement>(null);
   const { width: windowWidth } = Dimensions.get('window');
   
   // Set dimensions
@@ -24,95 +22,149 @@ export function D3ChordDiagram({ data, selectedIngredient }: D3ChordDiagramProps
   const outerRadius = Math.min(width, height) * 0.4;
   const innerRadius = outerRadius * 0.9;
 
-  useEffect(() => {
-    console.log('Initializing D3 chord diagram');
-    console.log('Data:', data);
-    
-    if (!svgRef.current || !data.matrix) return;
+  // Calculate group angles based on ingredients
+  function calculateGroupAngles(names: string[]) {
+    const groupAngles: { group: string; startAngle: number; endAngle: number }[] = [];
+    const totalIngredients = names.length;
+    let currentAngle = -Math.PI / 2; // Start at top
 
-    // Clear existing content
-    select(svgRef.current).selectAll('*').remove();
+    // Group ingredients by category
+    const groupedIngredients = ingredients.reduce((acc, ing, i) => {
+      const category = Object.entries(CATEGORY_COLORS).find(([_, color]) => 
+        colors[i] === color
+      )?.[0] || 'other';
+      
+      if (!acc[category]) acc[category] = [];
+      acc[category].push(i);
+      return acc;
+    }, {} as Record<string, number[]>);
+
+    // Create angle ranges for each group
+    Object.entries(groupedIngredients).forEach(([group, indices]) => {
+      if (indices.length === 0) return;
+      
+      const angleSize = (2 * Math.PI * indices.length) / totalIngredients;
+      groupAngles.push({
+        group,
+        startAngle: currentAngle,
+        endAngle: currentAngle + angleSize
+      });
+      currentAngle += angleSize;
+    });
+
+    return groupAngles;
+  }
+
+  useEffect(() => {
+    if (!canvasRef.current) return;
+
+    const canvas = canvasRef.current;
+    const context = canvas.getContext('2d');
+    if (!context) return;
+
+    // Handle high-DPI displays
+    const devicePixelRatio = window.devicePixelRatio || 1;
+    const rect = canvas.getBoundingClientRect();
+
+    canvas.width = rect.width * devicePixelRatio;
+    canvas.height = rect.height * devicePixelRatio;
+    canvas.style.width = rect.width + 'px';
+    canvas.style.height = rect.height + 'px';
+
+    context.scale(devicePixelRatio, devicePixelRatio);
+    context.translate(width / 2, height / 2);
 
     try {
-      // Create SVG
-      const svg = select(svgRef.current)
-        .attr('width', width)
-        .attr('height', height)
-        .append('g')
-        .attr('transform', `translate(${width / 2},${height / 2})`);
-
       // Create chord layout
       const chordLayout = chord()
         .padAngle(0.05)
         .sortSubgroups(descending);
 
-      console.log('Creating chord with matrix:', data.matrix);
-      const chordData = chordLayout(data.matrix);
-      console.log('Chord data created:', chordData);
+      const chordData = chordLayout(matrix);
 
-      // Create arc generator
-      const arcGenerator = arc()
-        .innerRadius(innerRadius)
-        .outerRadius(outerRadius);
-
-      // Draw the outer arcs
-      svg.append('g')
-        .selectAll('path')
-        .data(chordData.groups)
-        .join('path')
-        .attr('fill', (d) => data.colors[d.index])
-        .attr('d', arcGenerator as any);
-
-      // Add labels
-      svg.append('g')
-        .selectAll('text')
-        .data(chordData.groups)
-        .join('text')
-        .each((d, i, nodes) => {
-          const angle = (d.startAngle + d.endAngle) / 2;
-          const radius = outerRadius + 10;
-          const x = Math.cos(angle - Math.PI / 2) * radius;
-          const y = Math.sin(angle - Math.PI / 2) * radius;
-          
-          select(nodes[i])
-            .attr('transform', `translate(${x},${y})`)
-            .attr('text-anchor', angle > Math.PI ? 'end' : 'start')
-            .attr('dominant-baseline', 'middle')
-            .text(data.names[i]);
-        });
+      // Clear canvas
+      context.clearRect(-width / 2, -height / 2, width, height);
 
       // Create ribbon generator
-      const ribbonGenerator = ribbon()
-        .radius(innerRadius);
+      const ribbonGenerator = ribbon().radius(innerRadius);
 
       // Draw the chords
-      svg.append('g')
-        .selectAll('path')
-        .data(chordData)
-        .join('path')
-        .attr('d', ribbonGenerator as any)
-        .attr('fill', d => data.colors[d.source.index])
-        .attr('opacity', d => {
-          if (!selectedIngredient) return 0.6;
-          return (data.names[d.source.index] === selectedIngredient ||
-                  data.names[d.target.index] === selectedIngredient) ? 0.8 : 0.1;
-        })
-        .attr('stroke', '#000')
-        .attr('stroke-opacity', 0.2);
+      chordData.forEach(d => {
+        context.beginPath();
+        ribbonGenerator.context(context)(d);
+
+        // Create gradient for the chord
+        const gradient = context.createLinearGradient(
+          innerRadius * Math.cos(d.source.startAngle),
+          innerRadius * Math.sin(d.source.startAngle),
+          innerRadius * Math.cos(d.target.startAngle),
+          innerRadius * Math.sin(d.target.startAngle)
+        );
+        gradient.addColorStop(0, colors[d.source.index]);
+        gradient.addColorStop(1, colors[d.target.index]);
+
+        // Set opacity based on selection
+        const isSelected = selectedIngredient && 
+          (ingredients[d.source.index].toLowerCase() === selectedIngredient.toLowerCase() ||
+           ingredients[d.target.index].toLowerCase() === selectedIngredient.toLowerCase());
+
+        context.globalAlpha = isSelected ? 0.9 : (selectedIngredient ? 0.1 : 0.6);
+        context.fillStyle = gradient;
+        context.fill();
+
+        context.lineWidth = isSelected ? 2 : 0.5;
+        context.strokeStyle = gradient;
+        context.stroke();
+      });
+
+      // Draw the outer arcs for categories
+      const groupAngles = calculateGroupAngles(ingredients);
+      const arcWidth = 40;
+
+      groupAngles.forEach(group => {
+        const isHighlighted = selectedIngredient && 
+          ingredients.some((ing, i) => 
+            colors[i] === CATEGORY_COLORS[group.group as keyof typeof CATEGORY_COLORS] &&
+            ing.toLowerCase() === selectedIngredient.toLowerCase()
+          );
+
+        context.beginPath();
+        context.arc(0, 0, outerRadius + arcWidth / 2, group.startAngle, group.endAngle);
+        context.lineWidth = arcWidth;
+        context.strokeStyle = CATEGORY_COLORS[group.group as keyof typeof CATEGORY_COLORS] || '#000';
+        context.globalAlpha = isHighlighted ? 0.6 : 0.3;
+        context.stroke();
+
+        // Add category labels
+        const midAngle = (group.startAngle + group.endAngle) / 2;
+        const labelRadius = outerRadius + arcWidth + 20;
+        const x = labelRadius * Math.cos(midAngle);
+        const y = labelRadius * Math.sin(midAngle);
+
+        context.save();
+        context.translate(x, y);
+        context.rotate(midAngle + (midAngle > Math.PI / 2 && midAngle < 3 * Math.PI / 2 ? Math.PI : 0));
+        context.textAlign = 'center';
+        context.textBaseline = 'middle';
+        context.fillStyle = '#333';
+        context.font = 'bold 16px Arial';
+        context.globalAlpha = 1.0;
+        context.fillText(group.group.charAt(0).toUpperCase() + group.group.slice(1), 0, 0);
+        context.restore();
+      });
 
     } catch (error) {
       console.error('Error creating chord diagram:', error);
     }
-  }, [data, selectedIngredient, width, height]);
+  }, [matrix, ingredients, colors, selectedIngredient, width, height]);
 
   return (
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <svg
-        ref={svgRef}
+      <canvas
+        ref={canvasRef}
         style={{
-          width: '100%',
-          height: '100%',
-          minHeight: 500,
+          width: width,
+          height: height,
           backgroundColor: 'transparent',
         }}
       />
