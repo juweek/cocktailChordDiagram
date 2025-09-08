@@ -4,6 +4,7 @@ import Svg, { Path, G, Text } from 'react-native-svg';
 import { chord, ribbon } from 'd3-chord';
 import { arc } from 'd3-shape';
 import { descending } from 'd3-array';
+import { useRouter } from 'expo-router';
 import { INGREDIENT_MATRIX } from '@/data/ingredientMatrix';
 import { CATEGORY_COLORS } from '@/constants/Ingredients';
 import { ThemedText } from '@/components/ThemedText';
@@ -43,11 +44,20 @@ const ChordRibbon = memo(({ d, colors, isSelected, selectedIngredient, hoveredCa
 });
 
 export function D3ChordDiagram({ selectedIngredient }: D3ChordDiagramProps) {
+  const router = useRouter();
   const { width: windowWidth } = Dimensions.get('window');
   const { matrix, ingredients, colors } = INGREDIENT_MATRIX;
   const [hoveredCategory, setHoveredCategory] = useState<string | null>(null);
+  const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
   const [isLoading, setIsLoading] = useState(false);
   const [prevSelectedIngredient, setPrevSelectedIngredient] = useState(selectedIngredient);
+
+  const handleIngredientPress = (ingredient: string) => {
+    router.push({
+      pathname: '/modal/ingredient-details',
+      params: { ingredient: encodeURIComponent(ingredient) }
+    });
+  };
   
   // Show loading when selection changes
   useEffect(() => {
@@ -270,19 +280,65 @@ export function D3ChordDiagram({ selectedIngredient }: D3ChordDiagramProps) {
           <ThemedText style={styles.connectionsTitle}>
             Connections for {selectedIngredient}:
           </ThemedText>
-          <View style={{ flex: 1, width: '100%' }}>
+          
+          {/* Category Filter */}
+          <ScrollView 
+            horizontal 
+            showsHorizontalScrollIndicator={false}
+            style={styles.categoryFilterContainer}
+          >
+            <TouchableOpacity
+              style={[
+                styles.categoryFilterButton,
+                !selectedCategory && styles.categoryFilterButtonSelected
+              ]}
+              onPress={() => setSelectedCategory(null)}
+            >
+              <ThemedText style={styles.categoryFilterText}>All</ThemedText>
+            </TouchableOpacity>
+            {Object.entries(CATEGORY_COLORS).map(([category, color]) => (
+              <TouchableOpacity
+                key={category}
+                style={[
+                  styles.categoryFilterButton,
+                  { borderColor: color },
+                  selectedCategory === category && styles.categoryFilterButtonSelected,
+                  selectedCategory === category && { backgroundColor: color }
+                ]}
+                onPress={() => setSelectedCategory(
+                  selectedCategory === category ? null : category
+                )}
+              >
+                <ThemedText 
+                  style={[
+                    styles.categoryFilterText,
+                    selectedCategory === category && styles.categoryFilterTextSelected
+                  ]}
+                >
+                  {category.charAt(0).toUpperCase() + category.slice(1)}
+                </ThemedText>
+              </TouchableOpacity>
+            ))}
+          </ScrollView>
+
+          <View style={{ flex: 6, width: '100%' }}>
             <ScrollView 
               style={styles.connectionsList}
               contentContainerStyle={styles.connectionsContent}
             >
-              {connections.map((conn: any, index) => {
-                console.log('Rendering connection:', conn);
-                const maxValue = Math.max(...connections.map(c => c.value));
-                const barFlex = conn.value / maxValue;
-                console.log('Bar flex:', barFlex);
+              {connections
+                .filter(conn => !selectedCategory || conn.category === selectedCategory)
+                .map((conn: any, index) => {
+                  // Always use full set for max value calculation
+                  const maxValue = Math.max(...connections.map(c => c.value));
+                  const barFlex = conn.value / maxValue;
                 
                 return (
-                  <View key={index} style={styles.connectionRow}>
+                  <TouchableOpacity
+                    key={index}
+                    style={styles.connectionRow}
+                    onPress={() => handleIngredientPress(conn.target)}
+                  >
                     <View style={{ flex: 1 }}>
                       <ThemedText style={styles.connectionText}>
                         {conn.target} ({conn.value})
@@ -299,7 +355,7 @@ export function D3ChordDiagram({ selectedIngredient }: D3ChordDiagramProps) {
                         ]}
                       />
                     </View>
-                  </View>
+                  </TouchableOpacity>
                 );
               })}
             </ScrollView>
@@ -311,6 +367,33 @@ export function D3ChordDiagram({ selectedIngredient }: D3ChordDiagramProps) {
 }
 
 const styles = StyleSheet.create({
+  categoryFilterContainer: {
+    marginBottom: 0,
+    height: 0,
+  },
+  categoryFilterContent: {
+    paddingLeft: 0,
+    paddingRight: 0,
+  },
+  categoryFilterButton: {
+    paddingHorizontal: 8,
+    height: 24,
+    borderRadius: 12,
+    borderWidth: 1,
+    marginRight: 8,
+    borderColor: '#ccc',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  categoryFilterButtonSelected: {
+    backgroundColor: '#666',
+  },
+  categoryFilterText: {
+    fontSize: 12,
+  },
+  categoryFilterTextSelected: {
+    color: '#fff',
+  },
   container: {
     flex: 1,
     alignItems: 'center',
@@ -328,11 +411,11 @@ const styles = StyleSheet.create({
   },
   connectionsContainer: {
     width: '100%',
-    height: 200,
+    height: Platform.select({ ios: 300, android: 300, default: 300 }),
     padding: 10,
     backgroundColor: '#f5f5f5',
     borderRadius: 8,
-    marginTop: 10,
+    marginTop: 40,
   },
   connectionsTitle: {
     fontSize: 14,
@@ -344,7 +427,6 @@ const styles = StyleSheet.create({
     width: '100%',
   },
   connectionsContent: {
-    paddingHorizontal: 10,
     width: '100%',
   },
   connectionRow: {
