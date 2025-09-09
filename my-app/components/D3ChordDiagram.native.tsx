@@ -8,6 +8,8 @@ import { useRouter } from 'expo-router';
 import { INGREDIENT_MATRIX } from '@/data/ingredientMatrix';
 import { CATEGORY_COLORS } from '@/constants/Ingredients';
 import { ThemedText } from '@/components/ThemedText';
+import { useColorScheme } from '@/hooks/useColorScheme';
+import { Colors } from '@/constants/Colors';
 
 interface D3ChordDiagramProps {
   selectedIngredient?: string | null;
@@ -45,6 +47,7 @@ const ChordRibbon = memo(({ d, colors, isSelected, selectedIngredient, selectedC
 
 export function D3ChordDiagram({ selectedIngredient }: D3ChordDiagramProps) {
   const router = useRouter();
+  const colorScheme = useColorScheme() as 'light' | 'dark';
   const { width: windowWidth } = Dimensions.get('window');
   const { matrix, ingredients, colors } = INGREDIENT_MATRIX;
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
@@ -73,9 +76,11 @@ export function D3ChordDiagram({ selectedIngredient }: D3ChordDiagramProps) {
   // Set dimensions
   const width = windowWidth;
   const height = Platform.select({ ios: 400, android: 400, default: 500 });
-  const outerRadius = Math.min(width, height) * 0.4;
+  // Scale down the diagram size to fit with padding
+  const scaleFactor = 0.75; // Reduce size by 25%
+  const outerRadius = Math.min(width, height) * 0.4 * scaleFactor;
   const innerRadius = outerRadius * 0.9;
-  const categoryArcWidth = 40;
+  const categoryArcWidth = 35; // Slightly smaller arc width to match scale
 
   // Get connections for selected ingredient
   const connections = useMemo(() => {
@@ -187,8 +192,8 @@ export function D3ChordDiagram({ selectedIngredient }: D3ChordDiagramProps) {
     return { arcGenerator, ribbonGenerator, categoryArcGenerator };
   }, [innerRadius, outerRadius, categoryArcWidth]);
 
-  const centerX = width / 2;
-  const centerY = height / 2;
+  const centerX = width * 0.5;  // Center of the SVG
+  const centerY = height * 0.45;  // Slightly above center to account for category labels
 
   // Calculate connection counts for each ingredient
   const ingredientConnections = useMemo(() => {
@@ -220,9 +225,13 @@ export function D3ChordDiagram({ selectedIngredient }: D3ChordDiagramProps) {
       )}
       
       <Svg 
-        width={width} 
-        height={height}
-        style={{ opacity: isLoading ? 0.3 : 1 }}
+        width={width * 0.9} 
+        height={height * 0.9}
+        style={{ 
+          opacity: isLoading ? 0.3 : 1,
+          marginHorizontal: width * 0.05,
+          marginVertical: height * 0.05
+        }}
       >
         <G transform={`translate(${centerX},${centerY})`}>
           {/* Draw category arcs */}
@@ -249,17 +258,35 @@ export function D3ChordDiagram({ selectedIngredient }: D3ChordDiagramProps) {
                     selectedCategory === categoryArc.category ? null : categoryArc.category
                   )}
                 />
+                {/* Add a quarter turn (π/2) to the positioning angle */}
                 <G
                   transform={`
                     translate(
-                      ${Math.cos(categoryArc.midAngle) * (outerRadius + categoryArcWidth + 20)},
-                      ${Math.sin(categoryArc.midAngle) * (outerRadius + categoryArcWidth + 20)}
+                      ${Math.sin(categoryArc.midAngle + (categoryArc.category === 'alcoholic' ? -Math.PI/3 : 
+                                                        categoryArc.category === 'nonalcoholic' ? Math.PI/4 :
+                                                        categoryArc.category === 'other' ? Math.PI/2.5:
+                                                        categoryArc.category === 'spices' ? Math.PI/1.1:
+                                                        categoryArc.category === 'fruits' ? 3*Math.PI/5 :
+                                                        categoryArc.category === 'mixers' ? -Math.PI/40 : 0)) * (outerRadius + categoryArcWidth + 15)},
+                      ${Math.cos(categoryArc.midAngle + (categoryArc.category === 'alcoholic' ? -Math.PI/3 : 
+                                                        categoryArc.category === 'nonalcoholic' ? Math.PI/4 :
+                                                        categoryArc.category === 'other' ? Math.PI/2.5 :
+                                                        categoryArc.category === 'spices' ? Math.PI :
+                                                        categoryArc.category === 'fruits' ? Math.PI :
+                                                        categoryArc.category === 'mixers' ? 4*Math.PI/4 : 0)) * (outerRadius + categoryArcWidth + 15)}
                     )
-                    rotate(${(categoryArc.midAngle * 180 / Math.PI) + (categoryArc.midAngle > Math.PI / 2 && categoryArc.midAngle < 3 * Math.PI / 2 ? 180 : 0)})
+                    rotate(${(categoryArc.midAngle * 180 / Math.PI) + 
+                      (categoryArc.category === 'fruits' ? 180 :  // Keep as is
+                       categoryArc.category === 'spices' || categoryArc.category === 'mixers' ? 180 :  // Keep as is
+                       categoryArc.category === 'alcoholic' ? 0 :  // 90 deg left
+                       categoryArc.category === 'nonalcoholic' ? 180 :  // 90 deg right
+                       categoryArc.category === 'other' ? 315 :  // Keep as is
+                       90)  // Default
+                    })
                   `}
                 >
                   <Text
-                    fill="#333"
+                    fill={useColorScheme() === 'dark' ? '#fff' : '#333'}
                     fontSize={12}
                     textAnchor="middle"
                     alignmentBaseline="middle"
@@ -316,9 +343,54 @@ export function D3ChordDiagram({ selectedIngredient }: D3ChordDiagramProps) {
         </G>
       </Svg>
 
+      {/* Category Filters */}
+      <View style={[
+        styles.categoryFilterWrapper,
+        { backgroundColor: Colors[useColorScheme() ?? 'light'].chartBackground }
+      ]}>
+        <View style={styles.categoryFilterContainer}>
+          <TouchableOpacity
+            style={[
+              styles.categoryFilterButton,
+              !selectedCategory && styles.categoryFilterButtonSelected
+            ]}
+            onPress={() => setSelectedCategory(null)}
+          >
+            <ThemedText style={styles.categoryFilterText}>All</ThemedText>
+          </TouchableOpacity>
+          {Object.entries(CATEGORY_COLORS).map(([category, color]) => (
+            <TouchableOpacity
+              key={category}
+              style={[
+                styles.categoryFilterButton,
+                { borderColor: color },
+                selectedCategory === category && styles.categoryFilterButtonSelected,
+                selectedCategory === category && { backgroundColor: color }
+              ]}
+              onPress={() => setSelectedCategory(
+                selectedCategory === category ? null : category
+              )}
+            >
+              <ThemedText 
+                style={[
+                  styles.categoryFilterText,
+                  selectedCategory === category && styles.categoryFilterTextSelected
+                ]}
+              >
+                {category.charAt(0).toUpperCase() + category.slice(1)}
+              </ThemedText>
+            </TouchableOpacity>
+          ))}
+        </View>
+      </View>
+
+
       {/* All Ingredients List */}
       {!selectedIngredient && (
-        <View style={styles.connectionsContainer}>
+        <View style={[
+          styles.connectionsContainer,
+          { backgroundColor: Colors[useColorScheme() ?? 'light'].searchBackground }
+        ]}>
           <ThemedText style={styles.connectionsTitle}>
             All Ingredients by Connection Count
           </ThemedText>
@@ -326,90 +398,58 @@ export function D3ChordDiagram({ selectedIngredient }: D3ChordDiagramProps) {
             {ingredientConnections
               .filter(item => !selectedCategory || item.category === selectedCategory)
               .map((item, index) => (
-              <TouchableOpacity
-                key={index}
-                style={styles.connectionRow}
-                onPress={() => handleIngredientPress(item.ingredient)}
-              >
-                <View style={{ flex: 1 }}>
-                  <ThemedText style={styles.connectionText}>
-                    {item.ingredient} ({item.connectionCount} connections)
-                  </ThemedText>
-                </View>
-                <View style={styles.barContainer}>
-                  <View 
-                    style={[
-                      styles.bar,
-                      { 
-                        flex: item.connectionCount / ingredientConnections[0].connectionCount,
-                        backgroundColor: CATEGORY_COLORS[item.category as keyof typeof CATEGORY_COLORS]
-                      }
-                    ]}
-                  />
-                </View>
-              </TouchableOpacity>
-            ))}
+                <TouchableOpacity
+                  key={index}
+                  style={styles.connectionRow}
+                  onPress={() => handleIngredientPress(item.ingredient)}
+                >
+                  <View style={{ flex: 1 }}>
+                    <ThemedText style={styles.connectionText}>
+                      {item.ingredient} ({item.connectionCount} connections)
+                    </ThemedText>
+                  </View>
+                  <View style={styles.barContainer}>
+                    <View 
+                      style={[
+                        styles.bar,
+                        { 
+                          flex: item.connectionCount / ingredientConnections[0].connectionCount,
+                          backgroundColor: CATEGORY_COLORS[item.category as keyof typeof CATEGORY_COLORS]
+                        }
+                      ]}
+                    />
+                  </View>
+                </TouchableOpacity>
+              ))}
           </ScrollView>
         </View>
       )}
 
       {/* Connections List */}
       {selectedIngredient && connections.length > 0 && (
-        <View style={styles.connectionsContainer}>
+        <View style={[
+          styles.connectionsContainer,
+          { backgroundColor: Colors[useColorScheme() ?? 'light'].searchBackground }
+        ]}>
           <ThemedText style={styles.connectionsTitle}>
             Connections for {selectedIngredient}:
           </ThemedText>
           
-          {/* Category Filter */}
-          <ScrollView 
-            horizontal 
-            showsHorizontalScrollIndicator={false}
-            style={styles.categoryFilterContainer}
-          >
-            <TouchableOpacity
-              style={[
-                styles.categoryFilterButton,
-                !selectedCategory && styles.categoryFilterButtonSelected
-              ]}
-              onPress={() => setSelectedCategory(null)}
-            >
-              <ThemedText style={styles.categoryFilterText}>All</ThemedText>
-            </TouchableOpacity>
-            {Object.entries(CATEGORY_COLORS).map(([category, color]) => (
-              <TouchableOpacity
-                key={category}
-                style={[
-                  styles.categoryFilterButton,
-                  { borderColor: color },
-                  selectedCategory === category && styles.categoryFilterButtonSelected,
-                  selectedCategory === category && { backgroundColor: color }
-                ]}
-                onPress={() => setSelectedCategory(
-                  selectedCategory === category ? null : category
-                )}
-              >
-                <ThemedText 
-                  style={[
-                    styles.categoryFilterText,
-                    selectedCategory === category && styles.categoryFilterTextSelected
-                  ]}
-                >
-                  {category.charAt(0).toUpperCase() + category.slice(1)}
-                </ThemedText>
-              </TouchableOpacity>
-            ))}
-          </ScrollView>
-
           <View style={{ flex: 6, width: '100%' }}>
             <ScrollView 
               style={styles.connectionsList}
               contentContainerStyle={styles.connectionsContent}
             >
               {connections
-                .filter(conn => !selectedCategory || conn.category === selectedCategory)
-                .map((conn: any, index) => {
+                .filter((conn): conn is NonNullable<typeof conn> => 
+                  conn !== null && (!selectedCategory || conn.category === selectedCategory)
+                )
+                .map((conn, index) => {
                   // Always use full set for max value calculation
-                  const maxValue = Math.max(...connections.map(c => c.value));
+                  const maxValue = Math.max(...connections
+                    .filter((c): c is NonNullable<typeof c> => c !== null)
+                    .map(c => c.value)
+                  );
                   const barFlex = conn.value / maxValue;
                 
                 return (
@@ -446,18 +486,27 @@ export function D3ChordDiagram({ selectedIngredient }: D3ChordDiagramProps) {
 }
 
 const styles = StyleSheet.create({
-  categoryFilterContainer: {
+  categoryFilterWrapper: {
+    width: '100%',
+    marginTop: 30,
     marginBottom: 0,
-    height: 0,
+    borderRadius: 8,
+    padding: 8,
+  },
+  categoryFilterContainer: {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    gap: 8,
+    paddingVertical: 4,
   },
   categoryFilterContent: {
     paddingLeft: 0,
     paddingRight: 0,
   },
   categoryFilterButton: {
-    paddingHorizontal: 8,
-    height: 24,
-    borderRadius: 12,
+    paddingHorizontal: 12,
+    height: 32,
+    borderRadius: 16,
     borderWidth: 1,
     marginRight: 8,
     borderColor: '#ccc',
@@ -468,7 +517,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#666',
   },
   categoryFilterText: {
-    fontSize: 12,
+    fontSize: 14,
   },
   categoryFilterTextSelected: {
     color: '#fff',
@@ -492,9 +541,8 @@ const styles = StyleSheet.create({
     width: '100%',
     height: Platform.select({ ios: 300, android: 300, default: 300 }),
     padding: 10,
-    backgroundColor: '#f5f5f5',
     borderRadius: 8,
-    marginTop: 40,
+    marginTop: 16,
   },
   connectionsTitle: {
     fontSize: 14,

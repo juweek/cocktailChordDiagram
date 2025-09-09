@@ -1,7 +1,8 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useMemo } from 'react';
 import { View, Image, StyleSheet, ScrollView, ActivityIndicator, TouchableOpacity, Linking } from 'react-native';
 import { useLocalSearchParams, useRouter } from 'expo-router';
 import { ThemedText } from '@/components/ThemedText';
+import { Collapsible } from '@/components/Collapsible';
 
 interface Ingredient {
   strIngredient: string;
@@ -104,7 +105,20 @@ export default function IngredientDetails() {
         {ingredientDetails && (
           <View style={styles.detailsContainer}>
             <ThemedText style={styles.title}>{ingredientDetails.strIngredient}</ThemedText>
-            <ThemedText style={styles.description}>{ingredientDetails.strDescription}</ThemedText>
+            {ingredientDetails.strDescription && (
+              <>
+                <ThemedText style={styles.description}>
+                  {ingredientDetails.strDescription.split('\n\r')[0]}
+                </ThemedText>
+                {ingredientDetails.strDescription.split('\n\r').length > 1 && (
+                  <Collapsible title="Read More">
+                    <ThemedText style={[styles.description, styles.expandedDescription]}>
+                      {ingredientDetails.strDescription.split('\n\r').slice(1).join('\n\r')}
+                    </ThemedText>
+                  </Collapsible>
+                )}
+              </>
+            )}
             
             <ThemedText style={styles.subtitle}>
               {filteredIngredient 
@@ -198,6 +212,10 @@ const styles = StyleSheet.create({
   description: {
     fontSize: 16,
     lineHeight: 24,
+    marginBottom: 12,
+  },
+  expandedDescription: {
+    marginTop: 8,
     marginBottom: 24,
   },
   subtitle: {

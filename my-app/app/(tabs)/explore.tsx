@@ -12,6 +12,8 @@ import {
 } from 'react-native';
 import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
+import { useColorScheme } from '@/hooks/useColorScheme';
+import { Colors } from '@/constants/Colors';
 import { INGREDIENT_MATRIX } from '@/data/ingredientMatrix';
 
 // Import the correct version based on platform
@@ -23,6 +25,7 @@ const D3ChordDiagram = Platform.select({
 const { height: SCREEN_HEIGHT } = Dimensions.get('window');
 
 export default function ExploreScreen() {
+  const colorScheme = useColorScheme();
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedIngredient, setSelectedIngredient] = useState<string | null>(null);
   const [showResults, setShowResults] = useState(false);
@@ -46,8 +49,10 @@ export default function ExploreScreen() {
     setShowResults(false);
   };
 
+  const theme = useColorScheme() ?? 'light';
+
   return (
-    <SafeAreaView style={styles.safeArea}>
+    <SafeAreaView style={[styles.safeArea, { backgroundColor: Colors[theme].chartBackground }]}>
       <KeyboardAvoidingView 
         behavior={Platform.OS === "ios" ? "padding" : "height"}
         style={styles.keyboardAvoid}
@@ -59,10 +64,23 @@ export default function ExploreScreen() {
           scrollEnabled={!showResults} // Disable main scroll when showing results
         >
           <View style={styles.mainContainer}>
+            <View style={styles.header}>
+              <ThemedText style={[styles.title, { color: Colors[theme].text }]}>
+                Gourmet Cocktails
+              </ThemedText>
+            </View>
             <View style={styles.searchWrapper}>
-              <View style={styles.searchContainer}>
+              <View style={[styles.searchContainer, { marginBottom: showResults ? 0 : 16 }]}>
                 <TextInput
-                  style={styles.searchInput}
+                  style={[
+                    styles.searchInput,
+                    {
+                      borderColor: Colors[theme].searchBackground,
+                      backgroundColor: Colors[theme].searchBackground,
+                      color: Colors[theme].text
+                    }
+                  ]}
+                  placeholderTextColor={Colors[theme].text}
                   value={searchTerm}
                   onChangeText={(text) => {
                     setSearchTerm(text);
@@ -79,7 +97,13 @@ export default function ExploreScreen() {
               </View>
 
               {showResults && filteredIngredients.length > 0 && (
-                <View style={styles.resultsOuterContainer}>
+                <View style={[
+                  styles.resultsOuterContainer,
+                  {
+                    backgroundColor: Colors[theme].chartBackground,
+                    borderColor: Colors[theme].chartBackground
+                  }
+                ]}>
                   <ScrollView 
                     style={styles.resultsContainer}
                     keyboardShouldPersistTaps="handled"
@@ -90,6 +114,10 @@ export default function ExploreScreen() {
                         key={index}
                         style={[
                           styles.resultItem,
+                          {
+                            borderBottomColor: Colors[theme].background,
+                            backgroundColor: Colors[theme].chartBackground
+                          },
                           index === filteredIngredients.length - 1 && styles.lastResultItem
                         ]}
                         onPress={() => handleSelectIngredient(ingredient)}
@@ -115,7 +143,13 @@ export default function ExploreScreen() {
 const styles = StyleSheet.create({
   safeArea: {
     flex: 1,
-    backgroundColor: '#fff',
+  },
+  header: {
+    marginBottom: 20,
+  },
+  title: {
+    fontSize: 24,
+    fontWeight: 'bold',
   },
   keyboardAvoid: {
     flex: 1,
@@ -140,16 +174,13 @@ const styles = StyleSheet.create({
   searchContainer: {
     flexDirection: 'row',
     alignItems: 'center',
-    marginBottom: showResults => showResults ? 0 : 16,
   },
   searchInput: {
     flex: 1,
     height: 40,
     borderWidth: 1,
-    borderColor: '#ccc',
     borderRadius: 8,
     paddingHorizontal: 12,
-    backgroundColor: '#fff',
   },
   clearButton: {
     marginLeft: 8,
@@ -160,10 +191,8 @@ const styles = StyleSheet.create({
     top: '100%',
     left: 0,
     right: 0,
-    backgroundColor: '#fff',
     borderRadius: 8,
     borderWidth: 1,
-    borderColor: '#ccc',
     maxHeight: SCREEN_HEIGHT * 0.3, // 30% of screen height
     overflow: 'hidden',
     ...Platform.select({
@@ -187,8 +216,6 @@ const styles = StyleSheet.create({
   resultItem: {
     padding: 12,
     borderBottomWidth: 1,
-    borderBottomColor: '#eee',
-    backgroundColor: '#fff',
   },
   lastResultItem: {
     borderBottomWidth: 0,
