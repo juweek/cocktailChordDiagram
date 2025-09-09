@@ -15,19 +15,32 @@ interface Drink {
 }
 
 export default function IngredientDetails() {
-  const { ingredient } = useLocalSearchParams();
+  const params = useLocalSearchParams();
+  const ingredient = params.ingredient as string;
+  const filteredIngredient = params.filteredIngredient as string;
   const router = useRouter();
   const [isLoading, setIsLoading] = useState(true);
   const [ingredientDetails, setIngredientDetails] = useState<Ingredient | null>(null);
   const [drinks, setDrinks] = useState<Drink[]>([]);
 
+  // Format ingredient name for API
+  const formatIngredient = (name: string) => {
+    return decodeURIComponent(name)
+      .toLowerCase()
+      .replace(/\s+/g, '_') // Replace spaces with underscores
+      .replace(/[^a-z0-9_]/g, ''); // Remove special characters
+  };
+
   useEffect(() => {
     const fetchData = async () => {
       setIsLoading(true);
       try {
+        // Decode the ingredient name for display
+        const decodedIngredient = decodeURIComponent(ingredient);
+        
         // Fetch ingredient details
         const detailsResponse = await fetch(
-          `https://www.thecocktaildb.com/api/json/v1/1/search.php?i=${ingredient}`
+          `https://www.thecocktaildb.com/api/json/v2/961249867/search.php?i=${decodedIngredient}`
         );
         const detailsData = await detailsResponse.json();
         
@@ -35,13 +48,21 @@ export default function IngredientDetails() {
           setIngredientDetails(detailsData.ingredients[0]);
         }
 
-        // Fetch drinks with this ingredient
-        const drinksResponse = await fetch(
-          `https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=${ingredient}`
-        );
+        // Format ingredients for API call
+        const formattedIngredient = formatIngredient(ingredient);
+        
+        // Use different API endpoints based on whether we have a filtered ingredient
+        const apiUrl = filteredIngredient 
+          ? `https://www.thecocktaildb.com/api/json/v2/961249867/filter.php?i=${formattedIngredient},${formatIngredient(filteredIngredient)}`
+          : `https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=${formattedIngredient}`;
+
+        const drinksResponse = await fetch(apiUrl);
         const drinksData = await drinksResponse.json();
         
-        if (drinksData.drinks) {
+        // API returns null for drinks when no results are found
+        if (drinksData.drinks === null || !Array.isArray(drinksData.drinks)) {
+          setDrinks([]);
+        } else {
           setDrinks(drinksData.drinks);
         }
       } catch (error) {
@@ -85,22 +106,35 @@ export default function IngredientDetails() {
             <ThemedText style={styles.title}>{ingredientDetails.strIngredient}</ThemedText>
             <ThemedText style={styles.description}>{ingredientDetails.strDescription}</ThemedText>
             
-            <ThemedText style={styles.subtitle}>Cocktails ({drinks.length})</ThemedText>
-            <View style={styles.drinksGrid}>
-              {drinks.map((drink) => (
-                <TouchableOpacity
-                  key={drink.idDrink}
-                  style={styles.drinkCard}
-                  onPress={() => handleDrinkPress(drink.idDrink)}
-                >
-                  <Image
-                    source={{ uri: drink.strDrinkThumb }}
-                    style={styles.drinkImage}
-                  />
-                  <ThemedText style={styles.drinkName}>{drink.strDrink}</ThemedText>
-                </TouchableOpacity>
-              ))}
-            </View>
+            <ThemedText style={styles.subtitle}>
+              {filteredIngredient 
+                ? `Cocktails Involving ${decodeURIComponent(ingredient)} and ${decodeURIComponent(filteredIngredient)} (${drinks.length})`
+                : `Cocktails with ${decodeURIComponent(ingredient)} (${drinks.length})`
+              }
+            </ThemedText>
+            {drinks.length === 0 ? (
+              <View style={styles.noResultsContainer}>
+                <ThemedText style={styles.noResultsText}>
+                  No cocktails found with these ingredients. Try a different combination!
+                </ThemedText>
+              </View>
+            ) : (
+              <View style={styles.drinksGrid}>
+                {drinks.map((drink) => (
+                  <TouchableOpacity
+                    key={drink.idDrink}
+                    style={styles.drinkCard}
+                    onPress={() => handleDrinkPress(drink.idDrink)}
+                  >
+                    <Image
+                      source={{ uri: drink.strDrinkThumb }}
+                      style={styles.drinkImage}
+                    />
+                    <ThemedText style={styles.drinkName}>{drink.strDrink}</ThemedText>
+                  </TouchableOpacity>
+                ))}
+              </View>
+            )}
           </View>
         )}
       </ScrollView>
@@ -109,6 +143,17 @@ export default function IngredientDetails() {
 }
 
 const styles = StyleSheet.create({
+  noResultsContainer: {
+    width: '100%',
+    padding: 20,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  noResultsText: {
+    fontSize: 16,
+    textAlign: 'center',
+    color: '#666',
+  },
   container: {
     flex: 1,
     backgroundColor: '#fff',

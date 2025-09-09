@@ -14,8 +14,8 @@ interface D3ChordDiagramProps {
 }
 
 // Memoized chord component
-const ChordRibbon = memo(({ d, colors, isSelected, selectedIngredient, hoveredCategory }: any) => {
-  // Check if chord belongs to hovered category
+const ChordRibbon = memo(({ d, colors, isSelected, selectedIngredient, selectedCategory }: any) => {
+  // Check if chord belongs to selected category
   const belongsToCategory = (category: string) => {
     if (!category) return true;
     const sourceCategory = Object.entries(CATEGORY_COLORS).find(([_, color]) => 
@@ -27,7 +27,7 @@ const ChordRibbon = memo(({ d, colors, isSelected, selectedIngredient, hoveredCa
     return sourceCategory === category || targetCategory === category;
   };
 
-  const isHighlighted = !hoveredCategory || belongsToCategory(hoveredCategory);
+  const isHighlighted = !selectedCategory || belongsToCategory(selectedCategory);
   const opacity = isSelected ? 0.9 : 
                  (selectedIngredient ? (isHighlighted ? 0.6 : 0.1) : 
                  (isHighlighted ? 0.6 : 0.1));
@@ -47,7 +47,6 @@ export function D3ChordDiagram({ selectedIngredient }: D3ChordDiagramProps) {
   const router = useRouter();
   const { width: windowWidth } = Dimensions.get('window');
   const { matrix, ingredients, colors } = INGREDIENT_MATRIX;
-  const [hoveredCategory, setHoveredCategory] = useState<string | null>(null);
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
   const [isLoading, setIsLoading] = useState(false);
   const [prevSelectedIngredient, setPrevSelectedIngredient] = useState(selectedIngredient);
@@ -55,7 +54,10 @@ export function D3ChordDiagram({ selectedIngredient }: D3ChordDiagramProps) {
   const handleIngredientPress = (ingredient: string) => {
     router.push({
       pathname: '/modal/ingredient-details',
-      params: { ingredient: encodeURIComponent(ingredient) }
+      params: { 
+        ingredient: encodeURIComponent(ingredient),
+        filteredIngredient: selectedIngredient ? encodeURIComponent(selectedIngredient) : undefined
+      }
     });
   };
   
@@ -141,14 +143,33 @@ export function D3ChordDiagram({ selectedIngredient }: D3ChordDiagramProps) {
   // Filter visible chords
   const visibleChords = useMemo(() => {
     return chordData.filter(d => {
+      // Get categories for source and target
+      const sourceCategory = Object.entries(CATEGORY_COLORS).find(([_, color]) => 
+        color === colors[d.source.index]
+      )?.[0];
+      const targetCategory = Object.entries(CATEGORY_COLORS).find(([_, color]) => 
+        color === colors[d.target.index]
+      )?.[0];
+
+      // Check if either source or target belongs to selected category (from filter buttons)
+      const belongsToSelectedCategory = !selectedCategory || 
+        sourceCategory === selectedCategory || 
+        targetCategory === selectedCategory;
+
+      // Must pass category filter
+      if (!belongsToSelectedCategory) {
+        return false;
+      }
+
       if (selectedIngredient) {
         return ingredients[d.source.index].toLowerCase() === selectedIngredient.toLowerCase() ||
                ingredients[d.target.index].toLowerCase() === selectedIngredient.toLowerCase();
       }
+      
       // For non-selected state, only show stronger connections
       return d.source.value > 1 || d.target.value > 1;
     });
-  }, [chordData, selectedIngredient, ingredients]);
+  }, [chordData, selectedIngredient, ingredients, selectedCategory, colors]);
 
   // Memoize path generators
   const generators = useMemo(() => {
@@ -169,6 +190,26 @@ export function D3ChordDiagram({ selectedIngredient }: D3ChordDiagramProps) {
   const centerX = width / 2;
   const centerY = height / 2;
 
+  // Calculate connection counts for each ingredient
+  const ingredientConnections = useMemo(() => {
+    return ingredients.map((ingredient, idx) => {
+      // Count non-zero connections for this ingredient
+      const connectionCount = matrix[idx].reduce((count, value) => 
+        count + (value > 0 ? 1 : 0), 0);
+      
+      // Get category for the ingredient
+      const category = Object.entries(CATEGORY_COLORS).find(([_, color]) => 
+        color === colors[idx]
+      )?.[0] || 'other';
+
+      return {
+        ingredient,
+        connectionCount,
+        category
+      };
+    }).sort((a, b) => b.connectionCount - a.connectionCount); // Sort by connection count
+  }, [matrix, ingredients, colors]);
+
   return (
     <View style={styles.container}>
       {isLoading && (
@@ -186,7 +227,7 @@ export function D3ChordDiagram({ selectedIngredient }: D3ChordDiagramProps) {
         <G transform={`translate(${centerX},${centerY})`}>
           {/* Draw category arcs */}
           {categoryArcs.map((categoryArc, i) => {
-            const isHighlighted = hoveredCategory === categoryArc.category || !hoveredCategory;
+            const isHighlighted = selectedCategory === categoryArc.category || !selectedCategory;
             const isSelected = selectedIngredient && 
               categoryArc.indices.some(idx => ingredients[idx].toLowerCase() === selectedIngredient.toLowerCase());
             
@@ -204,8 +245,8 @@ export function D3ChordDiagram({ selectedIngredient }: D3ChordDiagramProps) {
                   fillOpacity={opacity}
                   stroke={categoryArc.color}
                   strokeWidth={isSelected ? 2 : 1}
-                  onPress={() => setHoveredCategory(
-                    hoveredCategory === categoryArc.category ? null : categoryArc.category
+                  onPress={() => setSelectedCategory(
+                    selectedCategory === categoryArc.category ? null : categoryArc.category
                   )}
                 />
                 <G
@@ -243,7 +284,7 @@ export function D3ChordDiagram({ selectedIngredient }: D3ChordDiagramProps) {
                 colors={[colors[d.source.index], colors[d.target.index]]}
                 isSelected={isSelected}
                 selectedIngredient={selectedIngredient}
-                hoveredCategory={hoveredCategory}
+                selectedCategory={selectedCategory}
               />
             );
           })}
@@ -255,7 +296,7 @@ export function D3ChordDiagram({ selectedIngredient }: D3ChordDiagramProps) {
             const category = Object.entries(CATEGORY_COLORS).find(([_, color]) => 
               color === colors[group.index]
             )?.[0];
-            const isHighlighted = !hoveredCategory || category === hoveredCategory;
+            const isHighlighted = !selectedCategory || category === selectedCategory;
 
             const opacity = isSelected ? 0.9 : 
                           (selectedIngredient ? (isHighlighted ? 0.7 : 0.3) : 
@@ -274,8 +315,46 @@ export function D3ChordDiagram({ selectedIngredient }: D3ChordDiagramProps) {
           })}
         </G>
       </Svg>
- {/* Connections List */}
- {selectedIngredient && connections.length > 0 && (
+
+      {/* All Ingredients List */}
+      {!selectedIngredient && (
+        <View style={styles.connectionsContainer}>
+          <ThemedText style={styles.connectionsTitle}>
+            All Ingredients by Connection Count
+          </ThemedText>
+          <ScrollView style={styles.connectionsList}>
+            {ingredientConnections
+              .filter(item => !selectedCategory || item.category === selectedCategory)
+              .map((item, index) => (
+              <TouchableOpacity
+                key={index}
+                style={styles.connectionRow}
+                onPress={() => handleIngredientPress(item.ingredient)}
+              >
+                <View style={{ flex: 1 }}>
+                  <ThemedText style={styles.connectionText}>
+                    {item.ingredient} ({item.connectionCount} connections)
+                  </ThemedText>
+                </View>
+                <View style={styles.barContainer}>
+                  <View 
+                    style={[
+                      styles.bar,
+                      { 
+                        flex: item.connectionCount / ingredientConnections[0].connectionCount,
+                        backgroundColor: CATEGORY_COLORS[item.category as keyof typeof CATEGORY_COLORS]
+                      }
+                    ]}
+                  />
+                </View>
+              </TouchableOpacity>
+            ))}
+          </ScrollView>
+        </View>
+      )}
+
+      {/* Connections List */}
+      {selectedIngredient && connections.length > 0 && (
         <View style={styles.connectionsContainer}>
           <ThemedText style={styles.connectionsTitle}>
             Connections for {selectedIngredient}:
