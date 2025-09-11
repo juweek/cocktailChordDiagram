@@ -1,8 +1,8 @@
 import React, { useMemo, memo, useState, useEffect } from 'react';
 import { StyleSheet, View, Dimensions, Platform, TouchableOpacity, ScrollView, ActivityIndicator } from 'react-native';
 import Svg, { Path, G, Text } from 'react-native-svg';
-import { chord, ribbon } from 'd3-chord';
-import { arc } from 'd3-shape';
+import { chord, ribbon, Chord, ChordGroup } from 'd3-chord';
+import { arc, DefaultArcObject } from 'd3-shape';
 import { descending } from 'd3-array';
 import { useRouter } from 'expo-router';
 import { INGREDIENT_MATRIX } from '@/data/ingredientMatrix';
@@ -12,11 +12,26 @@ import { useColorScheme } from '@/hooks/useColorScheme';
 import { Colors } from '@/constants/Colors';
 
 interface D3ChordDiagramProps {
-  selectedIngredient?: string | null;
+  selectedIngredient?: string | undefined;
 }
 
 // Memoized chord component
-const ChordRibbon = memo(({ d, colors, isSelected, selectedIngredient, selectedCategory }: any) => {
+interface ChordRibbonProps {
+  d: string;
+  colors: string[];
+  isSelected: boolean;
+  selectedIngredient?: string | undefined;
+  selectedCategory?: string | undefined;
+  value: number;
+  maxValue: number;
+}
+
+interface ChordData {
+  source: { value: number };
+  target: { value: number };
+}
+
+const ChordRibbon = memo(({ d, colors, isSelected, selectedIngredient, selectedCategory, value, maxValue }: ChordRibbonProps) => {
   // Check if chord belongs to selected category
   const belongsToCategory = (category: string) => {
     if (!category) return true;
@@ -40,7 +55,7 @@ const ChordRibbon = memo(({ d, colors, isSelected, selectedIngredient, selectedC
       fill={colors[0]}
       fillOpacity={opacity}
       stroke={colors[0]}
-      strokeWidth={isSelected ? 2 : 0.5}
+      strokeWidth={isSelected ? Math.max(0.1, 6.5 * value / maxValue) : Math.max(0.1, 6.5 * value / maxValue)}
     />
   );
 });
@@ -50,7 +65,19 @@ export function D3ChordDiagram({ selectedIngredient }: D3ChordDiagramProps) {
   const colorScheme = useColorScheme() as 'light' | 'dark';
   const { width: windowWidth } = Dimensions.get('window');
   const { matrix, ingredients, colors } = INGREDIENT_MATRIX;
-  const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
+
+  // Validate matrix data
+  if (!matrix || !ingredients || !colors || 
+      matrix.length !== ingredients.length || 
+      matrix.some(row => !row || row.length !== ingredients.length)) {
+    console.error('Invalid matrix data:', { 
+      matrixSize: matrix?.length, 
+      ingredientsSize: ingredients?.length,
+      colorsSize: colors?.length 
+    });
+    return null;
+  }
+  const [selectedCategory, setSelectedCategory] = useState<string | undefined>(undefined);
   const [isLoading, setIsLoading] = useState(false);
   const [prevSelectedIngredient, setPrevSelectedIngredient] = useState(selectedIngredient);
 
@@ -145,6 +172,9 @@ export function D3ChordDiagram({ selectedIngredient }: D3ChordDiagramProps) {
     return { chordData, categoryArcs };
   }, [matrix, ingredients, colors]);
 
+  // Calculate max value for scaling
+  const maxValue = useMemo(() => Math.max(...matrix.flat()), [matrix]);
+
   // Filter visible chords
   const visibleChords = useMemo(() => {
     return chordData.filter(d => {
@@ -182,13 +212,16 @@ export function D3ChordDiagram({ selectedIngredient }: D3ChordDiagramProps) {
       .innerRadius(innerRadius)
       .outerRadius(outerRadius);
 
+    // Find max value in matrix for scaling
+    const maxValue = Math.max(...matrix.flat());
+    
     const ribbonGenerator = ribbon()
       .radius(innerRadius);
 
     const categoryArcGenerator = arc()
       .innerRadius(outerRadius + 5)
       .outerRadius(outerRadius + categoryArcWidth);
-
+ 
     return { arcGenerator, ribbonGenerator, categoryArcGenerator };
   }, [innerRadius, outerRadius, categoryArcWidth]);
 
@@ -199,8 +232,7 @@ export function D3ChordDiagram({ selectedIngredient }: D3ChordDiagramProps) {
   const ingredientConnections = useMemo(() => {
     return ingredients.map((ingredient, idx) => {
       // Count non-zero connections for this ingredient
-      const connectionCount = matrix[idx].reduce((count, value) => 
-        count + (value > 0 ? 1 : 0), 0);
+      const connectionCount = matrix[idx].reduce((sum, value) => sum + value, 0);
       
       // Get category for the ingredient
       const category = Object.entries(CATEGORY_COLORS).find(([_, color]) => 
@@ -237,8 +269,8 @@ export function D3ChordDiagram({ selectedIngredient }: D3ChordDiagramProps) {
           {/* Draw category arcs */}
           {categoryArcs.map((categoryArc, i) => {
             const isHighlighted = selectedCategory === categoryArc.category || !selectedCategory;
-            const isSelected = selectedIngredient && 
-              categoryArc.indices.some(idx => ingredients[idx].toLowerCase() === selectedIngredient.toLowerCase());
+            const isSelected = Boolean(selectedIngredient && 
+              categoryArc.indices.some(idx => ingredients[idx].toLowerCase() === selectedIngredient.toLowerCase()));
             
             const opacity = isSelected ? 0.6 : 
                           (isHighlighted ? 0.3 : 0.1);
@@ -246,16 +278,18 @@ export function D3ChordDiagram({ selectedIngredient }: D3ChordDiagramProps) {
             return (
               <G key={`category-${i}`}>
                 <Path
-                  d={generators.categoryArcGenerator({
+                  d={String(generators.categoryArcGenerator({
                     startAngle: categoryArc.startAngle,
-                    endAngle: categoryArc.endAngle
-                  } as any)}
+                    endAngle: categoryArc.endAngle,
+                    innerRadius: outerRadius + 5,
+                    outerRadius: outerRadius + categoryArcWidth
+                  } as DefaultArcObject))}
                   fill={categoryArc.color}
                   fillOpacity={opacity}
                   stroke={categoryArc.color}
                   strokeWidth={isSelected ? 2 : 1}
                   onPress={() => setSelectedCategory(
-                    selectedCategory === categoryArc.category ? null : categoryArc.category
+                    selectedCategory === categoryArc.category ? undefined : categoryArc.category
                   )}
                 />
                 {/* Add a quarter turn (π/2) to the positioning angle */}
@@ -300,18 +334,24 @@ export function D3ChordDiagram({ selectedIngredient }: D3ChordDiagramProps) {
 
           {/* Draw only visible chords */}
           {visibleChords.map((d, i) => {
-            const isSelected = selectedIngredient && 
+            const isSelected = Boolean(selectedIngredient && 
               (ingredients[d.source.index].toLowerCase() === selectedIngredient.toLowerCase() ||
-               ingredients[d.target.index].toLowerCase() === selectedIngredient.toLowerCase());
+               ingredients[d.target.index].toLowerCase() === selectedIngredient.toLowerCase()));
 
             return (
               <ChordRibbon
                 key={`chord-${i}`}
-                d={generators.ribbonGenerator(d) || ''}
+                d={String(generators.ribbonGenerator({
+                  ...d,
+                  source: { ...d.source, radius: innerRadius },
+                  target: { ...d.target, radius: innerRadius }
+                } as any))}
                 colors={[colors[d.source.index], colors[d.target.index]]}
                 isSelected={isSelected}
                 selectedIngredient={selectedIngredient}
                 selectedCategory={selectedCategory}
+                value={d.source.value}
+                maxValue={maxValue}
               />
             );
           })}
@@ -332,7 +372,11 @@ export function D3ChordDiagram({ selectedIngredient }: D3ChordDiagramProps) {
             return (
               <Path
                 key={`group-${i}`}
-                d={generators.arcGenerator(group) || ''}
+                d={generators.arcGenerator({
+                  ...group,
+                  innerRadius,
+                  outerRadius
+                } as DefaultArcObject) || ''}
                 fill={colors[group.index]}
                 fillOpacity={opacity}
                 stroke={colors[group.index]}
@@ -352,9 +396,9 @@ export function D3ChordDiagram({ selectedIngredient }: D3ChordDiagramProps) {
           <TouchableOpacity
             style={[
               styles.categoryFilterButton,
-              !selectedCategory && styles.categoryFilterButtonSelected
+              !selectedCategory ? styles.categoryFilterButtonSelected : undefined
             ]}
-            onPress={() => setSelectedCategory(null)}
+            onPress={() => setSelectedCategory(undefined)}
           >
             <ThemedText style={styles.categoryFilterText}>All</ThemedText>
           </TouchableOpacity>
@@ -364,17 +408,17 @@ export function D3ChordDiagram({ selectedIngredient }: D3ChordDiagramProps) {
               style={[
                 styles.categoryFilterButton,
                 { borderColor: color },
-                selectedCategory === category && styles.categoryFilterButtonSelected,
-                selectedCategory === category && { backgroundColor: color }
+                selectedCategory === category ? styles.categoryFilterButtonSelected : undefined,
+                selectedCategory === category ? { backgroundColor: color } : undefined
               ]}
-              onPress={() => setSelectedCategory(
-                selectedCategory === category ? null : category
-              )}
+                  onPress={() => setSelectedCategory(
+                    selectedCategory === category ? undefined : category
+                  )}
             >
               <ThemedText 
                 style={[
                   styles.categoryFilterText,
-                  selectedCategory === category && styles.categoryFilterTextSelected
+                  selectedCategory === category ? styles.categoryFilterTextSelected : undefined
                 ]}
               >
                 {category.charAt(0).toUpperCase() + category.slice(1)}
@@ -392,7 +436,7 @@ export function D3ChordDiagram({ selectedIngredient }: D3ChordDiagramProps) {
           { backgroundColor: Colors[useColorScheme() ?? 'light'].searchBackground }
         ]}>
           <ThemedText style={styles.connectionsTitle}>
-            All Ingredients by Connection Count
+            All Ingredients by Total Cocktail Count
           </ThemedText>
           <ScrollView style={styles.connectionsList}>
             {ingredientConnections
@@ -405,7 +449,7 @@ export function D3ChordDiagram({ selectedIngredient }: D3ChordDiagramProps) {
                 >
                   <View style={{ flex: 1 }}>
                     <ThemedText style={styles.connectionText}>
-                      {item.ingredient} ({item.connectionCount} connections)
+                      {item.ingredient} ({item.connectionCount} cocktails)
                     </ThemedText>
                   </View>
                   <View style={styles.barContainer}>
@@ -460,7 +504,7 @@ export function D3ChordDiagram({ selectedIngredient }: D3ChordDiagramProps) {
                   >
                     <View style={{ flex: 1 }}>
                       <ThemedText style={styles.connectionText}>
-                        {conn.target} ({conn.value})
+                        {conn.target} ({conn.value} cocktails in common)
                       </ThemedText>
                     </View>
                     <View style={styles.barContainer}>
