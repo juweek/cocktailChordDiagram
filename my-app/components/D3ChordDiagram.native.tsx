@@ -1,6 +1,6 @@
 import React, { useMemo, memo, useState, useEffect } from 'react';
 import { StyleSheet, View, Dimensions, Platform, TouchableOpacity, ScrollView, ActivityIndicator } from 'react-native';
-import Svg, { Path, G, Text } from 'react-native-svg';
+import Svg, { Path, G, Text, Defs, LinearGradient, Stop } from 'react-native-svg';
 import { chord, ribbon, Chord, ChordGroup } from 'd3-chord';
 import { arc, DefaultArcObject } from 'd3-shape';
 import { descending } from 'd3-array';
@@ -49,14 +49,26 @@ const ChordRibbon = memo(({ d, colors, isSelected, selectedIngredient, selectedC
                  (selectedIngredient ? (isHighlighted ? 0.6 : 0.1) : 
                  (isHighlighted ? 0.6 : 0.1));
 
+  // Create a unique gradient ID for this chord
+  const gradientId = `gradient-${colors[0]}-${colors[1]}`.replace(/#/g, '');
+
   return (
-    <Path
-      d={d}
-      fill={colors[0]}
-      fillOpacity={opacity}
-      stroke={colors[0]}
-      strokeWidth={isSelected ? Math.max(0.1, 6.5 * value / maxValue) : Math.max(0.1, 6.5 * value / maxValue)}
-    />
+    <>
+      <Defs>
+        <LinearGradient id={gradientId} x1="0" y1="0" x2="1" y2="0">
+          <Stop offset="0%" stopColor={colors[0]} stopOpacity={opacity} />
+          <Stop offset="85%" stopColor={colors[0]} stopOpacity={opacity} />
+          <Stop offset="85%" stopColor={colors[1]} stopOpacity={opacity} />
+          <Stop offset="100%" stopColor={colors[1]} stopOpacity={opacity} />
+        </LinearGradient>
+      </Defs>
+      <Path
+        d={d}
+        fill={`url(#${gradientId})`}
+        stroke={`url(#${gradientId})`}
+        strokeWidth={isSelected ? Math.max(0.1, 6.5 * value / maxValue) : Math.max(0.1, 6.5 * value / maxValue)}
+      />
+    </>
   );
 });
 
@@ -89,6 +101,13 @@ export function D3ChordDiagram({ selectedIngredient }: D3ChordDiagramProps) {
         filteredIngredient: selectedIngredient ? encodeURIComponent(selectedIngredient) : undefined
       }
     });
+  };
+
+  const handleCategoryChange = (newCategory: string | undefined) => {
+    setIsLoading(true);
+    setSelectedCategory(newCategory);
+    // Add a small delay to ensure the loading state is visible
+    setTimeout(() => setIsLoading(false), 300);
   };
   
   // Show loading when selection changes
@@ -288,7 +307,7 @@ export function D3ChordDiagram({ selectedIngredient }: D3ChordDiagramProps) {
                   fillOpacity={opacity}
                   stroke={categoryArc.color}
                   strokeWidth={isSelected ? 2 : 1}
-                  onPress={() => setSelectedCategory(
+                  onPress={() => handleCategoryChange(
                     selectedCategory === categoryArc.category ? undefined : categoryArc.category
                   )}
                 />
@@ -398,7 +417,7 @@ export function D3ChordDiagram({ selectedIngredient }: D3ChordDiagramProps) {
               styles.categoryFilterButton,
               !selectedCategory ? styles.categoryFilterButtonSelected : undefined
             ]}
-            onPress={() => setSelectedCategory(undefined)}
+            onPress={() => handleCategoryChange(undefined)}
           >
             <ThemedText style={styles.categoryFilterText}>All</ThemedText>
           </TouchableOpacity>
@@ -411,7 +430,7 @@ export function D3ChordDiagram({ selectedIngredient }: D3ChordDiagramProps) {
                 selectedCategory === category ? styles.categoryFilterButtonSelected : undefined,
                 selectedCategory === category ? { backgroundColor: color } : undefined
               ]}
-                  onPress={() => setSelectedCategory(
+                  onPress={() => handleCategoryChange(
                     selectedCategory === category ? undefined : category
                   )}
             >
