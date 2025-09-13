@@ -147,7 +147,7 @@ export function D3ChordDiagram({ selectedIngredient }: D3ChordDiagramProps) {
     setIsLoading(true);
     setSelectedCategory(newCategory);
     // Add a small delay to ensure the loading state is visible
-    setTimeout(() => setIsLoading(false), 300);
+    setTimeout(() => setIsLoading(false), 100);
   };
   
   // Show loading when selection changes
@@ -190,12 +190,87 @@ export function D3ChordDiagram({ selectedIngredient }: D3ChordDiagramProps) {
 
   // Memoize calculations
   const { chordData, categoryArcs } = useMemo(() => {
-    // Create chord layout
+    // Define category order to match clockwise direction of arcs
+    const categoryOrder = ['other', 'mixers', 'spices', 'fruits', 'nonalcoholic', 'alcoholic'];
+    
+    // Map ingredients to their categories and sort
+    const categorizedIngredients = ingredients.map((ingredient, index) => {
+      const category = Object.entries(CATEGORY_COLORS).find(([_, color]) => 
+        colors[index] === color
+      )?.[0] || 'other';
+      return { ingredient, index, category };
+    });
+
+    // Sort ingredients by category order
+    const sortedIngredients = categorizedIngredients.sort((a, b) => {
+      const categoryA = categoryOrder.indexOf(a.category);
+      const categoryB = categoryOrder.indexOf(b.category);
+      return categoryA - categoryB;
+    });
+
+    // Get the sorted indices
+    const orderedIndices = sortedIngredients.map(item => item.index);
+
+    // Reorder matrix based on new order
+    const orderedMatrix = orderedIndices.map(i => 
+      orderedIndices.map(j => matrix[i][j])
+    );
+
+    // Create chord layout with custom sorting
+    const rotationAngle = -Math.PI * 18 / 180; // Convert -30 degrees to radians for counterclockwise rotation
     const chordLayout = chord()
       .padAngle(0.04)
-      .sortSubgroups(descending);
+      .sortSubgroups(descending)
+      // Sort chords to group them by source category
+      .sortChords((a: any, b: any) => {
+        if (!a || !b || !a.source || !b.source) return 0;
+        
+        // Get the original indices
+        const sourceIndexA = orderedIndices[a.source.index];
+        const sourceIndexB = orderedIndices[b.source.index];
+        
+        if (sourceIndexA === undefined || sourceIndexB === undefined) return 0;
+        
+        // Get categories for the source of each chord
+        const categoryA = Object.entries(CATEGORY_COLORS).find(([_, color]) => 
+          colors[sourceIndexA] === color
+        )?.[0] || 'other';
+        const categoryB = Object.entries(CATEGORY_COLORS).find(([_, color]) => 
+          colors[sourceIndexB] === color
+        )?.[0] || 'other';
+        
+        // Sort by category order first
+        const categoryOrderA = categoryOrder.indexOf(categoryA);
+        const categoryOrderB = categoryOrder.indexOf(categoryB);
+        
+        if (categoryOrderA === -1 || categoryOrderB === -1) return 0;
+        return categoryOrderB - categoryOrderA;
+      });
 
-    const chordData = chordLayout(matrix);
+    // Create a mapping function to convert back to original indices
+    const mapToOriginal = (index: number) => orderedIndices[index];
+    const mapFromOriginal = (index: number) => orderedIndices.indexOf(index);
+
+    const chordData = chordLayout(orderedMatrix);
+
+    // Rotate all chords by the rotation angle
+    chordData.forEach((chord: any) => {
+      chord.source.startAngle += rotationAngle;
+      chord.source.endAngle += rotationAngle;
+      chord.target.startAngle += rotationAngle;
+      chord.target.endAngle += rotationAngle;
+    });
+
+    // Map the indices in the chord data back to original indices
+    chordData.groups = chordData.groups.map(group => ({
+      ...group,
+      index: mapToOriginal(group.index)
+    }));
+
+    chordData.forEach(chord => {
+      chord.source.index = mapToOriginal(chord.source.index);
+      chord.target.index = mapToOriginal(chord.target.index);
+    });
 
     // Group ingredients by category
     const categoryGroups: { [key: string]: number[] } = {};
@@ -428,19 +503,38 @@ export function D3ChordDiagram({ selectedIngredient }: D3ChordDiagramProps) {
                           (selectedIngredient ? (isHighlighted ? 0.7 : 0.3) : 
                           (isHighlighted ? 0.7 : 0.3));
 
+            // Calculate tick mark for this group
+            const midAngle = (group.startAngle + group.endAngle) / 2;
+            const tickLength = 12; // Increased length of the tick mark
+            const tickStart = innerRadius + 1; // Start just slightly outside the inner radius
+            
+            // Adjust angle to match the arc orientation (clockwise from top)
+            const adjustedAngle = midAngle - Math.PI / 2 - 0.29; // Start from top and rotate 4 degrees left
+            const x1 = Math.cos(adjustedAngle) * tickStart;
+            const y1 = Math.sin(adjustedAngle) * tickStart;
+            const x2 = Math.cos(adjustedAngle) * (innerRadius - tickLength);
+            const y2 = Math.sin(adjustedAngle) * (innerRadius - tickLength);
+
             return (
-              <Path
-                key={`group-${i}`}
-                d={generators.arcGenerator({
-                  ...group,
-                  innerRadius,
-                  outerRadius
-                } as DefaultArcObject) || ''}
-                fill={colors[group.index]}
-                fillOpacity={opacity}
-                stroke={colors[group.index]}
-                strokeWidth={isSelected ? 2 : 0.5}
-              />
+              <G key={`group-${i}`}>
+                <Path
+                  d={generators.arcGenerator({
+                    ...group,
+                    innerRadius,
+                    outerRadius
+                  } as DefaultArcObject) || ''}
+                  fill={colors[group.index]}
+                  fillOpacity={opacity}
+                  stroke="none"
+                />
+                <Path
+                  d={`M ${x1} ${y1} L ${x2} ${y2}`}
+                  stroke={colors[group.index]}
+                  strokeWidth={1}
+                  opacity={opacity * 0.8}
+                  strokeLinecap="round"
+                />
+              </G>
             );
           })}
         </G>
