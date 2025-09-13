@@ -32,16 +32,51 @@ interface ChordData {
 }
 
 const ChordRibbon = memo(({ d, colors, isSelected, selectedIngredient, selectedCategory, value, maxValue }: ChordRibbonProps) => {
+  // Get categories for source and target
+  const sourceCategory = Object.entries(CATEGORY_COLORS).find(([_, color]) => 
+    color === colors[0]
+  )?.[0];
+  const targetCategory = Object.entries(CATEGORY_COLORS).find(([_, color]) => 
+    color === colors[1]
+  )?.[0];
+
   // Check if chord belongs to selected category
   const belongsToCategory = (category: string) => {
     if (!category) return true;
-    const sourceCategory = Object.entries(CATEGORY_COLORS).find(([_, color]) => 
-      color === colors[0]
-    )?.[0];
-    const targetCategory = Object.entries(CATEGORY_COLORS).find(([_, color]) => 
-      color === colors[1]
-    )?.[0];
     return sourceCategory === category || targetCategory === category;
+  };
+
+  // Determine gradient ratios based on selected category
+  const getGradientStops = () => {
+    if (!selectedCategory) {
+      // Default view: 50-50 split
+      return {
+        firstStop: "50%",
+        secondStop: "50%"
+      };
+    }
+    
+    if (sourceCategory === selectedCategory) {
+      // Source category is selected: 75-25 split favoring source
+      return {
+        firstStop: "75%",
+        secondStop: "75%"
+      };
+    }
+    
+    if (targetCategory === selectedCategory) {
+      // Target category is selected: 25-75 split favoring target
+      return {
+        firstStop: "25%",
+        secondStop: "25%"
+      };
+    }
+
+    // Category is selected but doesn't match either end: 50-50 split
+    return {
+      firstStop: "50%",
+      secondStop: "50%"
+    };
   };
 
   const isHighlighted = !selectedCategory || belongsToCategory(selectedCategory);
@@ -55,12 +90,17 @@ const ChordRibbon = memo(({ d, colors, isSelected, selectedIngredient, selectedC
   return (
     <>
       <Defs>
-        <LinearGradient id={gradientId} x1="0" y1="0" x2="1" y2="0">
-          <Stop offset="0%" stopColor={colors[0]} stopOpacity={opacity} />
-          <Stop offset="85%" stopColor={colors[0]} stopOpacity={opacity} />
-          <Stop offset="85%" stopColor={colors[1]} stopOpacity={opacity} />
-          <Stop offset="100%" stopColor={colors[1]} stopOpacity={opacity} />
-        </LinearGradient>
+         <LinearGradient id={gradientId} x1="0" y1="0" x2="1" y2="0">
+            {(() => {
+              const { firstStop, secondStop } = getGradientStops();
+              return [
+                <Stop key="start" offset="0%" stopColor={colors[0]} stopOpacity={opacity} />,
+                <Stop key="first" offset={firstStop} stopColor={colors[0]} stopOpacity={opacity} />,
+                <Stop key="second" offset={secondStop} stopColor={colors[1]} stopOpacity={opacity} />,
+                <Stop key="end" offset="100%" stopColor={colors[1]} stopOpacity={opacity} />
+              ];
+            })()}
+          </LinearGradient>
       </Defs>
       <Path
         d={d}
