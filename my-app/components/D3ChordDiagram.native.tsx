@@ -51,31 +51,31 @@ const ChordRibbon = memo(({ d, colors, isSelected, selectedIngredient, selectedC
     if (!selectedCategory) {
       // Default view: 50-50 split
       return {
-        firstStop: "50%",
-        secondStop: "50%"
+        firstStop: "20%",
+        secondStop: "80%"
       };
     }
     
     if (sourceCategory === selectedCategory) {
       // Source category is selected: 75-25 split favoring source
       return {
-        firstStop: "75%",
-        secondStop: "75%"
+        firstStop: "20%",
+        secondStop: "20%"
       };
     }
     
     if (targetCategory === selectedCategory) {
       // Target category is selected: 25-75 split favoring target
       return {
-        firstStop: "25%",
-        secondStop: "25%"
+        firstStop: "80%",
+        secondStop: "80%"
       };
     }
 
     // Category is selected but doesn't match either end: 50-50 split
     return {
-      firstStop: "50%",
-      secondStop: "50%"
+      firstStop: "80%",
+      secondStop: "20%"
     };
   };
 
@@ -94,10 +94,10 @@ const ChordRibbon = memo(({ d, colors, isSelected, selectedIngredient, selectedC
             {(() => {
               const { firstStop, secondStop } = getGradientStops();
               return [
-                <Stop key="start" offset="0%" stopColor={colors[0]} stopOpacity={opacity} />,
-                <Stop key="first" offset={firstStop} stopColor={colors[0]} stopOpacity={opacity} />,
-                <Stop key="second" offset={secondStop} stopColor={colors[1]} stopOpacity={opacity} />,
-                <Stop key="end" offset="100%" stopColor={colors[1]} stopOpacity={opacity} />
+                <Stop key="start" offset="0%" stopColor={colors[1]} stopOpacity={opacity} />,
+                <Stop key="first" offset={firstStop} stopColor={colors[1]} stopOpacity={opacity} />,
+                <Stop key="second" offset={secondStop} stopColor={colors[0]} stopOpacity={opacity} />,
+                <Stop key="end" offset="100%" stopColor={colors[0]} stopOpacity={opacity} />
               ];
             })()}
           </LinearGradient>
@@ -596,7 +596,6 @@ export function D3ChordDiagram({ selectedIngredient }: D3ChordDiagramProps) {
           <ScrollView style={styles.connectionsList}>
             {ingredientConnections
               .filter(item => !selectedCategory || item.category === selectedCategory)
-              .sort((a, b) => b.connectionCount - a.connectionCount) // Sort by connection count descending
               .map((item, index) => (
                 <TouchableOpacity
                   key={index}
@@ -644,7 +643,6 @@ export function D3ChordDiagram({ selectedIngredient }: D3ChordDiagramProps) {
                 .filter((conn): conn is NonNullable<typeof conn> => 
                   conn !== null && (!selectedCategory || conn.category === selectedCategory)
                 )
-                .sort((a, b) => (b?.value || 0) - (a?.value || 0)) // Sort by value (cocktails in common) descending
                 .map((conn, index) => {
                   // Always use full set for max value calculation
                   const maxValue = Math.max(...connections
