@@ -102,11 +102,12 @@ const ChordRibbon = memo(({ d, colors, isSelected, selectedIngredient, selectedC
             })()}
           </LinearGradient>
       </Defs>
-      <Path
-        d={d}
-        fill={`url(#${gradientId})`}
-        stroke={`url(#${gradientId})`}
-        strokeWidth={isSelected ? Math.max(0.1, 6.5 * value / maxValue) : Math.max(0.1, 6.5 * value / maxValue)}
+                  <Path
+                    d={d}
+                    fill={`url(#${gradientId})`}
+                    stroke={`url(#${gradientId})`}
+                    strokeWidth={isSelected ? Math.max(0.5, 8 * value / maxValue) : Math.max(0.1, 6.5 * value / maxValue)}
+                    strokeOpacity={isSelected ? 1 : 0.7}
       />
     </>
   );
@@ -163,8 +164,8 @@ export function D3ChordDiagram({ selectedIngredient }: D3ChordDiagramProps) {
   const width = windowWidth;
   const height = Platform.select({ ios: 400, android: 400, default: 500 });
   // Scale down the diagram size to fit with padding
-  const scaleFactor = 0.75; // Reduce size by 25%
-  const outerRadius = Math.min(width, height) * 0.4 * scaleFactor;
+  const scaleFactor = 0.85; // Reduce size by 25%
+  const outerRadius = Math.min(width, height) * 0.38 * scaleFactor;
   const innerRadius = outerRadius * 0.9;
   const categoryArcWidth = 35; // Slightly smaller arc width to match scale
 
@@ -359,8 +360,8 @@ export function D3ChordDiagram({ selectedIngredient }: D3ChordDiagramProps) {
     return { arcGenerator, ribbonGenerator, categoryArcGenerator };
   }, [innerRadius, outerRadius, categoryArcWidth]);
 
-  const centerX = width * 0.5;  // Center of the SVG
-  const centerY = height * 0.45;  // Slightly above center to account for category labels
+  const centerX = width * 0.46;  // Center of the SVG
+  const centerY = height * 0.43;  // Slightly above center to account for category labels
 
   // Calculate connection counts for each ingredient
   const ingredientConnections = useMemo(() => {
@@ -406,8 +407,8 @@ export function D3ChordDiagram({ selectedIngredient }: D3ChordDiagramProps) {
             const isSelected = Boolean(selectedIngredient && 
               categoryArc.indices.some(idx => ingredients[idx].toLowerCase() === selectedIngredient.toLowerCase()));
             
-            const opacity = isSelected ? 0.6 : 
-                          (isHighlighted ? 0.3 : 0.1);
+            const opacity = isSelected ? 0.65 : 
+                          (isHighlighted ? 0.7 : 0.1);
             
             return (
               <G key={`category-${i}`}>
@@ -422,6 +423,7 @@ export function D3ChordDiagram({ selectedIngredient }: D3ChordDiagramProps) {
                   fillOpacity={opacity}
                   stroke={categoryArc.color}
                   strokeWidth={isSelected ? 2 : 1}
+                  strokeOpacity={isSelected ? 1 : 0.6}
                   onPress={() => handleCategoryChange(
                     selectedCategory === categoryArc.category ? undefined : categoryArc.category
                   )}
@@ -594,6 +596,7 @@ export function D3ChordDiagram({ selectedIngredient }: D3ChordDiagramProps) {
           <ScrollView style={styles.connectionsList}>
             {ingredientConnections
               .filter(item => !selectedCategory || item.category === selectedCategory)
+              .sort((a, b) => b.connectionCount - a.connectionCount) // Sort by connection count descending
               .map((item, index) => (
                 <TouchableOpacity
                   key={index}
@@ -641,6 +644,7 @@ export function D3ChordDiagram({ selectedIngredient }: D3ChordDiagramProps) {
                 .filter((conn): conn is NonNullable<typeof conn> => 
                   conn !== null && (!selectedCategory || conn.category === selectedCategory)
                 )
+                .sort((a, b) => (b?.value || 0) - (a?.value || 0)) // Sort by value (cocktails in common) descending
                 .map((conn, index) => {
                   // Always use full set for max value calculation
                   const maxValue = Math.max(...connections
