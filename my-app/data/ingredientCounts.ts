@@ -29,18 +29,25 @@ Baileys irish cream,25
 Sugar syrup,22
 Orange,22
 Dark rum,20
+Cherry,18
+Maraschino cherry,18
 Bourbon,17
 Bitters,16
 Carbonated water,16
 Orange bitters,15
+Angostura bitters,15
 Scotch,15
 151 proof rum,15
 Mint,15
 Blue Curacao,14
 Champagne,13
+Cinnamon,12
 Coca-Cola,13
+Orange peel,12
+Salt,12
 Strawberries,12
 Lemonade,12
+Nutmeg,11
 Red wine,11
 Grapefruit juice,11
 Campari,11
@@ -61,12 +68,14 @@ Midori melon liqueur,8
 Malibu rum,8
 Prosecco,8
 Absolut Citron,7
+Banana,7
 Sprite,7
 7-Up,7
 Creme de Cassis,7
 Goldschlager,7
 Jägermeister,7
 Chambord raspberry liqueur,7
+Pineapple,7
 Tea,6
 Cherry brandy,6
 Chocolate,6
@@ -75,6 +84,7 @@ Cointreau,6
 Beer,6
 Vanilla ice-cream,6
 White Rum,6
+Apple,5
 Irish whiskey,5
 Port,5
 Sherry,5
@@ -106,7 +116,9 @@ Strawberry schnapps,3
 Mango,3
 Spiced rum,3
 Espresso,3
+Orange spiral,3
 Peach nectar,3
+Pepper,3
 Whiskey,3
 Irish cream,3
 Chocolate liqueur,3
@@ -117,18 +129,24 @@ Chocolate ice-cream,3
 Absinthe,3
 Guinness stout,3
 Godiva liqueur,3
+Fruit,3
 Bacardi Limon,3
 Green Creme de Menthe,3
 Aperol,3
 Applejack,2
+Orange curacao,2
+Bitter lemon,2
 Ricard,2
 Berries,2
 Kiwi,2
+Lime peel,2
 Peach Vodka,2
+Peach bitters,2
 Ouzo,2
 Angelica root,2
 Johnnie Walker,2
 Apple cider,2
+Celery salt,2
 Grape juice,2
 Pisco,2
 Advocaat,2
@@ -140,10 +158,14 @@ Jim Beam,2
 Fruit punch,2
 Zima,2
 Raspberry vodka,2
+Rosemary,2
 Grape Soda,2
 Hot Chocolate,2
 Gold rum,2
+Blood orange,1
+Blueberry schnapps,1
 Lemon vodka,1
+Limeade,1
 Dubonnet Rouge,1
 Coffee brandy,1
 Cantaloupe,1
@@ -151,10 +173,14 @@ Grapes,1
 Cranberries,1
 Firewater,1
 Ale,1
+Cayenne pepper,1
 Peppermint schnapps,1
+Peychaud bitters,1
+Pink lemonade,1
 Vanilla vodka,1
 Kiwi liqueur,1
 Cranberry vodka,1
+Thyme,1
 Yukon Jack,1
 Coconut rum,1
 Black Sambuca,1

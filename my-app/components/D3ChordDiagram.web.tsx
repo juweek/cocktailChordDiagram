@@ -5,6 +5,7 @@ import { select } from 'd3-selection';
 import { descending } from 'd3-array';
 import { arc } from 'd3-shape';
 import { INGREDIENT_MATRIX } from '@/data/ingredientMatrix';
+import { INGREDIENT_COUNTS } from '@/data/ingredientCounts';
 import { CATEGORY_COLORS } from '@/constants/Ingredients';
 import { ThemedText } from '@/components/ThemedText';
 
@@ -63,11 +64,16 @@ export function D3ChordDiagram({ selectedIngredient }: D3ChordDiagramProps) {
 
     const chordData = chordLayout(matrix);
 
-    // Filter visible chords
+    // Filter visible chords - only show chords where selected ingredient/category is the source
     const visibleChords = chordData.filter(d => {
       if (selectedIngredient) {
-        return ingredients[d.source.index].toLowerCase() === selectedIngredient.toLowerCase() ||
-               ingredients[d.target.index].toLowerCase() === selectedIngredient.toLowerCase();
+        return ingredients[d.source.index].toLowerCase() === selectedIngredient.toLowerCase();
+      }
+      if (hoveredCategory) {
+        const sourceCategory = Object.entries(CATEGORY_COLORS).find(([_, color]) => 
+          color === colors[d.source.index]
+        )?.[0];
+        return sourceCategory === hoveredCategory;
       }
       // For non-selected state, only show stronger connections
       return d.source.value > 1 || d.target.value > 1;
@@ -118,14 +124,27 @@ export function D3ChordDiagram({ selectedIngredient }: D3ChordDiagramProps) {
         context.beginPath();
         ribbonGenerator.context(context)(d);
 
-        // Create gradient for the chord
+        // Create gradient for the chord with dynamic ratios
         const gradient = context.createLinearGradient(
           innerRadius * Math.cos(d.source.startAngle),
           innerRadius * Math.sin(d.source.startAngle),
           innerRadius * Math.cos(d.target.startAngle),
           innerRadius * Math.sin(d.target.startAngle)
         );
+
+        // Determine gradient ratios based on selected category
+        let firstStop = 0.5;  // Default 50-50 split
+        if (hoveredCategory) {
+          if (sourceCategory === hoveredCategory) {
+            firstStop = 0.75;  // 75-25 split favoring source
+          } else if (targetCategory === hoveredCategory) {
+            firstStop = 0.25;  // 25-75 split favoring target
+          }
+        }
+
         gradient.addColorStop(0, colors[d.source.index]);
+        gradient.addColorStop(firstStop, colors[d.source.index]);
+        gradient.addColorStop(firstStop, colors[d.target.index]);
         gradient.addColorStop(1, colors[d.target.index]);
 
         // Set opacity based on selection and category
@@ -251,8 +270,11 @@ export function D3ChordDiagram({ selectedIngredient }: D3ChordDiagramProps) {
             contentContainerStyle={styles.connectionsContent}
           >
             {connections
-              .sort((a: any, b: any) => b.value - a.value) // Sort by connection strength
-              .map((conn: any, index) => {
+              .filter((conn): conn is NonNullable<typeof conn> => 
+                conn !== null && (!hoveredCategory || conn.category === hoveredCategory)
+              )
+              .sort((a, b) => b.value - a.value) // Sort by connection strength
+              .map((conn, index) => {
                 // Calculate relative bar width (max 80% of container)
                 const maxValue = Math.max(...connections.map(c => c.value));
                 const barWidth = `${(conn.value / maxValue) * 80}%`;

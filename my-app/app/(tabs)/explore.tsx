@@ -148,7 +148,9 @@ const styles = StyleSheet.create({
     marginBottom: 20,
   },
   title: {
-    fontSize: 24,
+    paddingTop: 20,
+    marginTop: 10,
+    fontSize: 32,
     fontWeight: 'bold',
   },
   keyboardAvoid: {
@@ -181,6 +183,7 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderRadius: 8,
     paddingHorizontal: 12,
+    fontSize: 15,
   },
   clearButton: {
     marginLeft: 8,
