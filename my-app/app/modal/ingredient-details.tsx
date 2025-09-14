@@ -3,6 +3,8 @@ import { View, Image, StyleSheet, ScrollView, ActivityIndicator, TouchableOpacit
 import { useLocalSearchParams, useRouter } from 'expo-router';
 import { ThemedText } from '@/components/ThemedText';
 import { Collapsible } from '@/components/Collapsible';
+import { useColorScheme } from '@/hooks/useColorScheme';
+import { Colors } from '@/constants/Colors';
 
 interface Ingredient {
   strIngredient: string;
@@ -83,19 +85,29 @@ export default function IngredientDetails() {
     Linking.openURL(url);
   };
 
+  const colorScheme = useColorScheme();
+  const backgroundColor = Colors[colorScheme ?? 'light'].background;
+  const tintColor = Colors[colorScheme ?? 'light'].tint;
+
   if (isLoading) {
     return (
-      <View style={styles.loadingContainer}>
-        <ActivityIndicator size="large" color="#0000ff" />
+      <View style={[styles.loadingContainer, { backgroundColor }]}>
+        <ActivityIndicator size="large" color={tintColor} />
         <ThemedText style={styles.loadingText}>Loading ingredient details...</ThemedText>
       </View>
     );
   }
 
   return (
-    <View style={styles.container}>
+    <View style={[
+      styles.container,
+      { backgroundColor: Colors[colorScheme ?? 'light'].background }
+    ]}>
       <TouchableOpacity 
-        style={styles.closeButton}
+        style={[
+          styles.closeButton,
+          { backgroundColor: Colors[colorScheme ?? 'light'].searchBackground }
+        ]}
         onPress={() => router.back()}
       >
         <ThemedText style={styles.closeButtonText}>×</ThemedText>
@@ -137,7 +149,10 @@ export default function IngredientDetails() {
                 {drinks.map((drink) => (
                   <TouchableOpacity
                     key={drink.idDrink}
-                    style={styles.drinkCard}
+                    style={[
+                      styles.drinkCard,
+                      { backgroundColor: Colors[colorScheme ?? 'light'].searchBackground }
+                    ]}
                     onPress={() => handleDrinkPress(drink.idDrink)}
                   >
                     <Image
@@ -166,7 +181,6 @@ const styles = StyleSheet.create({
   noResultsText: {
     fontSize: 16,
     textAlign: 'center',
-    color: '#666',
   },
   container: {
     flex: 1,
