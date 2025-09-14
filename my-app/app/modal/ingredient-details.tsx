@@ -55,7 +55,7 @@ export default function IngredientDetails() {
         // Use different API endpoints based on whether we have a filtered ingredient
         const apiUrl = filteredIngredient 
           ? `https://www.thecocktaildb.com/api/json/v2/961249867/filter.php?i=${formattedIngredient},${formatIngredient(filteredIngredient)}`
-          : `https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=${formattedIngredient}`;
+          : `https://www.thecocktaildb.com/api/json/v2/1/filter.php?i=${formattedIngredient}`;
 
         const drinksResponse = await fetch(apiUrl);
         const drinksData = await drinksResponse.json();

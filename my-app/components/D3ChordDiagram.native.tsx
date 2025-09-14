@@ -6,6 +6,7 @@ import { arc, DefaultArcObject } from 'd3-shape';
 import { descending } from 'd3-array';
 import { useRouter } from 'expo-router';
 import { INGREDIENT_MATRIX } from '@/data/ingredientMatrix';
+import { INGREDIENT_COUNTS } from '@/data/ingredientCounts';
 import { CATEGORY_COLORS } from '@/constants/Ingredients';
 import { ThemedText } from '@/components/ThemedText';
 import { useColorScheme } from '@/hooks/useColorScheme';
@@ -363,20 +364,30 @@ export function D3ChordDiagram({ selectedIngredient }: D3ChordDiagramProps) {
   const centerX = width * 0.46;  // Center of the SVG
   const centerY = height * 0.43;  // Slightly above center to account for category labels
 
-  // Calculate connection counts for each ingredient
+  // Calculate connection counts for each ingredient using accurate API data
   const ingredientConnections = useMemo(() => {
     return ingredients.map((ingredient, idx) => {
-      // Count non-zero connections for this ingredient
-      const connectionCount = matrix[idx].reduce((sum, value) => sum + value, 0);
+      // Get the exact count from our CSV data
+      const countData = INGREDIENT_COUNTS.find(
+        item => {
+          // Normalize both strings by trimming and converting to lowercase
+          const itemName = item.ingredient.trim().toLowerCase();
+          const searchName = ingredient.trim().toLowerCase();
+          
+          // Exact match only - no partial matches
+          return itemName === searchName;
+        }
+      );
       
       // Get category for the ingredient
       const category = Object.entries(CATEGORY_COLORS).find(([_, color]) => 
         color === colors[idx]
       )?.[0] || 'other';
 
+      // Only use the count from the CSV data, no fallback to matrix
       return {
         ingredient,
-        connectionCount,
+        connectionCount: countData?.count || 0, // Use 0 if not found in CSV
         category
       };
     }).sort((a, b) => b.connectionCount - a.connectionCount); // Sort by connection count
@@ -643,6 +654,8 @@ export function D3ChordDiagram({ selectedIngredient }: D3ChordDiagramProps) {
                 .filter((conn): conn is NonNullable<typeof conn> => 
                   conn !== null && (!selectedCategory || conn.category === selectedCategory)
                 )
+                // Sort by number of cocktails in common (descending)
+                .sort((a, b) => b.value - a.value)
                 .map((conn, index) => {
                   // Always use full set for max value calculation
                   const maxValue = Math.max(...connections

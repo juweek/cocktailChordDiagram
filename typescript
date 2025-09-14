@@ -1,0 +1,829 @@
+Script started on Sun Sep 14 14:15:31 2025
+[1m[7m%[27m[1m[0m                                                                                      ]7;file://gourmetdata/Users/juweekadolphe/Code/gourmetDataInteractives/cocktailApp[0m[27m[24m[Jjuweek@gourmetdata ~/Code/gourmetDataInteractives/cocktailApp [K[?2004h[?2004l
+[1m[7m%[27m[1m[0m                                                                                      ]7;file://gourmetdata/Users/juweekadolphe/Code/gourmetDataInteractives/cocktailApp[0m[27m[24m[Jjuweek@gourmetdata ~/Code/gourmetDataInteractives/cocktailApp [K[?2004hccd scripts[1m/[0m[0m [?2004l
+[1m[7m%[27m[1m[0m                                                                                      ]7;file://gourmetdata/Users/juweekadolphe/Code/gourmetDataInteractives/cocktailApp/scripts[0m[27m[24m[Jjuweek@gourmetdata ~/Code/gourmetDataInteractives/cocktailApp/scripts [K[?2004hlls[?2004l
+cocktaildb.py			ingredient_connections.csv
+generate_ingredient_counts.py	ingredients.csv
+[1m[7m%[27m[1m[0m                                                                                      ]7;file://gourmetdata/Users/juweekadolphe/Code/gourmetDataInteractives/cocktailApp/scripts[0m[27m[24m[Jjuweek@gourmetdata ~/Code/gourmetDataInteractives/cocktailApp/scripts [K[?2004hccd ../[?2004l
+[1m[7m%[27m[1m[0m                                                                                      ]7;file://gourmetdata/Users/juweekadolphe/Code/gourmetDataInteractives/cocktailApp[0m[27m[24m[Jjuweek@gourmetdata ~/Code/gourmetDataInteractives/cocktailApp [K[?2004hlls[?2004l
+chordDiagram.html	path			typescript
+my-app			scripts
+[1m[7m%[27m[1m[0m                                                                                      ]7;file://gourmetdata/Users/juweekadolphe/Code/gourmetDataInteractives/cocktailApp[0m[27m[24m[Jjuweek@gourmetdata ~/Code/gourmetDataInteractives/cocktailApp [K[?2004hlls[?2004l
+chordDiagram.html	path			typescript
+my-app			scripts
+[1m[7m%[27m[1m[0m                                                                                      ]7;file://gourmetdata/Users/juweekadolphe/Code/gourmetDataInteractives/cocktailApp[0m[27m[24m[Jjuweek@gourmetdata ~/Code/gourmetDataInteractives/cocktailApp [K[?2004hccd scripts[1m/[0m[0m [?2004l
+[1m[7m%[27m[1m[0m                                                                                      ]7;file://gourmetdata/Users/juweekadolphe/Code/gourmetDataInteractives/cocktailApp/scripts[0m[27m[24m[Jjuweek@gourmetdata ~/Code/gourmetDataInteractives/cocktailApp/scripts [K[?2004h[?2004l
+[1m[7m%[27m[1m[0m                                                                                      ]7;file://gourmetdata/Users/juweekadolphe/Code/gourmetDataInteractives/cocktailApp/scripts[0m[27m[24m[Jjuweek@gourmetdata ~/Code/gourmetDataInteractives/cocktailApp/scripts [K[?2004hlls[?2004l
+cocktaildb.py			ingredient_connections.csv
+generate_ingredient_counts.py	ingredients.csv
+[1m[7m%[27m[1m[0m                                                                                      ]7;file://gourmetdata/Users/juweekadolphe/Code/gourmetDataInteractives/cocktailApp/scripts[0m[27m[24m[Jjuweek@gourmetdata ~/Code/gourmetDataInteractives/cocktailApp/scripts [K[?2004hggit branch[?2004l
+[?1h=* [32mmain[m[m
+[K[?1l>[1m[7m%[27m[1m[0m                                                                                      ]7;file://gourmetdata/Users/juweekadolphe/Code/gourmetDataInteractives/cocktailApp/scripts[0m[27m[24m[Jjuweek@gourmetdata ~/Code/gourmetDataInteractives/cocktailApp/scripts [K[?2004hggit p  g  ppython2 3 generate_ingredient_counts.py[1m [0m[K[K[?2004l
+/Users/juweekadolphe/Code/gourmetDataInteractives/cocktailApp/path/to/venv/lib/python3.9/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+Traceback (most recent call last):
+  File "/Users/juweekadolphe/Code/gourmetDataInteractives/cocktailApp/scripts/generate_ingredient_counts.py", line 7, in <module>
+    from cocktaildb import CocktailDB
+ImportError: cannot import name 'CocktailDB' from 'cocktaildb' (/Users/juweekadolphe/Code/gourmetDataInteractives/cocktailApp/scripts/cocktaildb.py)
+[1m[7m%[27m[1m[0m                                                                                      ]7;file://gourmetdata/Users/juweekadolphe/Code/gourmetDataInteractives/cocktailApp/scripts[0m[27m[24m[Jjuweek@gourmetdata ~/Code/gourmetDataInteractives/cocktailApp/scripts [K[?2004h[?2004l
+[1m[7m%[27m[1m[0m                                                                                      ]7;file://gourmetdata/Users/juweekadolphe/Code/gourmetDataInteractives/cocktailApp/scripts[0m[27m[24m[Jjuweek@gourmetdata ~/Code/gourmetDataInteractives/cocktailApp/scripts [K[?2004hpython3 generate_ingredient_counts.py[K[A[49C[K[1B[K[A[70Cpython3 generate_ingredient_counts.py[K[7mg[7me[7mn[7me[7mr[7ma[7mt[7me[7m_[7mi[7mn[7mg[7mr[7me[7md[7mi[7me[7mn[7mt[7m_[7mc[7mo[7mu[7mn[7mt[7ms[7m.[7mp[7my[27m[29D[27mg[27me[27mn[27me[27mr[27ma[27mt[27me[27m_[27mi[27mn[27mg[27mr[27me[27md[27mi[27me[27mn[27mt[27m_[27mc[27mo[27mu[27mn[27mt[27ms[27m.[27mp[27m                             [?2004l
+/Users/juweekadolphe/Code/gourmetDataInteractives/cocktailApp/path/to/venv/lib/python3.9/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+Traceback (most recent call last):
+  File "/Users/juweekadolphe/Code/gourmetDataInteractives/cocktailApp/scripts/generate_ingredient_counts.py", line 7, in <module>
+    from cocktaildb import CocktailDB
+ImportError: cannot import name 'CocktailDB' from 'cocktaildb' (/Users/juweekadolphe/Code/gourmetDataInteractives/cocktailApp/scripts/cocktaildb.py)
+[1m[7m%[27m[1m[0m                                                                                      ]7;file://gourmetdata/Users/juweekadolphe/Code/gourmetDataInteractives/cocktailApp/scripts[0m[27m[24m[Jjuweek@gourmetdata ~/Code/gourmetDataInteractives/cocktailApp/scripts [K[?2004h[?2004l
+[1m[7m%[27m[1m[0m                                                                                      ]7;file://gourmetdata/Users/juweekadolphe/Code/gourmetDataInteractives/cocktailApp/scripts[0m[27m[24m[Jjuweek@gourmetdata ~/Code/gourmetDataInteractives/cocktailApp/scripts [K[?2004hpython3 generate_ingredient_counts.py[K[?2004l
+/Users/juweekadolphe/Code/gourmetDataInteractives/cocktailApp/path/to/venv/lib/python3.9/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+Fetching list of ingredients...
+
+Fetching cocktail counts for 100 ingredients...
+[1/100] Light rum: 44 cocktails
+[2/100] Bourbon: 13 cocktails
+[3/100] Vodka: 94 cocktails
+[4/100] Gin: 100 cocktails
+[5/100] Blended whiskey: 8 cocktails
+[6/100] Tequila: 27 cocktails
+[7/100] Sweet Vermouth: 24 cocktails
+[8/100] Apricot brandy: 10 cocktails
+[9/100] Triple sec: 35 cocktails
+[10/100] Southern Comfort: 8 cocktails
+[11/100] Orange bitters: 9 cocktails
+[12/100] Brandy: 22 cocktails
+[13/100] Lemon vodka: 1 cocktails
+[14/100] Dry Vermouth: 26 cocktails
+[15/100] Dark rum: 19 cocktails
+[16/100] Amaretto: 41 cocktails
+[17/100] Tea: 6 cocktails
+[18/100] Applejack: 2 cocktails
+[19/100] Champagne: 9 cocktails
+[20/100] Scotch: 15 cocktails
+[21/100] Coffee liqueur: 4 cocktails
+[22/100] Añejo rum: 2 cocktails
+[23/100] Bitters: 9 cocktails
+[24/100] Sugar: 57 cocktails
+[25/100] Kahlua: 29 cocktails
+[26/100] Dubonnet Rouge: 1 cocktails
+[27/100] Lime juice: 33 cocktails
+[28/100] Irish whiskey: 5 cocktails
+[29/100] Apple brandy: 2 cocktails
+[30/100] Carbonated water: 4 cocktails
+[31/100] Cherry brandy: 6 cocktails
+[32/100] Creme de Cacao: 10 cocktails
+[33/100] Grenadine: 24 cocktails
+[34/100] Port: 4 cocktails
+[35/100] Coffee brandy: 1 cocktails
+[36/100] Red wine: 9 cocktails
+[37/100] Rum: 22 cocktails
+[38/100] Grapefruit juice: 11 cocktails
+[39/100] Ricard: 2 cocktails
+[40/100] Sherry: 5 cocktails
+[41/100] Cognac: 7 cocktails
+[42/100] Sloe gin: 5 cocktails
+[43/100] Strawberry schnapps: 3 cocktails
+[44/100] Apple juice: 8 cocktails
+[45/100] Pineapple juice: 20 cocktails
+[46/100] Lemon juice: 48 cocktails
+[47/100] Sugar syrup: 16 cocktails
+[48/100] Milk: 20 cocktails
+[49/100] Strawberries: 7 cocktails
+[50/100] Chocolate syrup: 3 cocktails
+[51/100] Yoghurt: 9 cocktails
+[52/100] Mango: 3 cocktails
+[53/100] Ginger: 5 cocktails
+[54/100] Lime: 27 cocktails
+[55/100] Cantaloupe: 1 cocktails
+[56/100] Berries: 1 cocktails
+[57/100] Grapes: 1 cocktails
+[58/100] Kiwi: 2 cocktails
+[59/100] Tomato juice: 5 cocktails
+[60/100] Cocoa powder: 5 cocktails
+[61/100] Chocolate: 5 cocktails
+[62/100] Heavy cream: 4 cocktails
+[63/100] Galliano: 8 cocktails
+[64/100] Peach Vodka: 2 cocktails
+[65/100] Ouzo: 2 cocktails
+[66/100] Coffee: 24 cocktails
+[67/100] Spiced rum: 3 cocktails
+[68/100] Water: 26 cocktails
+[69/100] Espresso: 2 cocktails
+[70/100] Angelica root: 2 cocktails
+[71/100] Orange: 4 cocktails
+[72/100] Cranberries: 1 cocktails
+[73/100] Johnnie Walker: 2 cocktails
+[74/100] Apple cider: 2 cocktails
+[75/100] Everclear: 4 cocktails
+[76/100] Cranberry juice: 15 cocktails
+[77/100] Egg yolk: 2 cocktails
+[78/100] Egg: 5 cocktails
+[79/100] Grape juice: 2 cocktails
+[80/100] Peach nectar: 3 cocktails
+[81/100] Lemon: 32 cocktails
+[82/100] Firewater: 1 cocktails
+[83/100] Lemonade: 10 cocktails
+[84/100] Lager: 6 cocktails
+[85/100] Whiskey: 3 cocktails
+[86/100] Absolut Citron: 7 cocktails
+[87/100] Pisco: 2 cocktails
+[88/100] Irish cream: 3 cocktails
+[89/100] Ale: 1 cocktails
+[90/100] Chocolate liqueur: 3 cocktails
+[91/100] Midori melon liqueur: 8 cocktails
+[92/100] Sambuca: 10 cocktails
+[93/100] Cider: 5 cocktails
+[94/100] Sprite: 4 cocktails
+[95/100] 7-Up: 4 cocktails
+[96/100] Blackberry brandy: 3 cocktails
+[97/100] Peppermint schnapps: 1 cocktails
+[98/100] Creme de Cassis: 6 cocktails
+[99/100] Jack Daniels: 5 cocktails
+[100/100] Baileys irish cream: 24 cocktails
+Traceback (most recent call last):
+  File "/Users/juweekadolphe/Code/gourmetDataInteractives/cocktailApp/scripts/generate_ingredient_counts.py", line 70, in <module>
+    generate_ingredient_counts()
+  File "/Users/juweekadolphe/Code/gourmetDataInteractives/cocktailApp/scripts/generate_ingredient_counts.py", line 57, in generate_ingredient_counts
+    with open(output_path, 'w', newline='', encoding='utf-8') as f:
+FileNotFoundError: [Errno 2] No such file or directory: 'my-app/data/ingredient_counts.csv'
+[1m[7m%[27m[1m[0m                                                                                      ]7;file://gourmetdata/Users/juweekadolphe/Code/gourmetDataInteractives/cocktailApp/scripts[0m[27m[24m[Jjuweek@gourmetdata ~/Code/gourmetDataInteractives/cocktailApp/scripts [K[?2004h[?2004l
+[1m[7m%[27m[1m[0m                                                                                      ]7;file://gourmetdata/Users/juweekadolphe/Code/gourmetDataInteractives/cocktailApp/scripts[0m[27m[24m[Jjuweek@gourmetdata ~/Code/gourmetDataInteractives/cocktailApp/scripts [K[?2004hpython3 generate_ingredient_counts.py[K[?2004l
+/Users/juweekadolphe/Code/gourmetDataInteractives/cocktailApp/path/to/venv/lib/python3.9/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+Fetching list of ingredients...
+
+Fetching cocktail counts for 100 ingredients...
+[1/100] Light rum: 44 cocktails
+[2/100] Bourbon: 13 cocktails
+[3/100] Vodka: 94 cocktails
+[4/100] Gin: 100 cocktails
+[5/100] Blended whiskey: 8 cocktails
+[6/100] Tequila: 27 cocktails
+[7/100] Sweet Vermouth: 24 cocktails
+[8/100] Apricot brandy: 10 cocktails
+[9/100] Triple sec: 35 cocktails
+[10/100] Southern Comfort: 8 cocktails
+[11/100] Orange bitters: 9 cocktails
+[12/100] Brandy: 22 cocktails
+[13/100] Lemon vodka: 1 cocktails
+[14/100] Dry Vermouth: 26 cocktails
+[15/100] Dark rum: 19 cocktails
+[16/100] Amaretto: 41 cocktails
+[17/100] Tea: 6 cocktails
+[18/100] Applejack: 2 cocktails
+[19/100] Champagne: 9 cocktails
+[20/100] Scotch: 15 cocktails
+[21/100] Coffee liqueur: 4 cocktails
+[22/100] Añejo rum: 2 cocktails
+[23/100] Bitters: 9 cocktails
+[24/100] Sugar: 57 cocktails
+[25/100] Kahlua: 29 cocktails
+[26/100] Dubonnet Rouge: 1 cocktails
+[27/100] Lime juice: 33 cocktails
+[28/100] Irish whiskey: 5 cocktails
+[29/100] Apple brandy: 2 cocktails
+[30/100] Carbonated water: 4 cocktails
+[31/100] Cherry brandy: 6 cocktails
+[32/100] Creme de Cacao: 10 cocktails
+[33/100] Grenadine: 24 cocktails
+[34/100] Port: 4 cocktails
+[35/100] Coffee brandy: 1 cocktails
+[36/100] Red wine: 9 cocktails
+[37/100] Rum: 22 cocktails
+[38/100] Grapefruit juice: 11 cocktails
+[39/100] Ricard: 2 cocktails
+[40/100] Sherry: 5 cocktails
+[41/100] Cognac: 7 cocktails
+[42/100] Sloe gin: 5 cocktails
+[43/100] Strawberry schnapps: 3 cocktails
+[44/100] Apple juice: 8 cocktails
+[45/100] Pineapple juice: 20 cocktails
+[46/100] Lemon juice: 48 cocktails
+[47/100] Sugar syrup: 16 cocktails
+[48/100] Milk: 20 cocktails
+[49/100] Strawberries: 7 cocktails
+[50/100] Chocolate syrup: 3 cocktails
+[51/100] Yoghurt: 9 cocktails
+[52/100] Mango: 3 cocktails
+[53/100] Ginger: 5 cocktails
+[54/100] Lime: 27 cocktails
+[55/100] Cantaloupe: 1 cocktails
+[56/100] Berries: 1 cocktails
+[57/100] Grapes: 1 cocktails
+[58/100] Kiwi: 2 cocktails
+[59/100] Tomato juice: 5 cocktails
+[60/100] Cocoa powder: 5 cocktails
+[61/100] Chocolate: 5 cocktails
+[62/100] Heavy cream: 4 cocktails
+[63/100] Galliano: 8 cocktails
+[64/100] Peach Vodka: 2 cocktails
+[65/100] Ouzo: 2 cocktails
+[66/100] Coffee: 24 cocktails
+[67/100] Spiced rum: 3 cocktails
+[68/100] Water: 26 cocktails
+[69/100] Espresso: 2 cocktails
+[70/100] Angelica root: 2 cocktails
+[71/100] Orange: 4 cocktails
+[72/100] Cranberries: 1 cocktails
+[73/100] Johnnie Walker: 2 cocktails
+[74/100] Apple cider: 2 cocktails
+[75/100] Everclear: 4 cocktails
+[76/100] Cranberry juice: 15 cocktails
+[77/100] Egg yolk: 2 cocktails
+[78/100] Egg: 5 cocktails
+[79/100] Grape juice: 2 cocktails
+[80/100] Peach nectar: 3 cocktails
+[81/100] Lemon: 32 cocktails
+[82/100] Firewater: 1 cocktails
+[83/100] Lemonade: 10 cocktails
+[84/100] Lager: 6 cocktails
+[85/100] Whiskey: 3 cocktails
+[86/100] Absolut Citron: 7 cocktails
+[87/100] Pisco: 2 cocktails
+[88/100] Irish cream: 3 cocktails
+[89/100] Ale: 1 cocktails
+[90/100] Chocolate liqueur: 3 cocktails
+[91/100] Midori melon liqueur: 8 cocktails
+[92/100] Sambuca: 10 cocktails
+[93/100] Cider: 5 cocktails
+[94/100] Sprite: 4 cocktails
+[95/100] 7-Up: 4 cocktails
+[96/100] Blackberry brandy: 3 cocktails
+[97/100] Peppermint schnapps: 1 cocktails
+[98/100] Creme de Cassis: 6 cocktails
+[99/100] Jack Daniels: 5 cocktails
+[100/100] Baileys irish cream: 24 cocktails
+
+Data written to ingredient_counts.csv
+Total ingredients processed: 100
+
+Top 10 ingredients by cocktail count:
+Gin: 100 cocktails
+Vodka: 94 cocktails
+Sugar: 57 cocktails
+Lemon juice: 48 cocktails
+Light rum: 44 cocktails
+Amaretto: 41 cocktails
+Triple sec: 35 cocktails
+Lime juice: 33 cocktails
+Lemon: 32 cocktails
+Kahlua: 29 cocktails
+[1m[7m%[27m[1m[0m                                                                                      ]7;file://gourmetdata/Users/juweekadolphe/Code/gourmetDataInteractives/cocktailApp/scripts[0m[27m[24m[Jjuweek@gourmetdata ~/Code/gourmetDataInteractives/cocktailApp/scripts [K[?2004h[?2004l
+[1m[7m%[27m[1m[0m                                                                                      ]7;file://gourmetdata/Users/juweekadolphe/Code/gourmetDataInteractives/cocktailApp/scripts[0m[27m[24m[Jjuweek@gourmetdata ~/Code/gourmetDataInteractives/cocktailApp/scripts [K[?2004hpython3 generate_ingredient_counts.py[K[?2004l
+/Users/juweekadolphe/Code/gourmetDataInteractives/cocktailApp/path/to/venv/lib/python3.9/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+Fetching list of ingredients...
+
+Fetching cocktail counts for 167 ingredients...
+[1/167] Light rum: 45 cocktails
+[2/167] Bourbon: 17 cocktails
+[3/167] Vodka: 102 cocktails
+[4/167] Gin: 108 cocktails
+[5/167] Blended whiskey: 8 cocktails
+[6/167] Tequila: 30 cocktails
+[7/167] Sweet Vermouth: 25 cocktails
+[8/167] Apricot brandy: 10 cocktails
+[9/167] Triple sec: 42 cocktails
+[10/167] Southern Comfort: 8 cocktails
+[11/167] Orange bitters: 15 cocktails
+[12/167] Brandy: 26 cocktails
+[13/167] Lemon vodka: 1 cocktails
+[14/167] Dry Vermouth: 26 cocktails
+[15/167] Dark rum: 20 cocktails
+[16/167] Amaretto: 41 cocktails
+[17/167] Tea: 6 cocktails
+[18/167] Applejack: 2 cocktails
+[19/167] Champagne: 13 cocktails
+[20/167] Scotch: 15 cocktails
+[21/167] Coffee liqueur: 4 cocktails
+[22/167] Añejo rum: 3 cocktails
+[23/167] Bitters: 16 cocktails
+[24/167] Sugar: 71 cocktails
+[25/167] Kahlua: 29 cocktails
+[26/167] Dubonnet Rouge: 1 cocktails
+[27/167] Lime juice: 46 cocktails
+[28/167] Irish whiskey: 5 cocktails
+[29/167] Apple brandy: 3 cocktails
+[30/167] Carbonated water: 16 cocktails
+[31/167] Cherry brandy: 6 cocktails
+[32/167] Creme de Cacao: 10 cocktails
+[33/167] Grenadine: 40 cocktails
+[34/167] Port: 5 cocktails
+[35/167] Coffee brandy: 1 cocktails
+[36/167] Red wine: 11 cocktails
+[37/167] Rum: 26 cocktails
+[38/167] Grapefruit juice: 11 cocktails
+[39/167] Ricard: 2 cocktails
+[40/167] Sherry: 5 cocktails
+[41/167] Cognac: 8 cocktails
+[42/167] Sloe gin: 5 cocktails
+[43/167] Strawberry schnapps: 3 cocktails
+[44/167] Apple juice: 9 cocktails
+[45/167] Pineapple juice: 30 cocktails
+[46/167] Lemon juice: 67 cocktails
+[47/167] Sugar syrup: 22 cocktails
+[48/167] Milk: 34 cocktails
+[49/167] Strawberries: 12 cocktails
+[50/167] Chocolate syrup: 5 cocktails
+[51/167] Yoghurt: 9 cocktails
+[52/167] Mango: 3 cocktails
+[53/167] Ginger: 9 cocktails
+[54/167] Lime: 40 cocktails
+[55/167] Cantaloupe: 1 cocktails
+[56/167] Berries: 2 cocktails
+[57/167] Grapes: 1 cocktails
+[58/167] Kiwi: 2 cocktails
+[59/167] Tomato juice: 5 cocktails
+[60/167] Cocoa powder: 5 cocktails
+[61/167] Chocolate: 6 cocktails
+[62/167] Heavy cream: 5 cocktails
+[63/167] Galliano: 8 cocktails
+[64/167] Peach Vodka: 2 cocktails
+[65/167] Ouzo: 2 cocktails
+[66/167] Coffee: 27 cocktails
+[67/167] Spiced rum: 3 cocktails
+[68/167] Water: 38 cocktails
+[69/167] Espresso: 3 cocktails
+[70/167] Angelica root: 2 cocktails
+[71/167] Orange: 22 cocktails
+[72/167] Cranberries: 1 cocktails
+[73/167] Johnnie Walker: 2 cocktails
+[74/167] Apple cider: 2 cocktails
+[75/167] Everclear: 4 cocktails
+[76/167] Cranberry juice: 25 cocktails
+[77/167] Egg yolk: 4 cocktails
+[78/167] Egg: 9 cocktails
+[79/167] Grape juice: 2 cocktails
+[80/167] Peach nectar: 3 cocktails
+[81/167] Lemon: 46 cocktails
+[82/167] Firewater: 1 cocktails
+[83/167] Lemonade: 12 cocktails
+[84/167] Lager: 6 cocktails
+[85/167] Whiskey: 3 cocktails
+[86/167] Absolut Citron: 7 cocktails
+[87/167] Pisco: 2 cocktails
+[88/167] Irish cream: 3 cocktails
+[89/167] Ale: 1 cocktails
+[90/167] Chocolate liqueur: 3 cocktails
+[91/167] Midori melon liqueur: 8 cocktails
+[92/167] Sambuca: 10 cocktails
+[93/167] Cider: 5 cocktails
+[94/167] Sprite: 7 cocktails
+[95/167] 7-Up: 7 cocktails
+[96/167] Blackberry brandy: 3 cocktails
+[97/167] Peppermint schnapps: 1 cocktails
+[98/167] Creme de Cassis: 7 cocktails
+[99/167] Jack Daniels: 5 cocktails
+[100/167] Baileys irish cream: 25 cocktails
+[101/167] 151 proof rum: 15 cocktails
+[102/167] Absolut Vodka: 4 cocktails
+[103/167] Goldschlager: 7 cocktails
+[104/167] Crown Royal: 4 cocktails
+[105/167] Cointreau: 6 cocktails
+[106/167] Vermouth: 3 cocktails
+[107/167] Advocaat: 2 cocktails
+[108/167] Absolut Kurant: 2 cocktails
+[109/167] Beer: 6 cocktails
+[110/167] Kool-Aid: 4 cocktails
+[111/167] Cherry Heering: 2 cocktails
+[112/167] White Creme de Menthe: 5 cocktails
+[113/167] Malibu rum: 8 cocktails
+[114/167] Vanilla vodka: 1 cocktails
+[115/167] Jägermeister: 7 cocktails
+[116/167] Kiwi liqueur: 1 cocktails
+[117/167] Grand Marnier: 9 cocktails
+[118/167] Peachtree schnapps: 2 cocktails
+[119/167] Wild Turkey: 4 cocktails
+[120/167] Cranberry vodka: 1 cocktails
+[121/167] Corona: 3 cocktails
+[122/167] Orange juice: 72 cocktails
+[123/167] Yukon Jack: 1 cocktails
+[124/167] Chocolate ice-cream: 3 cocktails
+[125/167] Coconut rum: 1 cocktails
+[126/167] Banana liqueur: 5 cocktails
+[127/167] Black Sambuca: 1 cocktails
+[128/167] Hot Damn: 2 cocktails
+[129/167] Mint: 15 cocktails
+[130/167] Campari: 11 cocktails
+[131/167] Ice: 49 cocktails
+[132/167] Sour mix: 9 cocktails
+[133/167] Absinthe: 3 cocktails
+[134/167] Whisky: 1 cocktails
+[135/167] Guinness stout: 3 cocktails
+[136/167] Vanilla ice-cream: 6 cocktails
+[137/167] Chambord raspberry liqueur: 7 cocktails
+[138/167] Jim Beam: 2 cocktails
+[139/167] Godiva liqueur: 3 cocktails
+[140/167] Fruit punch: 2 cocktails
+[141/167] Zima: 2 cocktails
+[142/167] Blue Curacao: 14 cocktails
+[143/167] Coca-Cola: 13 cocktails
+[144/167] Maui: 1 cocktails
+[145/167] Frangelico: 4 cocktails
+[146/167] Bacardi Limon: 3 cocktails
+[147/167] Raspberry vodka: 2 cocktails
+[148/167] Cachaca: 4 cocktails
+[149/167] demerara Sugar: 1 cocktails
+[150/167] Green Creme de Menthe: 3 cocktails
+[151/167] Lemon peel: 34 cocktails
+[152/167] Prosecco: 8 cocktails
+[153/167] White Rum: 6 cocktails
+[154/167] Mezcal: 1 cocktails
+[155/167] Green Chartreuse: 5 cocktails
+[156/167] Grape Soda: 2 cocktails
+[157/167] Hot Chocolate: 2 cocktails
+[158/167] Rye whiskey: 4 cocktails
+[159/167] Blended Scotch: 1 cocktails
+[160/167] Cherry Juice: 1 cocktails
+[161/167] Gold rum: 2 cocktails
+[162/167] Hpnotiq: 1 cocktails
+[163/167] Aperol: 3 cocktails
+[164/167] Watermelon: 1 cocktails
+[165/167] Coconut Liqueur: 5 cocktails
+[166/167] Rose: 1 cocktails
+[167/167] Elderflower cordial: 4 cocktails
+
+Data written to ingredient_counts.csv
+Total ingredients processed: 167
+
+Top 10 ingredients by cocktail count:
+Gin: 108 cocktails
+Vodka: 102 cocktails
+Orange juice: 72 cocktails
+Sugar: 71 cocktails
+Lemon juice: 67 cocktails
+Ice: 49 cocktails
+Lime juice: 46 cocktails
+Lemon: 46 cocktails
+Light rum: 45 cocktails
+Triple sec: 42 cocktails
+[1m[7m%[27m[1m[0m                                                                                      ]7;file://gourmetdata/Users/juweekadolphe/Code/gourmetDataInteractives/cocktailApp/scripts[0m[27m[24m[Jjuweek@gourmetdata ~/Code/gourmetDataInteractives/cocktailApp/scripts [K[?2004h[?2004l
+[1m[7m%[27m[1m[0m                                                                                      ]7;file://gourmetdata/Users/juweekadolphe/Code/gourmetDataInteractives/cocktailApp/scripts[0m[27m[24m[Jjuweek@gourmetdata ~/Code/gourmetDataInteractives/cocktailApp/scripts [K[?2004hlls[?2004l
+cocktaildb.py			ingredient_counts.csv
+generate_ingredient_counts.py	ingredients.csv
+ingredient_connections.csv
+[1m[7m%[27m[1m[0m                                                                                      ]7;file://gourmetdata/Users/juweekadolphe/Code/gourmetDataInteractives/cocktailApp/scripts[0m[27m[24m[Jjuweek@gourmetdata ~/Code/gourmetDataInteractives/cocktailApp/scripts [K[?2004hccd ../[?2004l
+[1m[7m%[27m[1m[0m                                                                                      ]7;file://gourmetdata/Users/juweekadolphe/Code/gourmetDataInteractives/cocktailApp[0m[27m[24m[Jjuweek@gourmetdata ~/Code/gourmetDataInteractives/cocktailApp [K[?2004hlls[?2004l
+chordDiagram.html	path			typescript
+my-app			scripts
+[1m[7m%[27m[1m[0m                                                                                      ]7;file://gourmetdata/Users/juweekadolphe/Code/gourmetDataInteractives/cocktailApp[0m[27m[24m[Jjuweek@gourmetdata ~/Code/gourmetDataInteractives/cocktailApp [K[?2004hccd my-app[1m/[0m[0m [?2004l
+[1m[7m%[27m[1m[0m                                                                                      ]7;file://gourmetdata/Users/juweekadolphe/Code/gourmetDataInteractives/cocktailApp/my-app[0m[27m[24m[Jjuweek@gourmetdata ~/Code/gourmetDataInteractives/cocktailApp/my-app [K[?2004h[?2004l
+[1m[7m%[27m[1m[0m                                                                                      ]7;file://gourmetdata/Users/juweekadolphe/Code/gourmetDataInteractives/cocktailApp/my-app[0m[27m[24m[Jjuweek@gourmetdata ~/Code/gourmetDataInteractives/cocktailApp/my-app [K[?2004hlls[?2004l
+app			data			package-lock.json
+app.json		eslint.config.js	package.json
+assets			expo-env.d.ts		README.md
+components		hooks			scripts
+constants		node_modules		tsconfig.json
+[1m[7m%[27m[1m[0m                                                                                      ]7;file://gourmetdata/Users/juweekadolphe/Code/gourmetDataInteractives/cocktailApp/my-app[0m[27m[24m[Jjuweek@gourmetdata ~/Code/gourmetDataInteractives/cocktailApp/my-app [K[?2004hlscd my-app[9Dls       cd ../ls    python3 generate_ingredient_counts.py[K[A[49Cgit branch[K[1B[K[A[79C[10Dls        [8Dcd scripts[10Dls        [8Dcd ../ls    cd scripts[10Dls        [8Dgit push origin staging[K[A[67Cbranch[K[1B[K[A[79Ccommit -m "changing immediate to short-term outcomes"[K[A[33Cadd *[K[1B[K[A[78Ccommit -m "changing immediate to short-term outcomes"[K[A[33Cadd *[K[1B[K[A[78Cpush origin staging[K[A[67Cbranch[K[1B[K[A[79Ccommit -m "replacing hte modal with imapct goal"[K[A[38Cadd *[K[1B[K[A[78Ccommit -m "replacing the google sheet used to populate the logic model"[K[A[15Cpush origin staging[K[A[67Cbranch[K[1B[K[A[79Ccommit -m "replacing the google sheet used to populate the logic model"[K[A[15Cadd *[K[1B[K[A[78C[9Dpsql -h trust-her-staging.c1tdvv0skrsd.us-east-1.rds.amazonaws.com \[K
+     -p 5432 \[K
+     -U staging_admin \[K
+     -d staging[K
+[K[K[A[A[A[1B[1B[1B[5A[69Cgit add *[K[1B[K[1B[K[1B[K[1B[K[1B[K[5A[78Ccommit -m "replacing the google sheet used to populate the logic model"[K[A[15Cbranch[K[1B[K[A[79Cpush origin staging[K[A[67Ccommit -m "replacing the google sheet used to populate the logic model"[A[15Cadd *[K[1B[K[A[78Ccommit -m "replacing hte modal with imapct goal"[K[A[38Cbranch[K[1B[K[A[79Cpush origin staging[K[A[67Cadd *[K[1B[K[A[78Ccommit -m "changing immediate to short-term outcomes"[K[A[33Cadd *[K[1B[K[A[78Ccommit -m "changing immediate to short-term outcomes"[K[A[33Cbranch[K[1B[K[A[79Cpush origin staging[K[A[63Cls[K[1B[K[A[71Ccd scripts[10Dls        [8Dcd ../ls    cd scripts[10Dls        [8Dgit branch[10Dpython3 generate_ingredient_counts.py[K[A[49Cls[K[1B[K[A[71Ccd ../ls    cd my-app[9Dls         [?2004l[1B[1m[7m%[27m[1m[0m                                                                                      ]7;file://gourmetdata/Users/juweekadolphe/Code/gourmetDataInteractives/cocktailApp/my-app[0m[27m[24m[Jjuweek@gourmetdata ~/Code/gourmetDataInteractives/cocktailApp/my-app [K[?2004hnnpm u ls cd my-app[9Dls       l  nnpm run [7mexpo star[7mt[7m --web[27m[K[A[70C[27me[27mx[27mp[27mo[27m [27ms[27mt[27ma[27mrt[27m [27m-[27m-[27mw[27me[27mb[1C     [?2004l
+[1mnpm[22m [31merror[39m Missing script: "expo"
+[1mnpm[22m [31merror[39m
+[1mnpm[22m [31merror[39m To see a list of scripts, run:
+[1mnpm[22m [31merror[39m   npm run
+[1mnpm[22m [31merror[39m A complete log of this run can be found in: /Users/juweekadolphe/.npm/_logs/2025-09-14T18_30_30_906Z-debug-0.log
+[1G[0K[1m[7m%[27m[1m[0m                                                                                      ]7;file://gourmetdata/Users/juweekadolphe/Code/gourmetDataInteractives/cocktailApp/my-app[0m[27m[24m[Jjuweek@gourmetdata ~/Code/gourmetDataInteractives/cocktailApp/my-app [K[?2004hnpm run expo start[K[1C[1C--web[?2004l
+[1mnpm[22m [31merror[39m Missing script: "expo"
+[1mnpm[22m [31merror[39m
+[1mnpm[22m [31merror[39m To see a list of scripts, run:
+[1mnpm[22m [31merror[39m   npm run
+[1mnpm[22m [31merror[39m A complete log of this run can be found in: /Users/juweekadolphe/.npm/_logs/2025-09-14T18_30_38_242Z-debug-0.log
+[1G[0K[1m[7m%[27m[1m[0m                                                                                      ]7;file://gourmetdata/Users/juweekadolphe/Code/gourmetDataInteractives/cocktailApp/my-app[0m[27m[24m[Jjuweek@gourmetdata ~/Code/gourmetDataInteractives/cocktailApp/my-app [K[?2004hnpm run expo start --web[K[K[A[85C[P[14Ct [A[70Cx run expo start [A[70C[?2004l[1B
+[1G[0K⠙[1G[0K⠹[1G[0K⠸[1G[0K⠼[1G[0K⠴[1G[0K⠦[1G[0K⠧[1G[0K⠇[1G[0K⠏[1G[0K⠋[1G[0K[1G[0JNeed to install the following packages:
+run@1.5.0
+Ok to proceed? (y) [20Gn
+
+[1G[0K⠙[1G[0K[1mnpm[22m [31merror[39m canceled
+[1G[0K⠙[1G[0K[1mnpm[22m [31merror[39m A complete log of this run can be found in: /Users/juweekadolphe/.npm/_logs/2025-09-14T18_30_48_400Z-debug-0.log
+[1G[0K⠙[1G[0K[1m[7m%[27m[1m[0m                                                                                      ]7;file://gourmetdata/Users/juweekadolphe/Code/gourmetDataInteractives/cocktailApp/my-app[0m[27m[24m[Jjuweek@gourmetdata ~/Code/gourmetDataInteractives/cocktailApp/my-app [K[?2004h[7mnpx expo start[27m[14D[27mn[27mp[27mx[27m [27me[27mx[27mp[27mo[27m [27ms[27mt[27ma[27mr[27mt[?2004l
+[1G[0K⠙[1G[0K[90mStarting project at /Users/juweekadolphe/Code/gourmetDataInteractives/cocktailApp/my-app[39m
+[2mStarting Metro Bundler[22m
+[33mThe following packages should be updated for best compatibility with the installed [1mexpo[22m version:[39m
+[33m  [1meslint-config-expo[22m[36m@[39m[33m[31m9.2.0[39m[33m - expected version: [32m~10.0.0[39m[33m[39m
+[33m  [1mexpo[22m[36m@[39m[33m[31m54.0.1[39m[33m - expected version: [32m54.0.7[39m[33m[39m
+[33m  [1mexpo-blur[22m[36m@[39m[33m[31m15.0.6[39m[33m - expected version: [32m~15.0.7[39m[33m[39m
+[33m  [1mexpo-font[22m[36m@[39m[33m[31m14.0.7[39m[33m - expected version: [32m~14.0.8[39m[33m[39m
+[33m  [1mexpo-haptics[22m[36m@[39m[33m[31m15.0.6[39m[33m - expected version: [32m~15.0.7[39m[33m[39m
+[33m  [1mexpo-image[22m[36m@[39m[33m[31m3.0.7[39m[33m - expected version: [32m~3.0.8[39m[33m[39m
+[33m  [1mexpo-linking[22m[36m@[39m[33m[31m8.0.7[39m[33m - expected version: [32m~8.0.8[39m[33m[39m
+[33m  [1mexpo-router[22m[36m@[39m[33m[31m6.0.0[39m[33m - expected version: [32m~6.0.4[39m[33m[39m
+[33m  [1mexpo-splash-screen[22m[36m@[39m[33m[31m31.0.8[39m[33m - expected version: [32m~31.0.10[39m[33m[39m
+[33m  [1mexpo-status-bar[22m[36m@[39m[33m[31m3.0.7[39m[33m - expected version: [32m~3.0.8[39m[33m[39m
+[33m  [1mexpo-symbols[22m[36m@[39m[33m[31m1.0.6[39m[33m - expected version: [32m~1.0.7[39m[33m[39m
+[33m  [1mexpo-web-browser[22m[36m@[39m[33m[31m15.0.6[39m[33m - expected version: [32m~15.0.7[39m[33m[39m
+[33m  [1mtypescript[22m[36m@[39m[33m[31m5.8.3[39m[33m - expected version: [32m~5.9.2[39m[33m[39m
+[33mYour project may not work correctly until you install the expected versions of the packages.[39m
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+█ ▄▄▄▄▄ █▄▀▀▄▄▀▀█▄█ ▄▄▄▄▄ █
+█ █   █ ███▄█  ▀▀▄█ █   █ █
+█ █▄▄▄█ ██▄▀▄▀███▀█ █▄▄▄█ █
+█▄▄▄▄▄▄▄█ █ ▀▄▀ ▀▄█▄▄▄▄▄▄▄█
+█▄▄▀▄▄█▄▀█ ▄▄▀▀█ ▀▀▄█▀█▀▀▄█
+█▀█▄ ▀ ▄▀▀▀  ▀█▄▄▀  ▀▀▄▀▀ █
+█ ▀▄█▀▄▄   █▄▄▀▄ █▄▄ ▀█▀ ██
+█ ▄▄▀▀▀▄█▀   ▄▄█▄▀▄█▄▀▄▀  █
+█▄█▄█▄▄▄█▀▀ ▀▀▀▄  ▄▄▄  ▄▀▄█
+█ ▄▄▄▄▄ ██▄ ▄▀█▀█ █▄█ ██▀ █
+█ █   █ █  ▀█▄▄ ▄▄▄  ▄ █  █
+█ █▄▄▄█ █▀  █▄█ █▄▀▀▀▄█   █
+█▄▄▄▄▄▄▄█▄▄███▄▄▄▄▄▄▄▄███▄█
+
+› Metro waiting on [4mexp://10.0.0.102:8081[24m
+› Scan the QR code above with Expo Go (Android) or the Camera app (iOS)
+
+› Web is waiting on [4mhttp://localhost:8081[24m
+
+› Using [36mExpo Go[39m
+› Press [1ms[22m [2m│[22m switch to development build
+
+› Press [1ma[22m [2m│[22m open Android
+› Press [1mi[22m [2m│[22m open iOS simulator
+› Press [1mw[22m [2m│[22m open web
+
+› Press [1mj[22m [2m│[22m open debugger
+› Press [1mr[22m [2m│[22m reload app
+› Press [1mm[22m [2m│[22m toggle menu
+› [1mshift+m[22m [2m│[22m more tools
+› Press [1mo[22m [2m│[22m open project code in your editor
+
+› Press [1m?[22m [2m│[22m show all commands
+
+Logs for your project will appear below.[2m Press Ctrl+C to exit.[22m
+[?25l[37m⠋[39m Stopping server[2K[1G[?25h› Stopped server
+[?25h[1G[0K⠙[1G[0K[1m[7m%[27m[1m[0m                                                                                      ]7;file://gourmetdata/Users/juweekadolphe/Code/gourmetDataInteractives/cocktailApp/my-app[0m[27m[24m[Jjuweek@gourmetdata ~/Code/gourmetDataInteractives/cocktailApp/my-app [K[?2004hnpx expo start[?2004l
+[1G[0K⠙[1G[0K[90mStarting project at /Users/juweekadolphe/Code/gourmetDataInteractives/cocktailApp/my-app[39m
+[2mStarting Metro Bundler[22m
+[33mThe following packages should be updated for best compatibility with the installed [1mexpo[22m version:[39m
+[33m  [1meslint-config-expo[22m[36m@[39m[33m[31m9.2.0[39m[33m - expected version: [32m~10.0.0[39m[33m[39m
+[33m  [1mexpo[22m[36m@[39m[33m[31m54.0.1[39m[33m - expected version: [32m54.0.7[39m[33m[39m
+[33m  [1mexpo-blur[22m[36m@[39m[33m[31m15.0.6[39m[33m - expected version: [32m~15.0.7[39m[33m[39m
+[33m  [1mexpo-font[22m[36m@[39m[33m[31m14.0.7[39m[33m - expected version: [32m~14.0.8[39m[33m[39m
+[33m  [1mexpo-haptics[22m[36m@[39m[33m[31m15.0.6[39m[33m - expected version: [32m~15.0.7[39m[33m[39m
+[33m  [1mexpo-image[22m[36m@[39m[33m[31m3.0.7[39m[33m - expected version: [32m~3.0.8[39m[33m[39m
+[33m  [1mexpo-linking[22m[36m@[39m[33m[31m8.0.7[39m[33m - expected version: [32m~8.0.8[39m[33m[39m
+[33m  [1mexpo-router[22m[36m@[39m[33m[31m6.0.0[39m[33m - expected version: [32m~6.0.4[39m[33m[39m
+[33m  [1mexpo-splash-screen[22m[36m@[39m[33m[31m31.0.8[39m[33m - expected version: [32m~31.0.10[39m[33m[39m
+[33m  [1mexpo-status-bar[22m[36m@[39m[33m[31m3.0.7[39m[33m - expected version: [32m~3.0.8[39m[33m[39m
+[33m  [1mexpo-symbols[22m[36m@[39m[33m[31m1.0.6[39m[33m - expected version: [32m~1.0.7[39m[33m[39m
+[33m  [1mexpo-web-browser[22m[36m@[39m[33m[31m15.0.6[39m[33m - expected version: [32m~15.0.7[39m[33m[39m
+[33m  [1mtypescript[22m[36m@[39m[33m[31m5.8.3[39m[33m - expected version: [32m~5.9.2[39m[33m[39m
+[33mYour project may not work correctly until you install the expected versions of the packages.[39m
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+█ ▄▄▄▄▄ █▄▀▀▄▄▀▀█▄█ ▄▄▄▄▄ █
+█ █   █ ███▄█  ▀▀▄█ █   █ █
+█ █▄▄▄█ ██▄▀▄▀███▀█ █▄▄▄█ █
+█▄▄▄▄▄▄▄█ █ ▀▄▀ ▀▄█▄▄▄▄▄▄▄█
+█▄▄▀▄▄█▄▀█ ▄▄▀▀█ ▀▀▄█▀█▀▀▄█
+█▀█▄ ▀ ▄▀▀▀  ▀█▄▄▀  ▀▀▄▀▀ █
+█ ▀▄█▀▄▄   █▄▄▀▄ █▄▄ ▀█▀ ██
+█ ▄▄▀▀▀▄█▀   ▄▄█▄▀▄█▄▀▄▀  █
+█▄█▄█▄▄▄█▀▀ ▀▀▀▄  ▄▄▄  ▄▀▄█
+█ ▄▄▄▄▄ ██▄ ▄▀█▀█ █▄█ ██▀ █
+█ █   █ █  ▀█▄▄ ▄▄▄  ▄ █  █
+█ █▄▄▄█ █▀  █▄█ █▄▀▀▀▄█   █
+█▄▄▄▄▄▄▄█▄▄███▄▄▄▄▄▄▄▄███▄█
+
+› Metro waiting on [4mexp://10.0.0.102:8081[24m
+› Scan the QR code above with Expo Go (Android) or the Camera app (iOS)
+
+› Web is waiting on [4mhttp://localhost:8081[24m
+
+› Using [36mExpo Go[39m
+› Press [1ms[22m [2m│[22m switch to development build
+
+› Press [1ma[22m [2m│[22m open Android
+› Press [1mi[22m [2m│[22m open iOS simulator
+› Press [1mw[22m [2m│[22m open web
+
+› Press [1mj[22m [2m│[22m open debugger
+› Press [1mr[22m [2m│[22m reload app
+› Press [1mm[22m [2m│[22m toggle menu
+› [1mshift+m[22m [2m│[22m more tools
+› Press [1mo[22m [2m│[22m open project code in your editor
+
+› Press [1m?[22m [2m│[22m show all commands
+
+Logs for your project will appear below.[2m Press Ctrl+C to exit.[22m
+[1miOS[22m [0m[2mnode_modules/expo-router/[22m[0m[1mentry.js[22m [47m[37m░░░░░░░░░░░░░░░░[39m[49m[1m  0.0% [22m[2m(0/1)[22m
+[86D[1A[0J[1miOS[22m [0m[2mnode_modules/expo-router/[22m[0m[1mentry.js[22m [32m[42m▓[49m[39m[47m[37m░░░░░░░░░░░░░░░[39m[49m[1m  6.5% [22m[2m( 70/274)[22m
+[86D[1A[0J[1miOS[22m [0m[2mnode_modules/expo-router/[22m[0m[1mentry.js[22m [32m[42m▓▓▓▓[49m[39m[47m[37m░░░░░░░░░░░░[39m[49m[1m 26.2% [22m[2m(286/559)[22m
+[86D[1A[0J[1miOS[22m [0m[2mnode_modules/expo-router/[22m[0m[1mentry.js[22m [32m[42m▓▓▓▓▓[49m[39m[47m[37m░░░░░░░░░░░[39m[49m[1m 33.3% [22m[2m(425/736)[22m
+[86D[1A[0J[1miOS[22m [0m[2mnode_modules/expo-router/[22m[0m[1mentry.js[22m [32m[42m▓▓▓▓▓▓▓▓[49m[39m[47m[37m░░░░░░░░[39m[49m[1m 50.7% [22m[2m(623/875)[22m
+[86D[1A[0J[1miOS[22m [0m[2mnode_modules/expo-router/[22m[0m[1mentry.js[22m [32m[42m▓▓▓▓▓▓▓▓[49m[39m[47m[37m░░░░░░░░[39m[49m[1m 51.8% [22m[2m( 831/1155)[22m
+[86D[1A[0J[1miOS[22m [0m[2mnode_modules/expo-router/[22m[0m[1mentry.js[22m [32m[42m▓▓▓▓▓▓▓▓▓▓▓▓[49m[39m[47m[37m░░░░[39m[49m[1m 75.3% [22m[2m(1118/1288)[22m
+[86D[1A[0J[1miOS[22m [0m[2mnode_modules/expo-router/[22m[0m[1mentry.js[22m [32m[42m▓▓▓▓▓▓▓▓▓▓▓▓[49m[39m[47m[37m░░░░[39m[49m[1m 80.6% [22m[2m(1178/1312)[22m
+[86D[1A[0J[1miOS[22m [0m[2mnode_modules/expo-router/[22m[0m[1mentry.js[22m [32m[42m▓▓▓▓▓▓▓▓▓▓▓▓▓▓[49m[39m[47m[37m░░[39m[49m[1m 91.3% [22m[2m(1316/1377)[22m
+[86D[1A[0J[1miOS[22m [0m[2mnode_modules/expo-router/[22m[0m[1mentry.js[22m [32m[42m▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓[49m[39m[47m[37m░[39m[49m[1m 96.7% [22m[2m(1481/1506)[22m
+[86D[1A[0J[1miOS[22m [0m[2mnode_modules/expo-router/[22m[0m[1mentry.js[22m [32m[42m▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓[49m[39m[47m[37m░[39m[49m[1m 96.7% [22m[2m(1647/1684)[22m
+[86D[1A[0J[32m[1miOS[22m Bundled [39m[2m1094ms[22m[0m[2m node_modules/expo-router/entry.js (1684 modules)[22m[0m
+[1miOS[22m [0m[2mnode_modules/expo-router/[22m[0m[1mentry.js[22m [32m[42m▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓[49m[39m[47m[37m░[39m[49m[1m 96.7% [22m[2m(1647/1684)[22m
+[86D[1A[0J[7m[33m[1m WARN [22m[39m[27m SafeAreaView has been deprecated and will be removed in a future release. Please use 'react-native-safe-area-context' instead. See https://github.com/th3rdwave/react-native-safe-area-context
+[?25l[37m⠋[39m Stopping server[2K[1G[?25h› Stopped server
+[?25h[1G[0K⠙[1G[0K[1m[7m%[27m[1m[0m                                                                                      ]7;file://gourmetdata/Users/juweekadolphe/Code/gourmetDataInteractives/cocktailApp/my-app[0m[27m[24m[Jjuweek@gourmetdata ~/Code/gourmetDataInteractives/cocktailApp/my-app [K[?2004hnpx expo start[?2004l
+[1G[0K⠙[1G[0K[90mStarting project at /Users/juweekadolphe/Code/gourmetDataInteractives/cocktailApp/my-app[39m
+[2mStarting Metro Bundler[22m
+[33mThe following packages should be updated for best compatibility with the installed [1mexpo[22m version:[39m
+[33m  [1meslint-config-expo[22m[36m@[39m[33m[31m9.2.0[39m[33m - expected version: [32m~10.0.0[39m[33m[39m
+[33m  [1mexpo[22m[36m@[39m[33m[31m54.0.1[39m[33m - expected version: [32m54.0.7[39m[33m[39m
+[33m  [1mexpo-blur[22m[36m@[39m[33m[31m15.0.6[39m[33m - expected version: [32m~15.0.7[39m[33m[39m
+[33m  [1mexpo-font[22m[36m@[39m[33m[31m14.0.7[39m[33m - expected version: [32m~14.0.8[39m[33m[39m
+[33m  [1mexpo-haptics[22m[36m@[39m[33m[31m15.0.6[39m[33m - expected version: [32m~15.0.7[39m[33m[39m
+[33m  [1mexpo-image[22m[36m@[39m[33m[31m3.0.7[39m[33m - expected version: [32m~3.0.8[39m[33m[39m
+[33m  [1mexpo-linking[22m[36m@[39m[33m[31m8.0.7[39m[33m - expected version: [32m~8.0.8[39m[33m[39m
+[33m  [1mexpo-router[22m[36m@[39m[33m[31m6.0.0[39m[33m - expected version: [32m~6.0.4[39m[33m[39m
+[33m  [1mexpo-splash-screen[22m[36m@[39m[33m[31m31.0.8[39m[33m - expected version: [32m~31.0.10[39m[33m[39m
+[33m  [1mexpo-status-bar[22m[36m@[39m[33m[31m3.0.7[39m[33m - expected version: [32m~3.0.8[39m[33m[39m
+[33m  [1mexpo-symbols[22m[36m@[39m[33m[31m1.0.6[39m[33m - expected version: [32m~1.0.7[39m[33m[39m
+[33m  [1mexpo-web-browser[22m[36m@[39m[33m[31m15.0.6[39m[33m - expected version: [32m~15.0.7[39m[33m[39m
+[33m  [1mtypescript[22m[36m@[39m[33m[31m5.8.3[39m[33m - expected version: [32m~5.9.2[39m[33m[39m
+[33mYour project may not work correctly until you install the expected versions of the packages.[39m
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+█ ▄▄▄▄▄ █▄▀▀▄▄▀▀█▄█ ▄▄▄▄▄ █
+█ █   █ ███▄█  ▀▀▄█ █   █ █
+█ █▄▄▄█ ██▄▀▄▀███▀█ █▄▄▄█ █
+█▄▄▄▄▄▄▄█ █ ▀▄▀ ▀▄█▄▄▄▄▄▄▄█
+█▄▄▀▄▄█▄▀█ ▄▄▀▀█ ▀▀▄█▀█▀▀▄█
+█▀█▄ ▀ ▄▀▀▀  ▀█▄▄▀  ▀▀▄▀▀ █
+█ ▀▄█▀▄▄   █▄▄▀▄ █▄▄ ▀█▀ ██
+█ ▄▄▀▀▀▄█▀   ▄▄█▄▀▄█▄▀▄▀  █
+█▄█▄█▄▄▄█▀▀ ▀▀▀▄  ▄▄▄  ▄▀▄█
+█ ▄▄▄▄▄ ██▄ ▄▀█▀█ █▄█ ██▀ █
+█ █   █ █  ▀█▄▄ ▄▄▄  ▄ █  █
+█ █▄▄▄█ █▀  █▄█ █▄▀▀▀▄█   █
+█▄▄▄▄▄▄▄█▄▄███▄▄▄▄▄▄▄▄███▄█
+
+› Metro waiting on [4mexp://10.0.0.102:8081[24m
+› Scan the QR code above with Expo Go (Android) or the Camera app (iOS)
+
+› Web is waiting on [4mhttp://localhost:8081[24m
+
+› Using [36mExpo Go[39m
+› Press [1ms[22m [2m│[22m switch to development build
+
+› Press [1ma[22m [2m│[22m open Android
+› Press [1mi[22m [2m│[22m open iOS simulator
+› Press [1mw[22m [2m│[22m open web
+
+› Press [1mj[22m [2m│[22m open debugger
+› Press [1mr[22m [2m│[22m reload app
+› Press [1mm[22m [2m│[22m toggle menu
+› [1mshift+m[22m [2m│[22m more tools
+› Press [1mo[22m [2m│[22m open project code in your editor
+
+› Press [1m?[22m [2m│[22m show all commands
+
+Logs for your project will appear below.[2m Press Ctrl+C to exit.[22m
+[1miOS[22m [0m[2mnode_modules/expo-router/[22m[0m[1mentry.js[22m [47m[37m░░░░░░░░░░░░░░░░[39m[49m[1m  0.0% [22m[2m(0/1)[22m
+[86D[1A[0J[1miOS[22m [0m[2mnode_modules/expo-router/[22m[0m[1mentry.js[22m [32m[42m▓[49m[39m[47m[37m░░░░░░░░░░░░░░░[39m[49m[1m  7.3% [22m[2m( 71/262)[22m
+[86D[1A[0J[1miOS[22m [0m[2mnode_modules/expo-router/[22m[0m[1mentry.js[22m [32m[42m▓▓▓▓[49m[39m[47m[37m░░░░░░░░░░░░[39m[49m[1m 26.2% [22m[2m(253/494)[22m
+[86D[1A[0J[1miOS[22m [0m[2mnode_modules/expo-router/[22m[0m[1mentry.js[22m [32m[42m▓▓▓▓▓[49m[39m[47m[37m░░░░░░░░░░░[39m[49m[1m 34.3% [22m[2m(447/763)[22m
+[86D[1A[0J[1miOS[22m [0m[2mnode_modules/expo-router/[22m[0m[1mentry.js[22m [32m[42m▓▓▓▓▓▓▓▓[49m[39m[47m[37m░░░░░░░░[39m[49m[1m 52.1% [22m[2m(658/912)[22m
+[86D[1A[0J[1miOS[22m [0m[2mnode_modules/expo-router/[22m[0m[1mentry.js[22m [32m[42m▓▓▓▓▓▓▓▓[49m[39m[47m[37m░░░░░░░░[39m[49m[1m 52.1% [22m[2m( 873/1211)[22m
+[86D[1A[0J[1miOS[22m [0m[2mnode_modules/expo-router/[22m[0m[1mentry.js[22m [32m[42m▓▓▓▓▓▓▓▓▓▓▓[49m[39m[47m[37m░░░░░[39m[49m[1m 74.0% [22m[2m(1187/1380)[22m
+[86D[1A[0J[1miOS[22m [0m[2mnode_modules/expo-router/[22m[0m[1mentry.js[22m [32m[42m▓▓▓▓▓▓▓▓▓▓▓▓▓[49m[39m[47m[37m░░░[39m[49m[1m 82.1% [22m[2m(1385/1529)[22m
+[86D[1A[0J[32m[1miOS[22m Bundled [39m[2m847ms[22m[0m[2m node_modules/expo-router/entry.js (1529 modules)[22m[0m
+[1miOS[22m [0m[2mnode_modules/expo-router/[22m[0m[1mentry.js[22m [32m[42m▓▓▓▓▓▓▓▓▓▓▓▓▓[49m[39m[47m[37m░░░[39m[49m[1m 82.1% [22m[2m(1385/1529)[22m
+[86D[1A[0J[7m[33m[1m WARN [22m[39m[27m SafeAreaView has been deprecated and will be removed in a future release. Please use 'react-native-safe-area-context' instead. See https://github.com/th3rdwave/react-native-safe-area-context
+[?25l[37m⠋[39m Stopping server[2K[1G[?25h› Stopped server
+[?25h[1G[0K⠙[1G[0K[1m[7m%[27m[1m[0m                                                                                      ]7;file://gourmetdata/Users/juweekadolphe/Code/gourmetDataInteractives/cocktailApp/my-app[0m[27m[24m[Jjuweek@gourmetdata ~/Code/gourmetDataInteractives/cocktailApp/my-app [K[?2004hnpx expo start[?2004l
+[1G[0K⠙[1G[0K[90mStarting project at /Users/juweekadolphe/Code/gourmetDataInteractives/cocktailApp/my-app[39m
+[2mStarting Metro Bundler[22m
+[33mThe following packages should be updated for best compatibility with the installed [1mexpo[22m version:[39m
+[33m  [1meslint-config-expo[22m[36m@[39m[33m[31m9.2.0[39m[33m - expected version: [32m~10.0.0[39m[33m[39m
+[33m  [1mexpo[22m[36m@[39m[33m[31m54.0.1[39m[33m - expected version: [32m54.0.7[39m[33m[39m
+[33m  [1mexpo-blur[22m[36m@[39m[33m[31m15.0.6[39m[33m - expected version: [32m~15.0.7[39m[33m[39m
+[33m  [1mexpo-font[22m[36m@[39m[33m[31m14.0.7[39m[33m - expected version: [32m~14.0.8[39m[33m[39m
+[33m  [1mexpo-haptics[22m[36m@[39m[33m[31m15.0.6[39m[33m - expected version: [32m~15.0.7[39m[33m[39m
+[33m  [1mexpo-image[22m[36m@[39m[33m[31m3.0.7[39m[33m - expected version: [32m~3.0.8[39m[33m[39m
+[33m  [1mexpo-linking[22m[36m@[39m[33m[31m8.0.7[39m[33m - expected version: [32m~8.0.8[39m[33m[39m
+[33m  [1mexpo-router[22m[36m@[39m[33m[31m6.0.0[39m[33m - expected version: [32m~6.0.4[39m[33m[39m
+[33m  [1mexpo-splash-screen[22m[36m@[39m[33m[31m31.0.8[39m[33m - expected version: [32m~31.0.10[39m[33m[39m
+[33m  [1mexpo-status-bar[22m[36m@[39m[33m[31m3.0.7[39m[33m - expected version: [32m~3.0.8[39m[33m[39m
+[33m  [1mexpo-symbols[22m[36m@[39m[33m[31m1.0.6[39m[33m - expected version: [32m~1.0.7[39m[33m[39m
+[33m  [1mexpo-web-browser[22m[36m@[39m[33m[31m15.0.6[39m[33m - expected version: [32m~15.0.7[39m[33m[39m
+[33m  [1mtypescript[22m[36m@[39m[33m[31m5.8.3[39m[33m - expected version: [32m~5.9.2[39m[33m[39m
+[33mYour project may not work correctly until you install the expected versions of the packages.[39m
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+█ ▄▄▄▄▄ █▄▀▀▄▄▀▀█▄█ ▄▄▄▄▄ █
+█ █   █ ███▄█  ▀▀▄█ █   █ █
+█ █▄▄▄█ ██▄▀▄▀███▀█ █▄▄▄█ █
+█▄▄▄▄▄▄▄█ █ ▀▄▀ ▀▄█▄▄▄▄▄▄▄█
+█▄▄▀▄▄█▄▀█ ▄▄▀▀█ ▀▀▄█▀█▀▀▄█
+█▀█▄ ▀ ▄▀▀▀  ▀█▄▄▀  ▀▀▄▀▀ █
+█ ▀▄█▀▄▄   █▄▄▀▄ █▄▄ ▀█▀ ██
+█ ▄▄▀▀▀▄█▀   ▄▄█▄▀▄█▄▀▄▀  █
+█▄█▄█▄▄▄█▀▀ ▀▀▀▄  ▄▄▄  ▄▀▄█
+█ ▄▄▄▄▄ ██▄ ▄▀█▀█ █▄█ ██▀ █
+█ █   █ █  ▀█▄▄ ▄▄▄  ▄ █  █
+█ █▄▄▄█ █▀  █▄█ █▄▀▀▀▄█   █
+█▄▄▄▄▄▄▄█▄▄███▄▄▄▄▄▄▄▄███▄█
+
+› Metro waiting on [4mexp://10.0.0.102:8081[24m
+› Scan the QR code above with Expo Go (Android) or the Camera app (iOS)
+
+› Web is waiting on [4mhttp://localhost:8081[24m
+
+› Using [36mExpo Go[39m
+› Press [1ms[22m [2m│[22m switch to development build
+
+› Press [1ma[22m [2m│[22m open Android
+› Press [1mi[22m [2m│[22m open iOS simulator
+› Press [1mw[22m [2m│[22m open web
+
+› Press [1mj[22m [2m│[22m open debugger
+› Press [1mr[22m [2m│[22m reload app
+› Press [1mm[22m [2m│[22m toggle menu
+› [1mshift+m[22m [2m│[22m more tools
+› Press [1mo[22m [2m│[22m open project code in your editor
+
+› Press [1m?[22m [2m│[22m show all commands
+
+Logs for your project will appear below.[2m Press Ctrl+C to exit.[22m
+[1miOS[22m [0m[2mnode_modules/expo-router/[22m[0m[1mentry.js[22m [47m[37m░░░░░░░░░░░░░░░░[39m[49m[1m  0.0% [22m[2m(0/1)[22m
+[86D[1A[0J[1miOS[22m [0m[2mnode_modules/expo-router/[22m[0m[1mentry.js[22m [32m[42m▓[49m[39m[47m[37m░░░░░░░░░░░░░░░[39m[49m[1m  6.3% [22m[2m( 56/223)[22m
+[86D[1A[0J[1miOS[22m [0m[2mnode_modules/expo-router/[22m[0m[1mentry.js[22m [32m[42m▓▓▓[49m[39m[47m[37m░░░░░░░░░░░░░[39m[49m[1m 22.5% [22m[2m(228/481)[22m
+[86D[1A[0J[1miOS[22m [0m[2mnode_modules/expo-router/[22m[0m[1mentry.js[22m [32m[42m▓▓▓▓▓[49m[39m[47m[37m░░░░░░░░░░░[39m[49m[1m 34.4% [22m[2m(437/745)[22m
+[86D[1A[0J[1miOS[22m [0m[2mnode_modules/expo-router/[22m[0m[1mentry.js[22m [32m[42m▓▓▓▓▓▓[49m[39m[47m[37m░░░░░░░░░░[39m[49m[1m 41.6% [22m[2m( 701/1087)[22m
+[86D[1A[0J[1miOS[22m [0m[2mnode_modules/expo-router/[22m[0m[1mentry.js[22m [32m[42m▓▓▓▓▓▓▓▓▓[49m[39m[47m[37m░░░░░░░[39m[49m[1m 58.3% [22m[2m( 972/1273)[22m
+[86D[1A[0J[1miOS[22m [0m[2mnode_modules/expo-router/[22m[0m[1mentry.js[22m [32m[42m▓▓▓▓▓▓▓▓▓▓▓▓[49m[39m[47m[37m░░░░[39m[49m[1m 77.0% [22m[2m(1309/1492)[22m
+[86D[1A[0J[1miOS[22m [0m[2mnode_modules/expo-router/[22m[0m[1mentry.js[22m [32m[42m▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓[49m[39m[47m[37m░[39m[49m[1m 94.2% [22m[2m(1577/1625)[22m
+[86D[1A[0J[32m[1miOS[22m Bundled [39m[2m803ms[22m[0m[2m node_modules/expo-router/entry.js (1625 modules)[22m[0m
+[1miOS[22m [0m[2mnode_modules/expo-router/[22m[0m[1mentry.js[22m [32m[42m▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓[49m[39m[47m[37m░[39m[49m[1m 94.2% [22m[2m(1577/1625)[22m
+[86D[1A[0J[7m[33m[1m WARN [22m[39m[27m SafeAreaView has been deprecated and will be removed in a future release. Please use 'react-native-safe-area-context' instead. See https://github.com/th3rdwave/react-native-safe-area-context
+[?25l[37m⠋[39m Stopping server[2K[1G[?25h› Stopped server
+[?25h[1G[0K⠙[1G[0K[1m[7m%[27m[1m[0m                                                                                      ]7;file://gourmetdata/Users/juweekadolphe/Code/gourmetDataInteractives/cocktailApp/my-app[0m[27m[24m[Jjuweek@gourmetdata ~/Code/gourmetDataInteractives/cocktailApp/my-app [K[?2004hnpx expo start[?2004l
+[1G[0K⠙[1G[0K[90mStarting project at /Users/juweekadolphe/Code/gourmetDataInteractives/cocktailApp/my-app[39m
+[2mStarting Metro Bundler[22m
+[33mThe following packages should be updated for best compatibility with the installed [1mexpo[22m version:[39m
+[33m  [1meslint-config-expo[22m[36m@[39m[33m[31m9.2.0[39m[33m - expected version: [32m~10.0.0[39m[33m[39m
+[33m  [1mexpo[22m[36m@[39m[33m[31m54.0.1[39m[33m - expected version: [32m54.0.7[39m[33m[39m
+[33m  [1mexpo-blur[22m[36m@[39m[33m[31m15.0.6[39m[33m - expected version: [32m~15.0.7[39m[33m[39m
+[33m  [1mexpo-font[22m[36m@[39m[33m[31m14.0.7[39m[33m - expected version: [32m~14.0.8[39m[33m[39m
+[33m  [1mexpo-haptics[22m[36m@[39m[33m[31m15.0.6[39m[33m - expected version: [32m~15.0.7[39m[33m[39m
+[33m  [1mexpo-image[22m[36m@[39m[33m[31m3.0.7[39m[33m - expected version: [32m~3.0.8[39m[33m[39m
+[33m  [1mexpo-linking[22m[36m@[39m[33m[31m8.0.7[39m[33m - expected version: [32m~8.0.8[39m[33m[39m
+[33m  [1mexpo-router[22m[36m@[39m[33m[31m6.0.0[39m[33m - expected version: [32m~6.0.4[39m[33m[39m
+[33m  [1mexpo-splash-screen[22m[36m@[39m[33m[31m31.0.8[39m[33m - expected version: [32m~31.0.10[39m[33m[39m
+[33m  [1mexpo-status-bar[22m[36m@[39m[33m[31m3.0.7[39m[33m - expected version: [32m~3.0.8[39m[33m[39m
+[33m  [1mexpo-symbols[22m[36m@[39m[33m[31m1.0.6[39m[33m - expected version: [32m~1.0.7[39m[33m[39m
+[33m  [1mexpo-web-browser[22m[36m@[39m[33m[31m15.0.6[39m[33m - expected version: [32m~15.0.7[39m[33m[39m
+[33m  [1mtypescript[22m[36m@[39m[33m[31m5.8.3[39m[33m - expected version: [32m~5.9.2[39m[33m[39m
+[33mYour project may not work correctly until you install the expected versions of the packages.[39m
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+█ ▄▄▄▄▄ █▄▀▀▄▄▀▀█▄█ ▄▄▄▄▄ █
+█ █   █ ███▄█  ▀▀▄█ █   █ █
+█ █▄▄▄█ ██▄▀▄▀███▀█ █▄▄▄█ █
+█▄▄▄▄▄▄▄█ █ ▀▄▀ ▀▄█▄▄▄▄▄▄▄█
+█▄▄▀▄▄█▄▀█ ▄▄▀▀█ ▀▀▄█▀█▀▀▄█
+█▀█▄ ▀ ▄▀▀▀  ▀█▄▄▀  ▀▀▄▀▀ █
+█ ▀▄█▀▄▄   █▄▄▀▄ █▄▄ ▀█▀ ██
+█ ▄▄▀▀▀▄█▀   ▄▄█▄▀▄█▄▀▄▀  █
+█▄█▄█▄▄▄█▀▀ ▀▀▀▄  ▄▄▄  ▄▀▄█
+█ ▄▄▄▄▄ ██▄ ▄▀█▀█ █▄█ ██▀ █
+█ █   █ █  ▀█▄▄ ▄▄▄  ▄ █  █
+█ █▄▄▄█ █▀  █▄█ █▄▀▀▀▄█   █
+█▄▄▄▄▄▄▄█▄▄███▄▄▄▄▄▄▄▄███▄█
+
+› Metro waiting on [4mexp://10.0.0.102:8081[24m
+› Scan the QR code above with Expo Go (Android) or the Camera app (iOS)
+
+› Web is waiting on [4mhttp://localhost:8081[24m
+
+› Using [36mExpo Go[39m
+› Press [1ms[22m [2m│[22m switch to development build
+
+› Press [1ma[22m [2m│[22m open Android
+› Press [1mi[22m [2m│[22m open iOS simulator
+› Press [1mw[22m [2m│[22m open web
+
+› Press [1mj[22m [2m│[22m open debugger
+› Press [1mr[22m [2m│[22m reload app
+› Press [1mm[22m [2m│[22m toggle menu
+› [1mshift+m[22m [2m│[22m more tools
+› Press [1mo[22m [2m│[22m open project code in your editor
+
+› Press [1m?[22m [2m│[22m show all commands
+
+Logs for your project will appear below.[2m Press Ctrl+C to exit.[22m
+[1miOS[22m [0m[2mnode_modules/expo-router/[22m[0m[1mentry.js[22m [47m[37m░░░░░░░░░░░░░░░░[39m[49m[1m  0.0% [22m[2m(0/1)[22m
+[86D[1A[0J[1miOS[22m [0m[2mnode_modules/expo-router/[22m[0m[1mentry.js[22m [32m[42m▓[49m[39m[47m[37m░░░░░░░░░░░░░░░[39m[49m[1m  9.8% [22m[2m( 78/249)[22m
+[86D[1A[0J[1miOS[22m [0m[2mnode_modules/expo-router/[22m[0m[1mentry.js[22m [32m[42m▓▓▓▓[49m[39m[47m[37m░░░░░░░░░░░░[39m[49m[1m 28.7% [22m[2m(326/609)[22m
+[86D[1A[0J[1miOS[22m [0m[2mnode_modules/expo-router/[22m[0m[1mentry.js[22m [32m[42m▓▓▓▓▓▓▓[49m[39m[47m[37m░░░░░░░░░[39m[49m[1m 46.2% [22m[2m(539/793)[22m
+[86D[1A[0J[1miOS[22m [0m[2mnode_modules/expo-router/[22m[0m[1mentry.js[22m [32m[42m▓▓▓▓▓▓▓[49m[39m[47m[37m░░░░░░░░░[39m[49m[1m 46.2% [22m[2m( 721/1124)[22m
+[86D[1A[0J[1miOS[22m [0m[2mnode_modules/expo-router/[22m[0m[1mentry.js[22m [32m[42m▓▓▓▓▓▓▓▓▓▓▓[49m[39m[47m[37m░░░░░[39m[49m[1m 72.6% [22m[2m(1132/1329)[22m
+[86D[1A[0J[1miOS[22m [0m[2mnode_modules/expo-router/[22m[0m[1mentry.js[22m [32m[42m▓▓▓▓▓▓▓▓▓▓▓▓[49m[39m[47m[37m░░░░[39m[49m[1m 76.2% [22m[2m(1303/1493)[22m
+[86D[1A[0J[1miOS[22m [0m[2mnode_modules/expo-router/[22m[0m[1mentry.js[22m [32m[42m▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓[49m[39m[47m[37m░[39m[49m[1m 97.5% [22m[2m(1617/1638)[22m
+[86D[1A[0J[32m[1miOS[22m Bundled [39m[2m785ms[22m[0m[2m node_modules/expo-router/entry.js (1638 modules)[22m[0m
+[1miOS[22m [0m[2mnode_modules/expo-router/[22m[0m[1mentry.js[22m [32m[42m▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓[49m[39m[47m[37m░[39m[49m[1m 97.5% [22m[2m(1617/1638)[22m
+[86D[1A[0J[7m[33m[1m WARN [22m[39m[27m SafeAreaView has been deprecated and will be removed in a future release. Please use 'react-native-safe-area-context' instead. See https://github.com/th3rdwave/react-native-safe-area-context
+[?25l[37m⠋[39m Stopping server[2K[1G[?25h› Stopped server
+[?25h[1G[0K⠙[1G[0K[1m[7m%[27m[1m[0m                                                                                      ]7;file://gourmetdata/Users/juweekadolphe/Code/gourmetDataInteractives/cocktailApp/my-app[0m[27m[24m[Jjuweek@gourmetdata ~/Code/gourmetDataInteractives/cocktailApp/my-app [K[?2004hggit a  g  lls[?2004l
+app			data			package-lock.json
+app.json		eslint.config.js	package.json
+assets			expo-env.d.ts		README.md
+components		hooks			scripts
+constants		node_modules		tsconfig.json
+[1m[7m%[27m[1m[0m                                                                                      ]7;file://gourmetdata/Users/juweekadolphe/Code/gourmetDataInteractives/cocktailApp/my-app[0m[27m[24m[Jjuweek@gourmetdata ~/Code/gourmetDataInteractives/cocktailApp/my-app [K[?2004hccd ../[?2004l
+[1m[7m%[27m[1m[0m                                                                                      ]7;file://gourmetdata/Users/juweekadolphe/Code/gourmetDataInteractives/cocktailApp[0m[27m[24m[Jjuweek@gourmetdata ~/Code/gourmetDataInteractives/cocktailApp [K[?2004h

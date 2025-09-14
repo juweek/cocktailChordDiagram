@@ -1,0 +1,2407 @@
+Ingredient1,Ingredient2,Cocktail_Count
+fresh lemon juice,gin,24
+sugar,water,23
+orange juice,vodka,18
+gin,grenadine,15
+baileys irish cream,kahlua,15
+lemon,powdered sugar,15
+orange,sugar,14
+grenadine,orange juice,13
+dry vermouth,gin,13
+fresh lemon juice,sugar,13
+gin,triple sec,12
+gin,lemon peel,12
+orange juice,pineapple juice,11
+cranberry juice,vodka,11
+gin,sweet vermouth,11
+ice,vodka,11
+light rum,triple sec,11
+carbonated water,powdered sugar,11
+fresh lime juice,sugar,10
+triple sec,vodka,10
+fresh lime juice,light rum,10
+gin,orange bitters,10
+fresh lime juice,gin,10
+light rum,sugar,10
+maraschino cherry,orange,10
+maraschino cherry,sugar,10
+carbonated water,gin,10
+lemon,sugar,9
+grenadine,pineapple juice,9
+fresh lemon juice,triple sec,9
+sugar,vodka,9
+fresh lemon juice,vodka,9
+fresh lemon juice,orange,9
+gin,powdered sugar,9
+gin,vodka,9
+milk,sugar,9
+coffee,sugar,9
+gin,lemon,9
+light rum,powdered sugar,8
+fresh lime juice,tequila,8
+gin,maraschino liqueur,8
+bitters,gin,8
+lemon,light rum,8
+fresh lemon juice,light rum,8
+fresh lemon juice,grenadine,8
+fresh lime juice,triple sec,8
+gin,lime,8
+carbonated water,lemon,8
+fresh lime juice,rum,7
+vodka,water,7
+cinnamon,cloves,7
+ice,lime,7
+fresh lime juice,sugar syrup,7
+bourbon,sugar,7
+cherry,gin,7
+ice,sugar,7
+ice,orange juice,7
+blended whiskey,lemon,7
+gin,sugar,7
+gin,sugar syrup,7
+fresh lemon juice,sugar syrup,7
+fresh lemon juice,maraschino cherry,7
+sugar,vanilla extract,7
+light rum,lime,7
+tequila,vodka,7
+tequila,triple sec,7
+fresh lime juice,vodka,7
+lemon,soda water,6
+amaretto,orange juice,6
+creme de cacao,light cream,6
+gin,orange juice,6
+gin,orange peel,6
+red wine,sugar,6
+brandy,lemon,6
+lime,sugar,6
+lemon,lime,6
+lime,soda water,6
+lemonade,vodka,6
+fresh lemon juice,orange juice,6
+gin,maraschino cherry,6
+gin,soda water,6
+fresh lemon juice,lemon peel,6
+cranberry juice,orange juice,6
+cherry,lemon,6
+egg white,lemon,6
+salt,tequila,6
+rum,vodka,6
+lemon peel,water,6
+light cream,nutmeg,6
+coffee,water,6
+gin,orange,6
+egg white,gin,6
+amaretto,vodka,5
+powdered sugar,water,5
+blue curacao,vodka,5
+cranberry juice,peach schnapps,5
+ginger ale,ice,5
+gin,tonic water,5
+cinnamon,sugar,5
+brandy,sugar,5
+amaretto,light cream,5
+orange peel,sweet vermouth,5
+bourbon,water,5
+dark rum,orange juice,5
+soda water,sugar,5
+lemon,orange,5
+lemon,water,5
+egg white,light rum,5
+egg white,fresh lemon juice,5
+kahlua,vodka,5
+peach schnapps,vodka,5
+orange juice,peach schnapps,5
+scotch,sweet vermouth,5
+lemon peel,sugar,5
+club soda,sugar,5
+fresh lemon juice,soda water,5
+dry vermouth,lemon peel,5
+blended whiskey,powdered sugar,5
+cherry,powdered sugar,5
+egg white,powdered sugar,5
+salt,sugar,5
+milk,vanilla extract,5
+milk,nutmeg,5
+brandy,triple sec,5
+egg,nutmeg,5
+campari,orange peel,5
+gin,light rum,5
+milk,water,5
+gin,tequila,5
+chocolate,milk,5
+light rum,vodka,5
+sugar syrup,vodka,5
+egg white,grenadine,5
+light rum,milk,4
+milk,vanilla ice-cream,4
+malibu rum,pineapple juice,4
+angostura bitters,fresh lime juice,4
+apricot brandy,orange juice,4
+orange juice,triple sec,4
+ginger ale,orange juice,4
+club soda,fresh lemon juice,4
+ice,lemon,4
+cinnamon,water,4
+amaretto,sour mix,4
+orange juice,orange peel,4
+orange juice,tequila,4
+ice,triple sec,4
+coffee,whipped cream,4
+tonic water,vodka,4
+lime,vodka,4
+bourbon,maraschino cherry,4
+orange juice,sugar syrup,4
+dark rum,pineapple juice,4
+cherry,orange bitters,4
+maraschino liqueur,orange bitters,4
+dry vermouth,orange bitters,4
+grenadine,lemon,4
+apple,lemon,4
+lemon,red wine,4
+apricot brandy,gin,4
+apricot brandy,fresh lemon juice,4
+water,yoghurt,4
+salt,yoghurt,4
+salt,water,4
+baileys irish cream,coffee,4
+coffee,kahlua,4
+baileys irish cream,sambuca,4
+kahlua,sambuca,4
+cherry,sugar,4
+cherry,triple sec,4
+sugar,triple sec,4
+orange juice,rum,4
+orange juice,red wine,4
+lemon peel,scotch,4
+lemon peel,sweet vermouth,4
+bourbon,lemon peel,4
+dry vermouth,scotch,4
+bitters,lemon peel,4
+bitters,sugar,4
+egg white,sugar,4
+nutmeg,sugar,4
+club soda,gin,4
+brandy,lemon peel,4
+gin,mint,4
+soda water,sugar syrup,4
+bourbon,fresh lemon juice,4
+cider,lager,4
+sprite,vodka,4
+ice,rum,4
+fresh lime juice,salt,4
+fresh lime juice,mint,4
+club soda,orange,4
+club soda,maraschino cherry,4
+brandy,light rum,4
+brandy,gin,4
+carbonated water,lemon peel,4
+fresh lime juice,orange juice,4
+vanilla extract,water,4
+rum,water,4
+campari,sweet vermouth,4
+lemon peel,powdered sugar,4
+mint,sugar,4
+egg,powdered sugar,4
+gin,sweet and sour,4
+cinnamon,milk,4
+cloves,sugar,4
+ginger,water,4
+lemon,tequila,4
+soda water,vodka,4
+ice,light rum,4
+egg,milk,4
+sweet and sour,vodka,4
+coca-cola,gin,4
+light rum,tequila,4
+coca-cola,light rum,4
+lemon,vodka,4
+coca-cola,vodka,4
+lemon peel,vodka,4
+fresh lemon juice,ice,4
+grenadine,vodka,4
+orange bitters,sweet vermouth,4
+dry vermouth,olive,4
+nutmeg,powdered sugar,4
+light rum,mint,4
+lime,mint,4
+ice,lemon peel,4
+pineapple juice,triple sec,4
+bitters,scotch,3
+151 proof rum,grenadine,3
+bitters,light rum,3
+malibu rum,orange juice,3
+cream,kahlua,3
+fresh lime juice,grenadine,3
+champagne,orange juice,3
+coca-cola,lemon,3
+grenadine,tequila,3
+ice,tonic water,3
+fresh lime juice,ice,3
+fresh lemon juice,grand marnier,3
+cranberry juice,pineapple juice,3
+ice,lemonade,3
+fresh lime juice,pepper,3
+grapefruit juice,tequila,3
+fresh lime juice,grapefruit juice,3
+cinnamon,orange juice,3
+cloves,orange juice,3
+rum,sugar,3
+champagne,sugar,3
+amaretto,southern comfort,3
+amaretto,ice,3
+lemon,maraschino cherry,3
+amaretto,creme de cacao,3
+orange juice,sour mix,3
+amaretto,triple sec,3
+kahlua,milk,3
+amaretto,cranberry juice,3
+brandy,light cream,3
+angostura bitters,vodka,3
+angostura bitters,gin,3
+angostura bitters,sweet vermouth,3
+dry vermouth,maraschino liqueur,3
+maraschino cherry,maraschino liqueur,3
+lime,tonic water,3
+grenadine,sugar syrup,3
+dark rum,grenadine,3
+bitters,dry vermouth,3
+cherry,dry vermouth,3
+grenadine,light rum,3
+prosecco,soda water,3
+apple juice,ice,3
+apple,soda water,3
+ice,soda water,3
+strawberries,sugar,3
+lemon,strawberries,3
+apple,sugar,3
+orange,red wine,3
+brandy,red wine,3
+brandy,orange,3
+red wine,water,3
+grenadine,lime,3
+apricot brandy,triple sec,3
+lime,triple sec,3
+egg white,triple sec,3
+dry vermouth,fresh lemon juice,3
+grenadine,powdered sugar,3
+orange juice,sweet and sour,3
+baileys irish cream,frangelico,3
+baileys irish cream,cream,3
+butterscotch schnapps,milk,3
+godiva liqueur,milk,3
+baileys irish cream,vodka,3
+gin,grand marnier,3
+cherry,light rum,3
+banana,milk,3
+fruit,ice,3
+ice,yoghurt,3
+banana liqueur,pineapple juice,3
+pineapple juice,rum,3
+benedictine,gin,3
+brandy,fresh lemon juice,3
+bitters,sweet vermouth,3
+dry vermouth,sweet vermouth,3
+blue curacao,gin,3
+bitters,maraschino cherry,3
+bourbon,orange,3
+mint,soda water,3
+blended whiskey,cherry,3
+blended whiskey,carbonated water,3
+carbonated water,grenadine,3
+lime,powdered sugar,3
+carbonated water,light rum,3
+port,powdered sugar,3
+carbonated water,egg white,3
+blue curacao,lemonade,3
+gin,rum,3
+fresh lemon juice,water,3
+milk,salt,3
+salt,vanilla extract,3
+mint,water,3
+brandy,carbonated water,3
+carbonated water,dry vermouth,3
+club soda,lemon,3
+egg,light cream,3
+egg,sugar,3
+coffee,milk,3
+brandy,sweet vermouth,3
+ginger ale,lime,3
+coffee,vanilla extract,3
+coffee,rum,3
+cachaca,lime,3
+campari,orange juice,3
+campari,gin,3
+fresh lime juice,pineapple juice,3
+coffee,vodka,3
+cherry,orange,3
+grenadine,pineapple,3
+gin,light cream,3
+light cream,powdered sugar,3
+cherry,sweet and sour,3
+cloves,water,3
+cardamom,sugar,3
+ginger,sugar,3
+tabasco sauce,tequila,3
+fresh lemon juice,tequila,3
+fresh lemon juice,tomato juice,3
+chambord raspberry liqueur,vodka,3
+fresh lemon juice,maraschino liqueur,3
+fresh lemon juice,orange bitters,3
+light rum,sweet and sour,3
+sweet and sour,triple sec,3
+chocolate syrup,milk,3
+orange juice,soda water,3
+chocolate,cinnamon,3
+cinnamon,red wine,3
+cloves,red wine,3
+coca-cola,tequila,3
+lemon peel,light rum,3
+cocoa powder,sugar,3
+cocoa powder,milk,3
+gin,water,3
+ginger,lime,3
+cointreau,vodka,3
+cream,orange juice,3
+pineapple,pineapple juice,3
+fresh lime juice,lime,3
+light rum,orange juice,3
+fresh lemon juice,ginger ale,3
+salt,triple sec,3
+gin,ice,3
+gin,green chartreuse,3
+gin,pineapple juice,3
+fresh lime juice,maraschino liqueur,3
+fresh lemon juice,pineapple juice,3
+sugar,yoghurt,3
+151 proof rum,malibu rum,2
+151 proof rum,light rum,2
+151 proof rum,wild turkey,2
+151 proof rum,bitters,2
+151 proof rum,amaretto,2
+amaretto,beer,2
+grenadine,kahlua,2
+151 proof rum,kahlua,2
+absolut citron,lemon,2
+bitters,water,2
+grenadine,malibu rum,2
+amaretto,kahlua,2
+angostura bitters,grenadine,2
+grenadine,rum,2
+fresh lime juice,gold rum,2
+blue curacao,sour mix,2
+sour mix,vodka,2
+7-up,vodka,2
+champagne,vodka,2
+7-up,beer,2
+beer,lemonade,2
+lemon,lemonade,2
+gin,lillet blanc,2
+absolut citron,orange juice,2
+bitter lemon,ice,2
+absolut citron,ice,2
+lemon,sweet and sour,2
+cranberry juice,midori melon liqueur,2
+cranberry juice,sprite,2
+sugar,tea,2
+absolut vodka,cranberry juice,2
+coconut liqueur,pineapple juice,2
+cranberry juice,ginger ale,2
+champagne,fresh lemon juice,2
+agave syrup,tequila,2
+agave syrup,fresh lime juice,2
+grapefruit juice,pepper,2
+pepper,tequila,2
+allspice,cinnamon,2
+allspice,sugar,2
+coriander,sugar,2
+brown sugar,cinnamon,2
+brown sugar,cloves,2
+brown sugar,orange juice,2
+grain alcohol,sugar,2
+grain alcohol,water,2
+almond flavoring,sugar,2
+brandy,water,2
+pineapple juice,sugar,2
+amaretto,grenadine,2
+sour mix,southern comfort,2
+ice,maraschino cherry,2
+amaretto,cognac,2
+amaretto,sloe gin,2
+amaretto,coffee,2
+club soda,fresh lime juice,2
+amaretto,brandy,2
+midori melon liqueur,sweet and sour,2
+pineapple juice,sweet and sour,2
+amaretto,pineapple juice,2
+amaretto,whipped cream,2
+amaretto,chocolate liqueur,2
+amaretto,milk,2
+amaretto,jack daniels,2
+light cream,vodka,2
+creme de cacao,vodka,2
+cranberry juice,crown royal,2
+angostura bitters,orange peel,2
+orange peel,vodka,2
+angostura bitters,orange juice,2
+angostura bitters,maraschino liqueur,2
+dry vermouth,maraschino cherry,2
+dry vermouth,rye whiskey,2
+angostura bitters,maraschino cherry,2
+cognac,lemon peel,2
+ginger beer,lemon peel,2
+angostura bitters,lime,2
+angostura bitters,tonic water,2
+angostura bitters,ice,2
+angostura bitters,bourbon,2
+club soda,dark rum,2
+fresh lemon juice,mint,2
+angostura bitters,dark rum,2
+dark rum,fresh lemon juice,2
+light rum,sugar syrup,2
+angostura bitters,sugar syrup,2
+fresh lime juice,prosecco,2
+anis,gin,2
+anis,dry vermouth,2
+cherry,maraschino liqueur,2
+aperol,soda water,2
+aperol,prosecco,2
+soda water,strawberries,2
+apple,strawberries,2
+apple juice,strawberries,2
+apple,red wine,2
+apple,orange,2
+apple,lime,2
+orange,water,2
+apple brandy,lime,2
+apple juice,orange juice,2
+banana,strawberries,2
+ice,pineapple juice,2
+light rum,orange,2
+cherry,grenadine,2
+cherry,fresh lemon juice,2
+dry vermouth,grenadine,2
+apricot brandy,dry vermouth,2
+apricot brandy,grenadine,2
+dry vermouth,powdered sugar,2
+fresh lemon juice,powdered sugar,2
+lemon,rum,2
+bacardi limon,corona,2
+frangelico,kahlua,2
+coffee,cream,2
+baileys irish cream,grand marnier,2
+grand marnier,kahlua,2
+baileys irish cream,vanilla ice-cream,2
+baileys irish cream,butterscotch schnapps,2
+butterscotch schnapps,kahlua,2
+baileys irish cream,milk,2
+coffee,irish whiskey,2
+sugar,sugar syrup,2
+baileys irish cream,goldschlager,2
+goldschlager,kahlua,2
+baileys irish cream,white creme de menthe,2
+butterscotch schnapps,goldschlager,2
+vanilla ice-cream,vodka,2
+kahlua,vanilla ice-cream,2
+banana,cherry,2
+cherry,fresh lime juice,2
+banana,orange juice,2
+honey,strawberries,2
+banana,honey,2
+banana,yoghurt,2
+honey,milk,2
+fruit,yoghurt,2
+banana liqueur,orange juice,2
+grenadine,sweet and sour,2
+dark rum,rum,2
+dark rum,sweet and sour,2
+rum,sweet and sour,2
+tomato juice,worcestershire sauce,2
+fresh lime juice,tomato juice,2
+benedictine,lime,2
+benedictine,orange juice,2
+fresh lemon juice,red wine,2
+fresh lemon juice,rum,2
+benedictine,lemon peel,2
+blended whiskey,lime,2
+benedictine,bourbon,2
+blue curacao,triple sec,2
+bitters,triple sec,2
+nutmeg,rum,2
+bitters,fresh lime juice,2
+egg white,nutmeg,2
+egg white,fresh lime juice,2
+ginger ale,lemon peel,2
+blackberries,sugar syrup,2
+lemonade,sugar syrup,2
+blackberries,gin,2
+mint,sugar syrup,2
+elderflower cordial,gin,2
+cranberry juice,malibu rum,2
+blended whiskey,egg white,2
+carbonated water,port,2
+lemon,port,2
+egg white,port,2
+blue curacao,ice,2
+lemonade,sugar,2
+passoa,rum,2
+blue curacao,rum,2
+blue curacao,sweet and sour,2
+dark rum,ice,2
+blue curacao,fresh lime juice,2
+cranberry juice,fresh lime juice,2
+lemon-lime soda,vodka,2
+lemon-lime soda,rum,2
+gin,rosemary,2
+bourbon,light rum,2
+light rum,nutmeg,2
+sugar,whipping cream,2
+egg yolk,milk,2
+egg white,milk,2
+egg white,vanilla extract,2
+nutmeg,vanilla extract,2
+bourbon,powdered sugar,2
+bourbon,mint,2
+brandy,powdered sugar,2
+ricard,water,2
+brandy,nutmeg,2
+creme de cacao,nutmeg,2
+brandy,club soda,2
+brandy,coffee,2
+brandy,port,2
+mint,orange,2
+lemon,triple sec,2
+lime,passion fruit juice,2
+orange juice,peach nectar,2
+rum,vanilla extract,2
+milk,vodka,2
+elderflower cordial,lime,2
+campari,rye whiskey,2
+campari,fresh lime juice,2
+dark rum,fresh lime juice,2
+light rum,orgeat syrup,2
+light rum,sweet vermouth,2
+fresh lemon juice,orange peel,2
+orange juice,salt,2
+orange juice,rosemary syrup,2
+gin,orange spiral,2
+orange spiral,powdered sugar,2
+carbonated water,orange spiral,2
+lemon peel,orange spiral,2
+carbonated water,cherry,2
+gin,pineapple,2
+powdered sugar,strawberries,2
+egg white,light cream,2
+egg,gin,2
+cherry brandy,gin,2
+cherry brandy,sweet and sour,2
+cloves,ginger,2
+tea,water,2
+cardamom,coffee,2
+ginger,lemon,2
+tabasco sauce,tomato juice,2
+fresh lemon juice,tabasco sauce,2
+tequila,tomato juice,2
+celery salt,tomato juice,2
+fresh lemon juice,lemon,2
+celery salt,fresh lemon juice,2
+chambord raspberry liqueur,cranberry juice,2
+malibu rum,vodka,2
+midori melon liqueur,vodka,2
+rum,tequila,2
+rum,triple sec,2
+champagne,creme de cassis,2
+club soda,orange juice,2
+lemon,orange juice,2
+lemon,pineapple juice,2
+orange,orange juice,2
+ice,milk,2
+gin,ginger ale,2
+southern comfort,sweet and sour,2
+milk,whipped cream,2
+heavy cream,milk,2
+cinnamon,lemon peel,2
+cloves,lemon peel,2
+lemon peel,red wine,2
+southern comfort,vodka,2
+club soda,sweet and sour,2
+club soda,vodka,2
+dark rum,orange,2
+dark rum,sugar,2
+sweet and sour,tequila,2
+coca-cola,sweet and sour,2
+coca-cola,ice,2
+coca-cola,lime,2
+cocoa powder,water,2
+cocoa powder,vanilla extract,2
+pineapple juice,prosecco,2
+prosecco,rum,2
+light rum,pineapple,2
+vanilla extract,vodka,2
+coffee liqueur,vodka,2
+creme de cassis,gin,2
+cognac,gin,2
+creme de cassis,fresh lemon juice,2
+cognac,fresh lemon juice,2
+cointreau,fresh lemon juice,2
+cointreau,cranberry juice,2
+cointreau,lemon,2
+egg,vanilla extract,2
+ice,mint,2
+everclear,orange juice,2
+everclear,vodka,2
+grapefruit juice,vodka,2
+galliano,triple sec,2
+galliano,orange juice,2
+pineapple juice,vodka,2
+cream of coconut,ice,2
+ice,tequila,2
+creme de banane,vodka,2
+creme de banane,orange juice,2
+creme de cacao,gin,2
+gin,ginger,2
+gin,ginger beer,2
+fresh lime juice,ginger beer,2
+dark rum,vodka,2
+dark rum,kahlua,2
+fresh lime juice,lemon-lime soda,2
+mountain dew,vodka,2
+drambuie,lemon peel,2
+drambuie,scotch,2
+orange bitters,scotch,2
+dry vermouth,vodka,2
+olive,vodka,2
+gin,olive,2
+egg,sherry,2
+powdered sugar,sherry,2
+nutmeg,sherry,2
+milk,powdered sugar,2
+grenadine,triple sec,2
+orange juice,wine,2
+grapefruit juice,lime,2
+lime,tequila,2
+ice,salt,2
+ginger ale,rum,2
+fresh lime juice,galliano,2
+gin,yellow chartreuse,2
+green chartreuse,sweet vermouth,2
+mint,peach bitters,2
+grenadine,sugar,2
+grenadine,maraschino cherry,2
+grenadine,soda water,2
+lemon peel,tonic water,2
+fresh lime juice,soda water,2
+pineapple,sugar,2
+ginger,pineapple,2
+ginger ale,vodka,2
+ginger ale,spiced rum,2
+orange,vodka,2
+light rum,maraschino liqueur,2
+light rum,pineapple juice,2
+light rum,maraschino cherry,2
+lemon-lime soda,red wine,2
+strawberries,water,2
+light rum,soda water,2
+ice,lemon-lime soda,2
+jack daniels,jim beam,2
+fresh lemon juice,strawberries,2
+fresh lemon juice,salt,2
+strawberries,strawberry schnapps,2
+sloe gin,sweet vermouth,2
+strawberries,vodka,2
+fresh lime juice,strawberries,2
+lemonade,water,2
+passion fruit juice,vodka,2
+orange juice,pepsi cola,2
+scotch,wine,2
+schweppes russchian,vodka,2
+dark creme de cacao,malibu rum,1
+dark creme de cacao,light rum,1
+cointreau,dark creme de cacao,1
+coconut liqueur,dark creme de cacao,1
+151 proof rum,dark creme de cacao,1
+dark creme de cacao,milk,1
+dark creme de cacao,vanilla ice-cream,1
+light rum,malibu rum,1
+cointreau,malibu rum,1
+coconut liqueur,malibu rum,1
+malibu rum,milk,1
+malibu rum,vanilla ice-cream,1
+cointreau,light rum,1
+coconut liqueur,light rum,1
+light rum,vanilla ice-cream,1
+coconut liqueur,cointreau,1
+151 proof rum,cointreau,1
+cointreau,milk,1
+cointreau,vanilla ice-cream,1
+151 proof rum,coconut liqueur,1
+coconut liqueur,milk,1
+coconut liqueur,vanilla ice-cream,1
+151 proof rum,milk,1
+151 proof rum,vanilla ice-cream,1
+151 proof rum,goldschlager,1
+goldschlager,rumple minze,1
+151 proof rum,rumple minze,1
+151 proof rum,wormwood,1
+ice,wormwood,1
+bitters,wormwood,1
+scotch,wormwood,1
+151 proof rum,ice,1
+151 proof rum,scotch,1
+bitters,ice,1
+ice,scotch,1
+151 proof rum,sprite,1
+151 proof rum,tequila,1
+151 proof rum,fruit punch,1
+sprite,tequila,1
+fruit punch,sprite,1
+fruit punch,tequila,1
+dr. pepper,vodka,1
+151 proof rum,dr. pepper,1
+beer,dr. pepper,1
+amaretto,dr. pepper,1
+151 proof rum,vodka,1
+beer,vodka,1
+151 proof rum,beer,1
+151 proof rum,kool-aid,1
+151 proof rum,sugar,1
+galliano,sugar,1
+absolut citron,sugar,1
+151 proof rum,galliano,1
+151 proof rum,lemon,1
+151 proof rum,absolut citron,1
+galliano,lemon,1
+absolut citron,galliano,1
+daiquiri mix,pina colada mix,1
+151 proof rum,daiquiri mix,1
+151 proof rum,pina colada mix,1
+light rum,lime peel,1
+light rum,water,1
+lime peel,water,1
+151 proof rum,lime peel,1
+lime peel,powdered sugar,1
+bitters,lime peel,1
+151 proof rum,water,1
+151 proof rum,powdered sugar,1
+bitters,powdered sugar,1
+cherries,malibu rum,1
+cherries,orange juice,1
+cherries,grenadine,1
+151 proof rum,cherries,1
+cherries,pineapple juice,1
+151 proof rum,orange juice,1
+151 proof rum,pineapple juice,1
+151 proof rum,irish cream,1
+151 proof rum,cream,1
+amaretto,irish cream,1
+amaretto,cream,1
+irish cream,kahlua,1
+cream,irish cream,1
+angostura bitters,pernod,1
+grenadine,pernod,1
+151 proof rum,pernod,1
+pernod,rum,1
+fresh lime juice,pernod,1
+gold rum,pernod,1
+151 proof rum,angostura bitters,1
+angostura bitters,rum,1
+angostura bitters,gold rum,1
+gold rum,grenadine,1
+151 proof rum,rum,1
+151 proof rum,fresh lime juice,1
+151 proof rum,gold rum,1
+gold rum,rum,1
+blue curacao,blueberry schnapps,1
+7-up,blue curacao,1
+blueberry schnapps,vodka,1
+blueberry schnapps,sour mix,1
+7-up,blueberry schnapps,1
+7-up,sour mix,1
+7-up,gin,1
+7-up,fresh lemon juice,1
+7-up,orange juice,1
+apricot brandy,vodka,1
+7-up,apricot brandy,1
+apricot brandy,champagne,1
+7-up,champagne,1
+7-up,tequila,1
+creme de cassis,root beer,1
+beer,root beer,1
+lemon,root beer,1
+coca-cola,root beer,1
+7-up,root beer,1
+lemonade,root beer,1
+beer,creme de cassis,1
+creme de cassis,lemon,1
+coca-cola,creme de cassis,1
+7-up,creme de cassis,1
+creme de cassis,lemonade,1
+beer,lemon,1
+beer,coca-cola,1
+7-up,lemon,1
+7-up,coca-cola,1
+coca-cola,lemonade,1
+7-up,lemonade,1
+absinthe,gin,1
+absinthe,lillet blanc,1
+absinthe,fresh lemon juice,1
+absinthe,triple sec,1
+fresh lemon juice,lillet blanc,1
+lillet blanc,triple sec,1
+absinthe,champagne,1
+absinthe,grenadine,1
+absinthe,tequila,1
+absolut citron,strawberry liqueur,1
+absolut citron,orange curacao,1
+orange juice,strawberry liqueur,1
+orange curacao,strawberry liqueur,1
+orange curacao,orange juice,1
+absolut citron,bitter lemon,1
+bitter lemon,pisang ambon,1
+absolut citron,pisang ambon,1
+ice,pisang ambon,1
+absolut citron,tonic water,1
+absolut citron,fresh lime juice,1
+fresh lime juice,tonic water,1
+soda water,sweet and sour,1
+absolut citron,soda water,1
+soda water,sprite,1
+lemon,sprite,1
+absolut citron,sweet and sour,1
+sprite,sweet and sour,1
+absolut citron,sprite,1
+absolut citron,triple sec,1
+absolut citron,ginger ale,1
+ginger ale,triple sec,1
+absolut citron,grand marnier,1
+club soda,grand marnier,1
+absolut citron,club soda,1
+absolut citron,fresh lemon juice,1
+absolut kurant,cranberry juice,1
+absolut kurant,midori melon liqueur,1
+absolut kurant,sprite,1
+midori melon liqueur,sprite,1
+absolut kurant,tea,1
+absolut kurant,sugar,1
+absolut peppar,firewater,1
+firewater,tabasco sauce,1
+absolut peppar,tabasco sauce,1
+absolut vodka,peach schnapps,1
+absolut vodka,coconut liqueur,1
+absolut vodka,pineapple juice,1
+coconut liqueur,peach schnapps,1
+peach schnapps,pineapple juice,1
+coconut liqueur,cranberry juice,1
+cranberry juice,ice,1
+absolut vodka,ice,1
+absolut vodka,ginger ale,1
+absolut vodka,iced tea,1
+absolut vodka,gin,1
+absolut vodka,tonic water,1
+advocaat,sambuca,1
+advocaat,ice,1
+advocaat,lemonade,1
+advocaat,lemon,1
+agave syrup,champagne,1
+cachaca,champagne,1
+agave syrup,cachaca,1
+agave syrup,fresh lemon juice,1
+cachaca,fresh lemon juice,1
+agave syrup,pepper,1
+agave syrup,grapefruit juice,1
+cinnamon,vodka,1
+cinnamon,coriander,1
+allspice,vodka,1
+coriander,vodka,1
+allspice,water,1
+allspice,coriander,1
+coriander,water,1
+cinnamon,nutmeg,1
+cinnamon,lemonade,1
+allspice,cloves,1
+cloves,nutmeg,1
+cloves,lemonade,1
+allspice,orange juice,1
+nutmeg,orange juice,1
+lemonade,orange juice,1
+allspice,brown sugar,1
+brown sugar,nutmeg,1
+brown sugar,lemonade,1
+allspice,nutmeg,1
+allspice,lemonade,1
+lemonade,nutmeg,1
+orange spiral,sugar,1
+allspice,orange spiral,1
+orange spiral,rum,1
+champagne,orange spiral,1
+fresh lime juice,orange spiral,1
+allspice,rum,1
+allspice,champagne,1
+allspice,fresh lime juice,1
+champagne,rum,1
+champagne,fresh lime juice,1
+almond flavoring,grain alcohol,1
+brandy,grain alcohol,1
+almond flavoring,water,1
+almond flavoring,brandy,1
+ginger ale,sugar,1
+cranberry juice,sugar,1
+almond flavoring,ginger ale,1
+ginger ale,pineapple juice,1
+almond flavoring,pineapple juice,1
+almond flavoring,cranberry juice,1
+ice,southern comfort,1
+ice,sour mix,1
+amaretto,lemon,1
+amaretto,maraschino cherry,1
+amaretto,baileys irish cream,1
+baileys irish cream,cognac,1
+sloe gin,southern comfort,1
+fresh lemon juice,southern comfort,1
+amaretto,fresh lemon juice,1
+fresh lemon juice,sloe gin,1
+amaretto,grand marnier,1
+grand marnier,southern comfort,1
+amaretto,dark creme de cacao,1
+coffee,dark creme de cacao,1
+amaretto,orange peel,1
+orange peel,white wine,1
+amaretto,white wine,1
+orange juice,white wine,1
+amaretto,lime,1
+amaretto,club soda,1
+amaretto,fresh lime juice,1
+amaretto,white creme de menthe,1
+sour mix,tequila,1
+amaretto,tequila,1
+cider,ice,1
+amaretto,cider,1
+cider,triple sec,1
+amaretto,sweet and sour,1
+amaretto,midori melon liqueur,1
+midori melon liqueur,pineapple juice,1
+amaretto,tea,1
+tea,whipped cream,1
+chocolate liqueur,milk,1
+heavy cream,vodka,1
+amaretto,heavy cream,1
+amaretto,scotch,1
+sloe gin,vodka,1
+sloe gin,triple sec,1
+cranberry juice,sloe gin,1
+cranberry juice,triple sec,1
+beer,orange juice,1
+light cream,triple sec,1
+creme de cacao,triple sec,1
+amaretto,crown royal,1
+amaretto,gin,1
+chocolate liqueur,gin,1
+coffee,jack daniels,1
+jack daniels,whipped cream,1
+amaretto,irish whiskey,1
+cranberry juice,irish whiskey,1
+amaretto,wild turkey,1
+pineapple juice,wild turkey,1
+amaretto,kool-aid,1
+amaretto,rum,1
+kool-aid,rum,1
+angostura bitters,blood orange,1
+angostura bitters,ruby port,1
+amaro montenegro,angostura bitters,1
+blood orange,orange peel,1
+orange peel,ruby port,1
+amaro montenegro,orange peel,1
+blood orange,vodka,1
+ruby port,vodka,1
+amaro montenegro,vodka,1
+blood orange,ruby port,1
+amaro montenegro,blood orange,1
+amaro montenegro,ruby port,1
+orange juice,sweet vermouth,1
+maraschino liqueur,rye whiskey,1
+angostura bitters,dry vermouth,1
+maraschino cherry,rye whiskey,1
+angostura bitters,rye whiskey,1
+angostura bitters,lemon peel,1
+angostura bitters,cognac,1
+angostura bitters,ginger beer,1
+cognac,ginger beer,1
+angostura bitters,falernum,1
+angostura bitters,blackstrap rum,1
+blackstrap rum,falernum,1
+falernum,lime,1
+blackstrap rum,lime,1
+angostura bitters,st. germain,1
+pepper,st. germain,1
+lavender,st. germain,1
+pineapple syrup,st. germain,1
+pisco,st. germain,1
+fresh lime juice,st. germain,1
+angostura bitters,pepper,1
+angostura bitters,lavender,1
+angostura bitters,pineapple syrup,1
+angostura bitters,pisco,1
+lavender,pepper,1
+pepper,pineapple syrup,1
+pepper,pisco,1
+lavender,pineapple syrup,1
+lavender,pisco,1
+fresh lime juice,lavender,1
+pineapple syrup,pisco,1
+fresh lime juice,pineapple syrup,1
+fresh lime juice,pisco,1
+angostura bitters,honey,1
+honey,vodka,1
+honey,tonic water,1
+figs,honey,1
+honey,thyme,1
+angostura bitters,figs,1
+angostura bitters,thyme,1
+figs,vodka,1
+thyme,vodka,1
+figs,tonic water,1
+thyme,tonic water,1
+figs,thyme,1
+bourbon,orange peel,1
+bourbon,ice,1
+bourbon,sweet vermouth,1
+ice,orange peel,1
+maraschino cherry,orange peel,1
+ice,sweet vermouth,1
+maraschino cherry,sweet vermouth,1
+maraschino liqueur,sweet vermouth,1
+club soda,mint,1
+angostura bitters,club soda,1
+angostura bitters,mint,1
+dark rum,mint,1
+angostura bitters,fresh lemon juice,1
+angostura bitters,light rum,1
+light rum,prosecco,1
+angostura bitters,prosecco,1
+prosecco,sugar syrup,1
+angostura bitters,sugar,1
+angostura bitters,water,1
+gin,orange curacao,1
+orange bitters,orange curacao,1
+angostura bitters,orange bitters,1
+fresh lime juice,orange bitters,1
+angostura bitters,orange curacao,1
+fresh lime juice,orange curacao,1
+angostura bitters,pineapple juice,1
+dark rum,sugar syrup,1
+pineapple juice,sugar syrup,1
+anis,blackberry brandy,1
+dry vermouth,orange peel,1
+bitters,orange peel,1
+anis,orange peel,1
+anis,bitters,1
+anis,cherry,1
+anis,maraschino liqueur,1
+anis,orange bitters,1
+anisette,lemon,1
+anisette,light rum,1
+anisette,grenadine,1
+anisette,brandy,1
+aperol,gin,1
+aperol,fresh lime juice,1
+apfelkorn,schweppes russchian,1
+apfelkorn,cranberry vodka,1
+apfelkorn,apple juice,1
+apfelkorn,ice,1
+cranberry vodka,schweppes russchian,1
+apple juice,schweppes russchian,1
+ice,schweppes russchian,1
+apple juice,cranberry vodka,1
+cranberry vodka,ice,1
+apple juice,soda water,1
+ice,strawberries,1
+apple,apple juice,1
+apple,ice,1
+apple juice,sugar,1
+apple juice,lemon,1
+red wine,soda water,1
+orange,soda water,1
+brandy,soda water,1
+apple,brandy,1
+lime,red wine,1
+fresca,red wine,1
+apple,water,1
+apple,fresca,1
+lime,orange,1
+fresca,orange,1
+fresca,sugar,1
+lime,water,1
+fresca,water,1
+fresca,lime,1
+fresca,lemon,1
+apple brandy,soda water,1
+soda water,white wine,1
+lime,strawberries,1
+apple brandy,strawberries,1
+strawberries,white wine,1
+apple,apple brandy,1
+apple,white wine,1
+lime,white wine,1
+apple brandy,white wine,1
+apple brandy,lemon,1
+lemon,white wine,1
+apple brandy,gin,1
+apple brandy,apricot brandy,1
+apple brandy,grenadine,1
+apple juice,grapefruit juice,1
+grapefruit juice,maraschino cherry,1
+grapefruit juice,orange juice,1
+apple juice,maraschino cherry,1
+maraschino cherry,orange juice,1
+apple juice,malibu rum,1
+apple juice,cinnamon,1
+cinnamon,malibu rum,1
+pisang ambon,vodka,1
+apple juice,pisang ambon,1
+fresh lemon juice,pisang ambon,1
+lemonade,pisang ambon,1
+apple juice,vodka,1
+apple juice,fresh lemon juice,1
+apple juice,lemonade,1
+fresh lemon juice,lemonade,1
+apple juice,banana,1
+apple juice,pineapple juice,1
+apple juice,vermouth,1
+applejack,grapefruit juice,1
+applejack,triple sec,1
+applejack,fresh lemon juice,1
+apricot brandy,lime,1
+apricot brandy,light rum,1
+orange,triple sec,1
+egg white,orange,1
+apricot brandy,orange,1
+apricot brandy,egg white,1
+apricot brandy,cherry,1
+apricot brandy,powdered sugar,1
+apricot brandy,sweet and sour,1
+orange bitters,orange juice,1
+apricot brandy,orange bitters,1
+apricot nectar,soda water,1
+rum,soda water,1
+pomegranate juice,soda water,1
+apricot nectar,lemon,1
+apricot nectar,rum,1
+apricot nectar,pomegranate juice,1
+lemon,pomegranate juice,1
+pomegranate juice,rum,1
+asafoetida,yoghurt,1
+asafoetida,water,1
+asafoetida,salt,1
+bacardi limon,coca-cola,1
+coffee,frangelico,1
+cream,frangelico,1
+cream,vanilla ice-cream,1
+butterscotch schnapps,godiva liqueur,1
+baileys irish cream,godiva liqueur,1
+godiva liqueur,kahlua,1
+baileys irish cream,grenadine,1
+baileys irish cream,blue curacao,1
+blue curacao,kahlua,1
+blue curacao,sambuca,1
+coffee,whisky,1
+baileys irish cream,whisky,1
+baileys irish cream,irish whiskey,1
+baileys irish cream,orange juice,1
+baileys irish cream,bourbon,1
+bourbon,vodka,1
+bourbon,orange juice,1
+baileys irish cream,sugar,1
+baileys irish cream,sugar syrup,1
+baileys irish cream,chambord raspberry liqueur,1
+chambord raspberry liqueur,sugar,1
+chambord raspberry liqueur,sugar syrup,1
+coffee,goldschlager,1
+goldschlager,heavy cream,1
+baileys irish cream,heavy cream,1
+coffee,heavy cream,1
+heavy cream,kahlua,1
+cream,white creme de menthe,1
+frangelico,milk,1
+oreo cookie,vodka,1
+baileys irish cream,oreo cookie,1
+oreo cookie,vanilla ice-cream,1
+kahlua,oreo cookie,1
+baileys irish cream,midori melon liqueur,1
+kahlua,midori melon liqueur,1
+baileys irish cream,gin,1
+gin,ouzo,1
+baileys irish cream,ouzo,1
+grand marnier,ouzo,1
+sambuca,white creme de menthe,1
+banana,light rum,1
+banana,sugar,1
+banana,triple sec,1
+banana,fresh lime juice,1
+banana,sugar syrup,1
+milk,sugar syrup,1
+milk,orange juice,1
+milk,strawberries,1
+strawberries,yoghurt,1
+honey,yoghurt,1
+milk,yoghurt,1
+banana,fruit,1
+banana,ice,1
+fruit,orange juice,1
+orange juice,yoghurt,1
+banana liqueur,grenadine,1
+banana liqueur,dark rum,1
+banana liqueur,rum,1
+banana liqueur,sweet and sour,1
+banana liqueur,malibu rum,1
+banana liqueur,vodka,1
+banana liqueur,peach schnapps,1
+cherry,creme de cacao,1
+cherry,whipped cream,1
+banana liqueur,cherry,1
+cherry,chocolate syrup,1
+banana,creme de cacao,1
+banana,whipped cream,1
+banana,banana liqueur,1
+banana,chocolate syrup,1
+creme de cacao,whipped cream,1
+banana liqueur,creme de cacao,1
+chocolate syrup,creme de cacao,1
+banana liqueur,whipped cream,1
+chocolate syrup,whipped cream,1
+banana liqueur,chocolate syrup,1
+hot sauce,tomato juice,1
+beer,tomato juice,1
+soy sauce,tomato juice,1
+beer,hot sauce,1
+hot sauce,soy sauce,1
+hot sauce,worcestershire sauce,1
+fresh lime juice,hot sauce,1
+beer,soy sauce,1
+beer,worcestershire sauce,1
+beer,fresh lime juice,1
+soy sauce,worcestershire sauce,1
+fresh lime juice,soy sauce,1
+fresh lime juice,worcestershire sauce,1
+beer,ice,1
+ice,whiskey,1
+beer,whiskey,1
+lemonade,whiskey,1
+gin,wine,1
+benedictine,wine,1
+lime,wine,1
+orange juice,tea,1
+brandy,orange juice,1
+orange juice,rye whiskey,1
+red wine,tea,1
+benedictine,red wine,1
+red wine,rum,1
+red wine,rye whiskey,1
+benedictine,tea,1
+rum,tea,1
+fresh lemon juice,tea,1
+brandy,tea,1
+rye whiskey,tea,1
+benedictine,rum,1
+benedictine,fresh lemon juice,1
+benedictine,brandy,1
+benedictine,rye whiskey,1
+brandy,rum,1
+rum,rye whiskey,1
+fresh lemon juice,rye whiskey,1
+brandy,rye whiskey,1
+benedictine,scotch,1
+benedictine,sweet vermouth,1
+benedictine,blended whiskey,1
+benedictine,lemon,1
+benedictine,grenadine,1
+benedictine,dry vermouth,1
+ice,kiwi liqueur,1
+bitter lemon,kiwi liqueur,1
+blue curacao,lemon peel,1
+bitters,blue curacao,1
+blue curacao,maraschino cherry,1
+lemon peel,triple sec,1
+lemon peel,maraschino cherry,1
+maraschino cherry,triple sec,1
+bitters,maraschino liqueur,1
+bitters,rum,1
+egg white,rum,1
+bitters,egg white,1
+bitters,nutmeg,1
+fresh lime juice,nutmeg,1
+cognac,sugar,1
+bitters,cognac,1
+champagne,cognac,1
+champagne,lemon peel,1
+bitters,champagne,1
+bitters,bourbon,1
+bitters,orange,1
+maraschino cherry,water,1
+dubonnet rouge,gin,1
+dubonnet rouge,lemon peel,1
+bitters,dubonnet rouge,1
+scotch,sugar syrup,1
+sugar syrup,sweet vermouth,1
+bitters,sugar syrup,1
+bitters,club soda,1
+bitters,brandy,1
+brandy,ginger ale,1
+bitters,ginger ale,1
+grapefruit juice,light rum,1
+bitters,grapefruit juice,1
+black sambuca,orange juice,1
+blackberries,vermouth,1
+blackberries,maraschino cherry,1
+blackberries,lemonade,1
+sugar syrup,vermouth,1
+maraschino cherry,sugar syrup,1
+maraschino cherry,vermouth,1
+lemonade,vermouth,1
+lemonade,maraschino cherry,1
+blackberries,soda water,1
+blackberries,mint,1
+blackberries,fresh lemon juice,1
+coconut liqueur,gin,1
+blackberries,elderflower cordial,1
+blackberries,coconut liqueur,1
+blackberries,fresh lime juice,1
+coconut liqueur,elderflower cordial,1
+elderflower cordial,fresh lime juice,1
+coconut liqueur,fresh lime juice,1
+blackberry brandy,dry vermouth,1
+blackberry brandy,bourbon,1
+blackberry brandy,lemon peel,1
+blackberry brandy,fresh lemon juice,1
+bourbon,dry vermouth,1
+blackberry brandy,malibu rum,1
+blackberry brandy,orange juice,1
+blackberry brandy,pineapple juice,1
+blackberry brandy,cranberry juice,1
+blackcurrant cordial,cider,1
+blackcurrant cordial,lager,1
+blended scotch,ginger syrup,1
+blended scotch,honey syrup,1
+blended scotch,fresh lemon juice,1
+blended scotch,islay single malt scotch,1
+ginger syrup,honey syrup,1
+fresh lemon juice,ginger syrup,1
+ginger syrup,islay single malt scotch,1
+fresh lemon juice,honey syrup,1
+honey syrup,islay single malt scotch,1
+fresh lemon juice,islay single malt scotch,1
+blended whiskey,pineapple juice,1
+blended whiskey,dry vermouth,1
+dry vermouth,pineapple juice,1
+cherry,egg white,1
+blended whiskey,grenadine,1
+carbonated water,lime,1
+blended whiskey,light rum,1
+blended whiskey,port,1
+blended whiskey,red wine,1
+blended whiskey,sugar,1
+cherry,red wine,1
+blue curacao,sugar,1
+lemonade,triple sec,1
+coconut liqueur,vodka,1
+coconut liqueur,sprite,1
+blue curacao,sprite,1
+blue curacao,coconut liqueur,1
+blue curacao,passoa,1
+ice,passoa,1
+dark rum,passoa,1
+passoa,sweet and sour,1
+blue curacao,dark rum,1
+ice,sweet and sour,1
+cherry,vodka,1
+cherry,lemonade,1
+blue curacao,cherry,1
+blue curacao,salt,1
+blue curacao,tequila,1
+mint,raspberry vodka,1
+blue curacao,raspberry vodka,1
+raspberry vodka,sugar syrup,1
+cranberry juice,raspberry vodka,1
+lemonade,raspberry vodka,1
+fresh lime juice,raspberry vodka,1
+blue curacao,mint,1
+cranberry juice,mint,1
+lemonade,mint,1
+blue curacao,sugar syrup,1
+blue curacao,cranberry juice,1
+cranberry juice,sugar syrup,1
+cranberry juice,lemonade,1
+fresh lime juice,lemonade,1
+malibu rum,sweet and sour,1
+peach schnapps,sweet and sour,1
+malibu rum,peach schnapps,1
+blue curacao,malibu rum,1
+blue curacao,peach schnapps,1
+blue curacao,cider,1
+blue curacao,lager,1
+gin,lemon-lime soda,1
+gin,sour mix,1
+blue curacao,lemon-lime soda,1
+lemon-lime soda,sour mix,1
+rum,sour mix,1
+rosemary,tonic water,1
+blue curacao,tonic water,1
+blue curacao,rosemary,1
+creme de cacao,light rum,1
+blue curacao,creme de cacao,1
+blue curacao,light rum,1
+coca-cola,vanilla ice-cream,1
+bourbon,coca-cola,1
+bourbon,vanilla ice-cream,1
+light rum,salt,1
+light rum,whipping cream,1
+egg yolk,light rum,1
+light rum,vanilla extract,1
+bourbon,salt,1
+bourbon,whipping cream,1
+bourbon,milk,1
+bourbon,egg yolk,1
+bourbon,vanilla extract,1
+bourbon,egg white,1
+bourbon,nutmeg,1
+salt,whipping cream,1
+egg yolk,salt,1
+egg white,salt,1
+nutmeg,salt,1
+milk,whipping cream,1
+egg yolk,whipping cream,1
+vanilla extract,whipping cream,1
+egg white,whipping cream,1
+nutmeg,whipping cream,1
+egg yolk,sugar,1
+egg yolk,vanilla extract,1
+egg white,egg yolk,1
+egg yolk,nutmeg,1
+bourbon,club soda,1
+dark rum,heavy cream,1
+bourbon,heavy cream,1
+bourbon,dark rum,1
+mint,powdered sugar,1
+bourbon,carbonated water,1
+bourbon,lemon,1
+bourbon,brandy,1
+mint,raspberry syrup,1
+bourbon,raspberry syrup,1
+bourbon,peychaud bitters,1
+peychaud bitters,ricard,1
+peychaud bitters,sugar,1
+peychaud bitters,water,1
+lemon peel,peychaud bitters,1
+bourbon,ricard,1
+ricard,sugar,1
+lemon peel,ricard,1
+brandy,dry vermouth,1
+brandy,lime,1
+brandy,creme de cacao,1
+brandy,maraschino cherry,1
+brandy,egg,1
+light cream,sugar,1
+brandy,cherry,1
+coffee,triple sec,1
+brandy,milk,1
+milk,triple sec,1
+carbonated water,sweet vermouth,1
+club soda,sweet vermouth,1
+brandy,kahlua,1
+brandy,egg yolk,1
+egg yolk,port,1
+brandy,raspberry syrup,1
+light rum,raspberry syrup,1
+lemon,raspberry syrup,1
+brandy,scotch,1
+brandy,mint,1
+mint,scotch,1
+orange,scotch,1
+brandy,white creme de menthe,1
+brown sugar,passion fruit juice,1
+brown sugar,ginger ale,1
+brown sugar,lime,1
+brown sugar,ice,1
+ginger ale,passion fruit juice,1
+ice,passion fruit juice,1
+cinnamon,peach nectar,1
+cinnamon,fresh lime juice,1
+cloves,peach nectar,1
+cloves,fresh lime juice,1
+brown sugar,peach nectar,1
+brown sugar,fresh lime juice,1
+fresh lime juice,peach nectar,1
+brown sugar,water,1
+brown sugar,vanilla extract,1
+brown sugar,rum,1
+brown sugar,coffee,1
+chocolate,vanilla extract,1
+butter,vanilla extract,1
+half-and-half,vanilla extract,1
+marshmallows,vanilla extract,1
+butter,chocolate,1
+chocolate,half-and-half,1
+chocolate,marshmallows,1
+butter,half-and-half,1
+butter,marshmallows,1
+half-and-half,marshmallows,1
+butterscotch schnapps,vodka,1
+butterscotch schnapps,vanilla ice-cream,1
+goldschlager,milk,1
+cachaca,sugar,1
+cachaca,demerara sugar,1
+demerara sugar,lime,1
+cachaca,elderflower cordial,1
+campari,lemon peel,1
+lemon peel,orange peel,1
+campari,ginger beer,1
+ginger beer,orange peel,1
+ginger beer,orange juice,1
+orange peel,rye whiskey,1
+rye whiskey,sweet vermouth,1
+campari,lager,1
+campari,dry vermouth,1
+campari,prosecco,1
+campari,soda water,1
+campari,creme de banane,1
+campari,dark rum,1
+campari,pineapple juice,1
+creme de banane,dark rum,1
+creme de banane,pineapple juice,1
+creme de banane,fresh lime juice,1
+gin,orgeat syrup,1
+campari,light rum,1
+light rum,orange peel,1
+campari,orgeat syrup,1
+orange peel,orgeat syrup,1
+orgeat syrup,sweet vermouth,1
+fresh lemon juice,orgeat syrup,1
+campari,fresh lemon juice,1
+fresh lemon juice,sweet vermouth,1
+campari,salt,1
+rosemary syrup,salt,1
+campari,tequila,1
+campari,rosemary syrup,1
+rosemary syrup,tequila,1
+fresh lime juice,rosemary syrup,1
+caramel coloring,vodka,1
+vanilla,vodka,1
+caramel coloring,sugar,1
+sugar,vanilla,1
+caramel coloring,water,1
+caramel coloring,vanilla,1
+caramel coloring,coffee,1
+vanilla,water,1
+coffee,vanilla,1
+carbonated soft drink,grape juice,1
+carbonated soft drink,sherbet,1
+grape juice,sherbet,1
+light rum,port,1
+cherry,mint,1
+carbonated water,mint,1
+carbonated water,orange,1
+carbonated water,sugar,1
+gin,strawberries,1
+grenadine,strawberries,1
+carbonated water,strawberries,1
+pineapple,strawberries,1
+pineapple,powdered sugar,1
+carbonated water,pineapple,1
+carbonated water,light cream,1
+lemon,light cream,1
+dry vermouth,orange spiral,1
+carbonated water,egg,1
+egg,lemon,1
+cherry,cherry brandy,1
+cherry brandy,grenadine,1
+carbonated water,cherry brandy,1
+carbonated water,sweet and sour,1
+carbonated water,creme de cassis,1
+creme de cassis,dry vermouth,1
+cardamom,cinnamon,1
+cinnamon,tea,1
+black pepper,cinnamon,1
+cinnamon,ginger,1
+cardamom,cloves,1
+cloves,milk,1
+cloves,tea,1
+black pepper,cloves,1
+cardamom,water,1
+cardamom,milk,1
+cardamom,tea,1
+black pepper,cardamom,1
+cardamom,ginger,1
+black pepper,sugar,1
+black pepper,water,1
+milk,tea,1
+black pepper,milk,1
+ginger,milk,1
+black pepper,tea,1
+ginger,tea,1
+black pepper,ginger,1
+cardamom,whipping cream,1
+cardamom,ice,1
+cardamom,coriander,1
+ice,whipping cream,1
+coffee,whipping cream,1
+coriander,whipping cream,1
+coffee,ice,1
+coriander,ice,1
+coffee,coriander,1
+cream,sugar,1
+cardamom,cream,1
+cayenne pepper,sugar,1
+cayenne pepper,water,1
+cayenne pepper,lemon,1
+cayenne pepper,ginger,1
+lemon,tabasco sauce,1
+celery salt,tabasco sauce,1
+celery salt,tequila,1
+lemon,tomato juice,1
+celery salt,lemon,1
+peachtree schnapps,vodka,1
+cranberry juice,peachtree schnapps,1
+chambord raspberry liqueur,peachtree schnapps,1
+chambord raspberry liqueur,coffee,1
+cocoa powder,coffee,1
+chambord raspberry liqueur,whipped cream,1
+cocoa powder,whipped cream,1
+chambord raspberry liqueur,cocoa powder,1
+gin,malibu rum,1
+chambord raspberry liqueur,gin,1
+gin,midori melon liqueur,1
+malibu rum,tequila,1
+chambord raspberry liqueur,malibu rum,1
+malibu rum,midori melon liqueur,1
+malibu rum,rum,1
+malibu rum,triple sec,1
+chambord raspberry liqueur,tequila,1
+midori melon liqueur,tequila,1
+chambord raspberry liqueur,midori melon liqueur,1
+chambord raspberry liqueur,rum,1
+chambord raspberry liqueur,triple sec,1
+midori melon liqueur,rum,1
+midori melon liqueur,triple sec,1
+chambord raspberry liqueur,crown royal,1
+crown royal,peach schnapps,1
+chambord raspberry liqueur,peach schnapps,1
+chambord raspberry liqueur,zima,1
+chambord raspberry liqueur,soda water,1
+champagne,cranberry juice,1
+champagne,green creme de menthe,1
+champagne,peach schnapps,1
+champagne,gin,1
+champagne,orange,1
+champagne,maraschino cherry,1
+club soda,pineapple juice,1
+champagne,club soda,1
+champagne,lemon,1
+champagne,pineapple juice,1
+orange,orange bitters,1
+cherry,ice,1
+cherry,orange juice,1
+cherry,peach brandy,1
+cherry,irish whiskey,1
+orange juice,peach brandy,1
+irish whiskey,orange juice,1
+orange,peach brandy,1
+irish whiskey,peach brandy,1
+peach brandy,sweet and sour,1
+irish whiskey,orange,1
+orange,sweet and sour,1
+irish whiskey,sweet and sour,1
+cherry,orgeat syrup,1
+orgeat syrup,sweet and sour,1
+orgeat syrup,triple sec,1
+dry vermouth,triple sec,1
+orange bitters,triple sec,1
+cherry,lime,1
+cherry,scotch,1
+lime,scotch,1
+powdered sugar,scotch,1
+lemon,scotch,1
+powdered sugar,tequila,1
+cherry,tequila,1
+cherry brandy,vodka,1
+chocolate syrup,vodka,1
+cherry brandy,milk,1
+cherry brandy,ice,1
+chocolate syrup,ice,1
+cherry brandy,chocolate syrup,1
+cherry brandy,light rum,1
+cherry brandy,light cream,1
+light cream,light rum,1
+cherry brandy,orange juice,1
+cherry brandy,ginger ale,1
+cherry brandy,southern comfort,1
+southern comfort,yukon jack,1
+cherry brandy,yukon jack,1
+sweet and sour,yukon jack,1
+cherry brandy,dark rum,1
+cherry heering,green chartreuse,1
+cherry heering,hot chocolate,1
+green chartreuse,hot chocolate,1
+cherry heering,soda water,1
+cherry heering,ice,1
+cherry heering,orange juice,1
+cloves,red chili flakes,1
+cherry juice,cloves,1
+cloves,orange peel,1
+cloves,vodka,1
+cherry juice,red chili flakes,1
+orange peel,red chili flakes,1
+red chili flakes,vodka,1
+ginger,red chili flakes,1
+cherry juice,orange peel,1
+cherry juice,vodka,1
+cherry juice,ginger,1
+ginger,orange peel,1
+ginger,vodka,1
+cherry liqueur,vodka,1
+cherry liqueur,cranberry juice,1
+cherry liqueur,orange juice,1
+cinnamon,egg,1
+chocolate,egg,1
+chocolate,water,1
+cinnamon,whipped cream,1
+cinnamon,vanilla,1
+cinnamon,heavy cream,1
+milk,vanilla,1
+chocolate,whipped cream,1
+vanilla,whipped cream,1
+heavy cream,whipped cream,1
+chocolate,vanilla,1
+chocolate,heavy cream,1
+heavy cream,vanilla,1
+milk,orange peel,1
+espresso,orange peel,1
+chocolate,orange peel,1
+nutmeg,orange peel,1
+espresso,milk,1
+chocolate,espresso,1
+espresso,nutmeg,1
+chocolate,nutmeg,1
+cinnamon,egg yolk,1
+chocolate,egg yolk,1
+coffee liqueur,mezcal,1
+chocolate liqueur,mezcal,1
+chocolate liqueur,coffee liqueur,1
+chocolate syrup,soda water,1
+milk,soda water,1
+coconut syrup,condensed milk,1
+condensed milk,half-and-half,1
+condensed milk,scotch,1
+chocolate syrup,condensed milk,1
+coconut syrup,half-and-half,1
+coconut syrup,scotch,1
+chocolate syrup,coconut syrup,1
+half-and-half,scotch,1
+chocolate syrup,half-and-half,1
+chocolate syrup,scotch,1
+chocolate syrup,mint syrup,1
+milk,mint syrup,1
+cinnamon,whiskey,1
+cinnamon,honey,1
+cinnamon,lemon,1
+cloves,whiskey,1
+cloves,honey,1
+cloves,lemon,1
+honey,whiskey,1
+lemon,whiskey,1
+honey,lemon,1
+brandy,cinnamon,1
+brandy,cloves,1
+cinnamon,fresh lemon juice,1
+cloves,fresh lemon juice,1
+orange juice,sugar,1
+cinnamon,coffee,1
+club soda,cranberry juice,1
+club soda,strawberry schnapps,1
+cranberry juice,strawberry schnapps,1
+orange juice,strawberry schnapps,1
+club soda,southern comfort,1
+passion fruit syrup,southern comfort,1
+club soda,passion fruit syrup,1
+passion fruit syrup,sweet and sour,1
+passion fruit syrup,vodka,1
+dark rum,lemon,1
+dark rum,maraschino cherry,1
+bitters,sweet and sour,1
+bitters,vodka,1
+bitters,tequila,1
+bitters,lemon,1
+bitters,coca-cola,1
+coca-cola,triple sec,1
+coca-cola,peach vodka,1
+coca-cola,fresh lemon juice,1
+coca-cola,dark rum,1
+dark rum,lime,1
+coca-cola,kahlua,1
+coca-cola,guinness stout,1
+guinness stout,vodka,1
+guinness stout,kahlua,1
+coca-cola,vanilla extract,1
+coca-cola,tennessee whiskey,1
+ice,vanilla extract,1
+ice,tennessee whiskey,1
+tennessee whiskey,vanilla extract,1
+lemon peel,tequila,1
+coca-cola,lemon peel,1
+coca-cola,egg,1
+egg,sweet and sour,1
+cocoa powder,espresso,1
+espresso,honey,1
+cocoa powder,honey,1
+cocoa powder,salt,1
+coconut liqueur,prosecco,1
+coconut liqueur,rum,1
+grapefruit juice,soda water,1
+coconut liqueur,soda water,1
+coconut liqueur,grapefruit juice,1
+coconut milk,pineapple,1
+coconut milk,light rum,1
+coffee,everclear,1
+espresso,vanilla syrup,1
+rum,vanilla syrup,1
+coffee,vanilla syrup,1
+espresso,rum,1
+coffee,espresso,1
+coffee,peach schnapps,1
+corn syrup,vodka,1
+corn syrup,sugar,1
+corn syrup,water,1
+corn syrup,vanilla extract,1
+coffee,corn syrup,1
+sugar,whipped cream,1
+irish whiskey,whipped cream,1
+irish whiskey,sugar,1
+water,whipped cream,1
+rum,whipped cream,1
+coffee,grain alcohol,1
+coffee,grand marnier,1
+lime vodka,sherry,1
+coffee brandy,sherry,1
+coffee brandy,lime vodka,1
+coffee liqueur,ice,1
+coffee liqueur,light rum,1
+coffee liqueur,milk,1
+coffee liqueur,light cream,1
+cognac,creme de cassis,1
+cognac,dry vermouth,1
+dry vermouth,water,1
+dry vermouth,sugar syrup,1
+dry vermouth,rum,1
+dry vermouth,fresh lime juice,1
+cognac,water,1
+cognac,sugar syrup,1
+cognac,rum,1
+cognac,fresh lime juice,1
+sugar syrup,water,1
+fresh lime juice,water,1
+rum,sugar syrup,1
+cognac,ginger,1
+cognac,lime,1
+cognac,cointreau,1
+cointreau,fresh lime juice,1
+cranberry juice,lime,1
+cointreau,lime,1
+cointreau,ice,1
+condensed milk,egg,1
+egg,rum,1
+condensed milk,sugar,1
+condensed milk,milk,1
+condensed milk,vanilla extract,1
+condensed milk,rum,1
+condensed milk,nutmeg,1
+milk,rum,1
+condensed milk,mint,1
+mint,tea,1
+condensed milk,water,1
+condensed milk,tea,1
+condensed milk,ice,1
+ice,water,1
+ice,tea,1
+corona,light rum,1
+roses sweetened lime juice,vodka,1
+cranberry juice,roses sweetened lime juice,1
+roses sweetened lime juice,sprite,1
+creme de banane,soda water,1
+cranberry juice,soda water,1
+midori melon liqueur,soda water,1
+cranberry juice,creme de banane,1
+creme de banane,midori melon liqueur,1
+cranberry juice,orange,1
+orange,surge,1
+cranberry juice,dark rum,1
+cranberry juice,surge,1
+dark rum,surge,1
+everclear,peach schnapps,1
+cranberry juice,everclear,1
+cranberry juice,gin,1
+cranberry juice,grenadine,1
+cranberry juice,grapefruit juice,1
+cream,pineapple juice,1
+cream,grenadine,1
+crown royal,kahlua,1
+cream,crown royal,1
+cream,triple sec,1
+cream,galliano,1
+cream,vodka,1
+cream,ice,1
+cream,rum,1
+gin,vanilla extract,1
+cream,gin,1
+soda water,vanilla extract,1
+egg white,soda water,1
+cream,soda water,1
+sugar syrup,vanilla extract,1
+fresh lemon juice,vanilla extract,1
+cream,vanilla extract,1
+egg white,sugar syrup,1
+cream,sugar syrup,1
+cream,fresh lemon juice,1
+cream,egg white,1
+ice,malibu rum,1
+malibu rum,pineapple,1
+cream of coconut,malibu rum,1
+orange juice,pineapple,1
+cream of coconut,orange juice,1
+pineapple,vodka,1
+cream of coconut,vodka,1
+grenadine,ice,1
+cream of coconut,grenadine,1
+ice,pineapple,1
+cream of coconut,pineapple,1
+cream of coconut,pineapple juice,1
+cream of coconut,tequila,1
+cream of coconut,fresh lime juice,1
+creme de banane,grenadine,1
+gin,nutmeg,1
+green creme de menthe,light cream,1
+creme de cacao,green creme de menthe,1
+creme de cassis,lime,1
+creme de cassis,ginger,1
+creme de cassis,fresh lime juice,1
+creme de cassis,ginger beer,1
+ginger beer,lime,1
+fresh lime juice,ginger,1
+ginger,ginger beer,1
+creme de cassis,sugar syrup,1
+creme de cassis,vodka,1
+creme de mure,gin,1
+creme de mure,sugar syrup,1
+creme de mure,fresh lemon juice,1
+crown royal,frangelico,1
+cucumber,gin,1
+cucumber,lemon,1
+cucumber,fresh lime juice,1
+cucumber,ginger beer,1
+fresh lime juice,lemon,1
+ginger beer,lemon,1
+cumin seed,mint,1
+mint,salt,1
+mint,yoghurt,1
+cumin seed,salt,1
+cumin seed,water,1
+cumin seed,yoghurt,1
+dark rum,light rum,1
+dark rum,peach nectar,1
+dark rum,egg white,1
+egg white,kahlua,1
+lemon-lime soda,sugar,1
+dark rum,lemon-lime soda,1
+dark rum,ginger beer,1
+melon liqueur,mountain dew,1
+melon liqueur,vodka,1
+melon liqueur,tequila,1
+dark rum,melon liqueur,1
+melon liqueur,triple sec,1
+mountain dew,tequila,1
+dark rum,mountain dew,1
+mountain dew,triple sec,1
+dark rum,tequila,1
+dark rum,triple sec,1
+dark rum,tia maria,1
+dark rum,orgeat syrup,1
+orange juice,orgeat syrup,1
+orgeat syrup,pineapple juice,1
+dark rum,light cream,1
+kahlua,light cream,1
+dark rum,nutmeg,1
+kahlua,nutmeg,1
+drambuie,dry vermouth,1
+dry vermouth,soda water,1
+soda water,sweet vermouth,1
+dry vermouth,lemon,1
+dry vermouth,olive brine,1
+olive brine,vodka,1
+lemon,olive,1
+olive,olive brine,1
+lemon,olive brine,1
+dry vermouth,sloe gin,1
+orange bitters,sloe gin,1
+egg,salt,1
+egg,port,1
+light cream,port,1
+nutmeg,port,1
+milk,sherry,1
+light cream,sherry,1
+mint,triple sec,1
+egg white,mint,1
+gin,milk,1
+gin,heavy cream,1
+grenadine,milk,1
+grenadine,heavy cream,1
+egg white,heavy cream,1
+grenadine,light cream,1
+pisco,sugar,1
+ice,pisco,1
+fresh lemon juice,pisco,1
+egg white,pisco,1
+egg white,ice,1
+ginger ale,tequila,1
+egg white,tequila,1
+ginger ale,grenadine,1
+egg white,ginger ale,1
+powdered sugar,sweet vermouth,1
+lemon,sweet vermouth,1
+egg white,sweet vermouth,1
+egg yolk,gin,1
+egg yolk,maraschino liqueur,1
+egg yolk,fresh lemon juice,1
+egg yolk,orange bitters,1
+elderflower cordial,soda water,1
+elderflower cordial,vodka,1
+elderflower cordial,fresh lemon juice,1
+gin,rosso vermouth,1
+mint,rosso vermouth,1
+elderflower cordial,mint,1
+mint,tonic water,1
+ginger,mint,1
+elderflower cordial,rosso vermouth,1
+rosso vermouth,tonic water,1
+lime,rosso vermouth,1
+ginger,rosso vermouth,1
+elderflower cordial,tonic water,1
+elderflower cordial,ginger,1
+ginger,tonic water,1
+everclear,kool-aid,1
+kool-aid,orange juice,1
+kool-aid,wine,1
+everclear,wine,1
+mountain dew,surge,1
+everclear,mountain dew,1
+mountain dew,rum,1
+fresh lemon juice,mountain dew,1
+surge,vodka,1
+everclear,surge,1
+rum,surge,1
+fresh lemon juice,surge,1
+everclear,rum,1
+everclear,fresh lemon juice,1
+lime,pepper,1
+pepper,pineapple juice,1
+grapefruit juice,pineapple juice,1
+pineapple juice,tequila,1
+lime,pineapple juice,1
+salt,vodka,1
+fruit,salt,1
+fruit juice,salt,1
+rum,salt,1
+fruit,vodka,1
+fruit juice,vodka,1
+fruit,tequila,1
+fruit juice,tequila,1
+fruit,fruit juice,1
+fruit,rum,1
+fruit,triple sec,1
+fruit juice,ice,1
+fruit juice,rum,1
+fruit juice,triple sec,1
+fruit juice,yoghurt,1
+fruit punch,orange juice,1
+fruit punch,ginger ale,1
+fruit punch,ice,1
+fruit punch,rum,1
+galliano,prosecco,1
+galliano,rum,1
+galliano,pineapple juice,1
+galliano,soda water,1
+kahlua,soda water,1
+galliano,kahlua,1
+peach vodka,sirup of roses,1
+galliano,peach vodka,1
+fresh lemon juice,peach vodka,1
+galliano,sirup of roses,1
+fresh lemon juice,sirup of roses,1
+fresh lemon juice,galliano,1
+galliano,ice,1
+galliano,ginger ale,1
+galliano,vodka,1
+galliano,light rum,1
+grand marnier,grenadine,1
+gin,vermouth,1
+lemon peel,yellow chartreuse,1
+orange bitters,yellow chartreuse,1
+lemon peel,orange bitters,1
+grand marnier,lemon peel,1
+green chartreuse,orange bitters,1
+club soda,light rum,1
+club soda,tequila,1
+club soda,triple sec,1
+gin,peach bitters,1
+gin,lillet,1
+lillet,orange peel,1
+lillet,sweet vermouth,1
+lime,sugar syrup,1
+grenadine,orange,1
+orange peel,water,1
+orange peel,powdered sugar,1
+lemon,orange peel,1
+pineapple,triple sec,1
+green chartreuse,yellow chartreuse,1
+gin,rosemary syrup,1
+orange peel,soda water,1
+rosemary,soda water,1
+rosemary syrup,soda water,1
+orange juice,rosemary,1
+orange peel,rosemary,1
+orange peel,rosemary syrup,1
+fresh lemon juice,rosemary,1
+rosemary,rosemary syrup,1
+fresh lemon juice,rosemary syrup,1
+gin,grapefruit juice,1
+gin,salt,1
+grapefruit juice,salt,1
+green chartreuse,maraschino liqueur,1
+fresh lime juice,green chartreuse,1
+gin,melon liqueur,1
+gin,prosecco,1
+melon liqueur,prosecco,1
+fresh lemon juice,melon liqueur,1
+melon liqueur,orange bitters,1
+fresh lemon juice,prosecco,1
+orange bitters,prosecco,1
+lillet blanc,vodka,1
+pineapple,water,1
+pineapple juice,water,1
+fresh lemon juice,pineapple,1
+fresh lemon juice,ginger,1
+ginger,pineapple juice,1
+ginger ale,light rum,1
+lemon peel,orange juice,1
+lemonade,rum,1
+ginger ale,lemonade,1
+ice,spiced rum,1
+lime,spiced rum,1
+fresh lime juice,ginger ale,1
+ginger ale,sugar syrup,1
+ginger beer,light rum,1
+vanilla ice-cream,whipped cream,1
+godiva liqueur,whipped cream,1
+godiva liqueur,vanilla ice-cream,1
+gold rum,triple sec,1
+gold rum,orange juice,1
+goldschlager,irish cream,1
+goldschlager,midori melon liqueur,1
+grand marnier,orange juice,1
+grand marnier,vanilla vodka,1
+orange juice,vanilla vodka,1
+grand marnier,sambuca,1
+grape juice,vodka,1
+grape juice,orange,1
+grape juice,powdered sugar,1
+fresh lemon juice,grape juice,1
+powdered sugar,vodka,1
+orange,powdered sugar,1
+grape soda,ice,1
+grape soda,vodka,1
+grape soda,orange juice,1
+grape soda,tequila,1
+grapefruit juice,maraschino liqueur,1
+grapefruit juice,rum,1
+maraschino liqueur,rum,1
+grapefruit juice,mint,1
+mint,tequila,1
+green chartreuse,irish whiskey,1
+irish whiskey,sweet vermouth,1
+green creme de menthe,grenadine,1
+passion fruit juice,pineapple juice,1
+grenadine,passion fruit juice,1
+fresh lemon juice,passion fruit juice,1
+grenadine,maraschino liqueur,1
+maraschino liqueur,pineapple juice,1
+maraschino cherry,pineapple juice,1
+sour mix,spiced rum,1
+grenadine,spiced rum,1
+orange juice,spiced rum,1
+grenadine,sour mix,1
+grenadine,lemon-lime soda,1
+grenadine,red wine,1
+guinness stout,root beer,1
+limeade,vodka,1
+ice,limeade,1
+half-and-half,limeade,1
+limeade,nutmeg,1
+half-and-half,vodka,1
+nutmeg,vodka,1
+half-and-half,ice,1
+ice,nutmeg,1
+half-and-half,nutmeg,1
+honey,light rum,1
+fresh lemon juice,honey,1
+johnnie walker,lemon peel,1
+honey,johnnie walker,1
+honey,lemon peel,1
+honey,water,1
+southern comfort,white creme de menthe,1
+hot chocolate,southern comfort,1
+vodka,white creme de menthe,1
+hot chocolate,vodka,1
+hot chocolate,white creme de menthe,1
+hot damn,whiskey,1
+hot damn,tea,1
+ice,mountain dew,1
+peach nectar,vodka,1
+ice,peach schnapps,1
+peach nectar,peach schnapps,1
+lemon peel,peach schnapps,1
+ice,peach nectar,1
+lemon peel,peach nectar,1
+lime,salt,1
+lime,yoghurt,1
+mango,soda water,1
+mango,mint,1
+light rum,mango,1
+lime,mango,1
+ice,mango,1
+ice,raspberry vodka,1
+lemon-lime soda,raspberry vodka,1
+ice,red wine,1
+ice,root beer,1
+root beer,sambuca,1
+ice,sambuca,1
+iced tea,vodka,1
+fresh lemon juice,iced tea,1
+irish cream,sambuca,1
+jack daniels,johnnie walker,1
+jim beam,johnnie walker,1
+jack daniels,sour mix,1
+midori melon liqueur,sour mix,1
+jack daniels,midori melon liqueur,1
+jack daniels,wild turkey,1
+jim beam,wild turkey,1
+sambuca,vodka,1
+jello,vodka,1
+jello,water,1
+kahlua,sugar syrup,1
+kiwi,vodka,1
+kiwi,sugar syrup,1
+kiwi,papaya,1
+kool-aid,vodka,1
+lager,tequila,1
+lemon,pineapple,1
+lemon,lemon-lime soda,1
+pineapple juice,red wine,1
+orange,pineapple juice,1
+tabasco sauce,vodka,1
+lime,tabasco sauce,1
+tabasco sauce,worcestershire sauce,1
+tomato juice,vodka,1
+vodka,worcestershire sauce,1
+lime,tomato juice,1
+fresh lemon juice,lime,1
+lime,worcestershire sauce,1
+fresh lemon juice,worcestershire sauce,1
+tia maria,vodka,1
+fresh lemon juice,tia maria,1
+orange juice,tia maria,1
+rose,strawberries,1
+rose,sugar,1
+fresh lemon juice,rose,1
+fresh lemon juice,yoghurt,1
+salt,strawberries,1
+strawberries,tequila,1
+strawberries,triple sec,1
+salt,strawberry schnapps,1
+strawberry schnapps,tequila,1
+fresh lemon juice,strawberry schnapps,1
+strawberry schnapps,triple sec,1
+light rum,maple syrup,1
+fresh lemon juice,maple syrup,1
+lemon peel,sloe gin,1
+powdered sugar,rum,1
+lemon peel,rum,1
+lemon-lime soda,strawberries,1
+maraschino liqueur,triple sec,1
+fresh lime juice,pineapple,1
+light rum,sherry,1
+lime,sherry,1
+light rum,strawberries,1
+light rum,strawberry schnapps,1
+powdered sugar,strawberry schnapps,1
+fresh lime juice,strawberry schnapps,1
+fresh lime juice,powdered sugar,1
+southern comfort,triple sec,1
+lime,southern comfort,1
+sour mix,triple sec,1
+lime,sour mix,1
+lime peel,soda water,1
+lime peel,sugar,1
+lime,lime peel,1
+passoa,vodka,1
+passion fruit juice,passoa,1
+lime,passoa,1
+passoa,prosecco,1
+prosecco,vodka,1
+passion fruit juice,prosecco,1
+lime,prosecco,1
+mint,passoa,1
+passoa,peach bitters,1
+passion fruit syrup,passoa,1
+fresh lime juice,passoa,1
+mint,rum,1
+mint,passion fruit syrup,1
+peach bitters,rum,1
+passion fruit syrup,peach bitters,1
+fresh lime juice,peach bitters,1
+passion fruit syrup,rum,1
+fresh lime juice,passion fruit syrup,1
+orange juice,tomato juice,1
+salt,tomato juice,1
+salt,sugar syrup,1
+sugar syrup,tequila,1
+sugar syrup,tomato juice,1
+fresh lime juice,sprite,1
+mango,yoghurt,1
+mango,sugar,1
+mango,water,1
+mango,orange,1
+midori melon liqueur,zima,1
+olive,scotch,1
+olive,sweet vermouth,1
+olive,orange bitters,1
+sherry,sweet vermouth,1
+orange bitters,sherry,1
+pepsi cola,southern comfort,1
+orange juice,southern comfort,1
+peach schnapps,pepsi cola,1
+peach schnapps,red wine,1
+pepsi cola,red wine,1
+orange juice,scotch,1
+orgeat syrup,ricard,1
+orgeat syrup,water,1
+ouzo,vodka,1
+passion fruit juice,sugar syrup,1
+peachtree schnapps,surge,1
+raspberry liqueur,vodka,1
+pineapple juice,raspberry liqueur,1
+pink lemonade,vodka,1
+pink lemonade,sprite,1
+sambuca,sarsaparilla,1
+strawberry liqueur,vodka,1
+strawberries,strawberry liqueur,1
+schweppes russchian,strawberry liqueur,1
+schweppes russchian,strawberries,1
+sweet vermouth,wine,1
+sloe gin,wine,1
+vodka,wormwood,1
+sugar,wormwood,1
